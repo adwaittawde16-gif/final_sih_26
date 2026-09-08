@@ -771,10 +771,10 @@ export default function CDRNetworkPage() {
                       : isInterGang
                       ? "url(#bridgeGrad)"
                       : edge.total_calls > 50
-                      ? "#f59e0b"
-                      : "#475569";
+                      ? "#fbbf24"
+                      : "#64748b";
 
-                    const opacity = isDimmed ? 0.12 : isConnectedToFocus ? 0.95 : 0.45;
+                    const opacity = isDimmed ? 0.32 : isConnectedToFocus ? 1 : 0.72;
 
                     const midX = (p1.x + p2.x) / 2;
                     const midY = (p1.y + p2.y) / 2;
@@ -823,8 +823,8 @@ export default function CDRNetworkPage() {
                             <text
                               x={0}
                               y={3.5}
-                              fill={isConnectedToFocus ? "#38bdf8" : "#94a3b8"}
-                              fontSize="9"
+                              fill={isConnectedToFocus ? "#7dd3fc" : "#e2e8f0"}
+                              fontSize="10"
                               fontWeight="bold"
                               fontFamily="monospace"
                               textAnchor="middle"
