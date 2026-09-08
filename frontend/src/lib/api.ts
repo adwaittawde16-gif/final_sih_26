@@ -32,7 +32,9 @@ import {
   fallbackGeo
 } from "./mockData";
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8080";
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL !== undefined
+  ? process.env.NEXT_PUBLIC_API_URL
+  : (typeof window !== "undefined" ? "" : "http://127.0.0.1:8080");
 
 async function fetchAPI<T>(endpoint: string, options?: RequestInit, fallbackData?: T): Promise<T> {
   const controller = new AbortController();
