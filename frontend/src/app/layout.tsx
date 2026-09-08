@@ -3,23 +3,10 @@ import "./globals.css";
 import { Sidebar } from "@/components/shared/Sidebar";
 
 export const metadata: Metadata = {
-  title: "Mumbai Police Intelligence Platform — SIH 26",
-  description: "Tactical Police Intelligence & Crime Network Analytics Platform for Brihanmumbai Police Department.",
+  title: "Tactical Intelligence Command Center | Brihanmumbai Police",
+  description: "Restricted command-center interface for reviewing synthetic tactical intelligence signals across Mumbai jurisdiction.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="en">
-      <body className="bg-background text-slate-900 flex min-h-screen">
-        <Sidebar />
-        <main className="flex-1 p-6 md:p-8 overflow-y-auto max-w-[1600px] mx-auto">
-          {children}
-        </main>
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return <html lang="en" className="bg-slate-50"><body className="min-h-screen bg-slate-50 text-slate-900"><div className="flex min-h-screen"><Sidebar /><main className="min-w-0 flex-1 overflow-y-auto px-4 py-5 sm:px-6 lg:px-8">{children}</main></div></body></html>;
 }
