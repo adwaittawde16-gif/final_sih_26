@@ -109,40 +109,46 @@ export default function CCTVCoLocationPage() {
         </Card>
 
         {/* Selected CCTV Encounter Inspector */}
-        <Card className="lg:col-span-1 space-y-4 border-slate-300 bg-white">
+        <Card className="lg:col-span-1 space-y-4 bg-slate-900 border-slate-800 text-white p-4">
           {selectedMeeting ? (
-            <div className="space-y-4">
-              <div className="border-b border-slate-200 pb-3">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-amber-700 font-bold">Encounter Inspector</span>
-                <h3 className="text-base font-bold text-slate-900 mt-1">{selectedMeeting.camera_location}</h3>
-                <p className="text-xs font-mono text-slate-500">Camera ID: {selectedMeeting.camera_id}</p>
+            <div className="space-y-4 font-mono">
+              <div className="border-b border-slate-800 pb-3">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-amber-400 font-bold">📷 Encounter Inspector</span>
+                <h3 className="text-sm font-bold text-white mt-1 leading-snug">{selectedMeeting.camera_location}</h3>
+                <p className="text-xs text-slate-400">Camera ID: <span className="text-blue-400 font-bold">{selectedMeeting.camera_id}</span></p>
               </div>
 
-              <div className="space-y-2 font-mono text-xs">
-                <div className="p-2.5 bg-slate-50 rounded-lg border border-slate-200 flex justify-between">
-                  <span className="text-slate-600">Suspect 1</span>
-                  <span className="font-bold text-slate-900">{selectedMeeting.suspect_1}</span>
+              <div className="space-y-2 text-xs">
+                <div className="p-2.5 bg-slate-950 rounded-lg border border-slate-800 flex justify-between">
+                  <span className="text-slate-400">Suspect 1</span>
+                  <span className="font-bold text-white">{selectedMeeting.suspect_1}</span>
                 </div>
-                <div className="p-2.5 bg-slate-50 rounded-lg border border-slate-200 flex justify-between">
-                  <span className="text-slate-600">Suspect 2</span>
-                  <span className="font-bold text-slate-900">{selectedMeeting.suspect_2}</span>
+                <div className="p-2.5 bg-slate-950 rounded-lg border border-slate-800 flex justify-between">
+                  <span className="text-slate-400">Suspect 2</span>
+                  <span className="font-bold text-white">{selectedMeeting.suspect_2}</span>
                 </div>
-                <div className="p-2.5 bg-amber-50 rounded-lg border border-amber-200 flex justify-between">
-                  <span className="text-amber-800 font-semibold">Face Match Confidence</span>
-                  <span className="font-bold text-amber-900">{(selectedMeeting.avg_match_confidence * 100).toFixed(1)}%</span>
+                <div className="p-2.5 bg-amber-950/50 rounded-lg border border-amber-700/50 flex justify-between">
+                  <span className="text-amber-300 font-semibold">Face Match Confidence</span>
+                  <span className="font-bold text-amber-400">{(selectedMeeting.avg_match_confidence * 100).toFixed(1)}%</span>
                 </div>
-                <div className="p-2.5 bg-cyan-50 rounded-lg border border-cyan-200 flex justify-between">
-                  <span className="text-cyan-800 font-semibold">Proximity Distance</span>
-                  <span className="font-bold text-cyan-900">{selectedMeeting.avg_distance_meters.toFixed(1)} meters</span>
+                <div className="p-2.5 bg-cyan-950/50 rounded-lg border border-cyan-700/50 flex justify-between">
+                  <span className="text-cyan-300 font-semibold">Proximity Distance</span>
+                  <span className="font-bold text-cyan-400">{selectedMeeting.avg_distance_meters.toFixed(1)} meters</span>
                 </div>
-                <div className="p-2.5 bg-slate-50 rounded-lg border border-slate-200 flex justify-between">
-                  <span className="text-slate-600">CDR Calls Between Pair</span>
-                  <span className="font-bold text-blue-700">{selectedMeeting.cdr_call_count} calls</span>
+                <div className="p-2.5 bg-slate-950 rounded-lg border border-slate-800 flex justify-between">
+                  <span className="text-slate-400">CDR Calls Pair</span>
+                  <span className="font-bold text-blue-400">{selectedMeeting.cdr_call_count} calls</span>
                 </div>
-                <div className="p-2.5 bg-emerald-50 rounded-lg border border-emerald-200 flex justify-between">
-                  <span className="text-emerald-800 font-semibold">Verification Status</span>
-                  <span className="font-bold text-emerald-900">{selectedMeeting.sighting_status}</span>
+                <div className="p-2.5 bg-emerald-950/50 rounded-lg border border-emerald-700/50 flex justify-between">
+                  <span className="text-emerald-300 font-semibold">Verification</span>
+                  <span className="font-bold text-emerald-400">{selectedMeeting.sighting_status}</span>
                 </div>
+                {selectedMeeting.encounter_time && (
+                  <div className="p-2.5 bg-slate-950 rounded-lg border border-slate-800 flex justify-between">
+                    <span className="text-slate-400">Encounter Time</span>
+                    <span className="font-bold text-slate-300 text-[11px]">{selectedMeeting.encounter_time}</span>
+                  </div>
+                )}
               </div>
             </div>
           ) : (
@@ -154,38 +160,39 @@ export default function CCTVCoLocationPage() {
       </div>
 
       {/* Tabular Encounter Log */}
-      <Card className="overflow-hidden p-0">
-        <div className="p-4 border-b border-slate-200 bg-slate-50 flex justify-between items-center">
-          <h3 className="text-sm font-bold font-mono text-slate-900">Full CCTV Encounters Roster</h3>
-          <span className="text-xs font-mono text-slate-500 font-semibold">Sorted by Confidence</span>
+      <Card className="overflow-hidden p-0 bg-slate-900 border-slate-800">
+        <div className="p-4 border-b border-slate-800 bg-slate-900 flex justify-between items-center">
+          <h3 className="text-sm font-bold font-mono text-white">Full CCTV Encounters Roster</h3>
+          <span className="text-xs font-mono text-amber-400 font-semibold">Sorted by Confidence</span>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs font-mono">
-            <thead className="bg-slate-100 text-slate-600 border-b border-slate-200 uppercase tracking-wider text-[10px]">
+            <thead className="bg-slate-950 text-slate-400 border-b border-slate-800 uppercase tracking-wider text-[10px]">
               <tr>
                 <th className="p-3">Suspect 1</th>
                 <th className="p-3">Suspect 2</th>
                 <th className="p-3">Camera Location</th>
                 <th className="p-3 text-right">Camera ID</th>
-                <th className="p-3 text-right">Proximity Distance</th>
-                <th className="p-3 text-right">Match Confidence</th>
+                <th className="p-3 text-right">Proximity</th>
+                <th className="p-3 text-right">Match %</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-200">
+            <tbody className="divide-y divide-slate-800">
               {data?.meetings.map((m, idx) => (
-                <tr key={idx} className="hover:bg-slate-50 transition-colors">
-                  <td className="p-3 font-bold text-slate-900">{m.suspect_1}</td>
-                  <td className="p-3 font-bold text-slate-900">{m.suspect_2}</td>
-                  <td className="p-3 text-slate-700 font-sans font-medium">{m.camera_location}</td>
-                  <td className="p-3 text-right text-slate-500">{m.camera_id}</td>
-                  <td className="p-3 text-right text-cyan-700 font-bold">{m.avg_distance_meters.toFixed(1)} m</td>
-                  <td className="p-3 text-right text-emerald-700 font-bold">{(m.avg_match_confidence * 100).toFixed(1)}%</td>
+                <tr key={idx} className="hover:bg-slate-800/50 transition-colors cursor-pointer" onClick={() => setSelectedMeeting(m)}>
+                  <td className="p-3 font-bold text-white">{m.suspect_1}</td>
+                  <td className="p-3 font-bold text-white">{m.suspect_2}</td>
+                  <td className="p-3 text-slate-300 font-sans font-medium">{m.camera_location}</td>
+                  <td className="p-3 text-right text-blue-400">{m.camera_id}</td>
+                  <td className="p-3 text-right text-cyan-400 font-bold">{m.avg_distance_meters.toFixed(1)} m</td>
+                  <td className="p-3 text-right text-emerald-400 font-bold">{(m.avg_match_confidence * 100).toFixed(1)}%</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
       </Card>
+
     </div>
   );
 }
