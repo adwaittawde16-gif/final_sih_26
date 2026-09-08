@@ -1,0 +1,454 @@
+/**
+ * Fallback Demonstration Intelligence Data for Vercel Cloud Deployments
+ * Used automatically when local FastAPI backend is unreachable.
+ */
+
+import {
+  ThreatLeaderboardResponse,
+  CDRSummaryResponse,
+  NetworkGraphResponse,
+  CCTVMeetingsResponse,
+  CrimeRingsResponse,
+  FinancialIntelligenceResponse,
+  NocturnalAnomaliesResponse,
+  SurveillanceHeatmapResponse,
+  AlertsResponse,
+  SuspectDossierDetails,
+  SearchResultResponse,
+  GangListResponse,
+  GangSubGraphResponse,
+  TimelineResponse,
+  SocialMediaResponse,
+  FIRNLPResponse,
+  GeoPointsResponse
+} from "../types";
+
+export const fallbackLeaderboard: ThreatLeaderboardResponse = {
+  total_suspects: 10,
+  critical_count: 3,
+  high_count: 4,
+  moderate_count: 2,
+  low_count: 1,
+  leaderboard: [
+    {
+      suspect_name: "Md. Ranbir Bhalla",
+      phone_number: "+91-2236381844",
+      total_threat_score: 94.2,
+      cctv_meeting_score: 90.0,
+      cdr_network_score: 95.0,
+      fir_severity_score: 92.0,
+      criminal_history_score: 98.0,
+      financial_risk_score: 88.0,
+      surveillance_score: 95.0
+    },
+    {
+      suspect_name: "Md. Teerth Bhargava",
+      phone_number: "+91-7611970993",
+      total_threat_score: 88.5,
+      cctv_meeting_score: 85.0,
+      cdr_network_score: 90.0,
+      fir_severity_score: 89.0,
+      criminal_history_score: 86.0,
+      financial_risk_score: 91.0,
+      surveillance_score: 88.0
+    },
+    {
+      suspect_name: "Md. Vedant Padmanabhan",
+      phone_number: "+91-2530358841",
+      total_threat_score: 84.1,
+      cctv_meeting_score: 80.0,
+      cdr_network_score: 88.0,
+      fir_severity_score: 82.0,
+      criminal_history_score: 85.0,
+      financial_risk_score: 84.0,
+      surveillance_score: 86.0
+    },
+    {
+      suspect_name: "Md. Pranit Arya",
+      phone_number: "+91-7774789752",
+      total_threat_score: 79.6,
+      cctv_meeting_score: 75.0,
+      cdr_network_score: 82.0,
+      fir_severity_score: 78.0,
+      criminal_history_score: 80.0,
+      financial_risk_score: 81.0,
+      surveillance_score: 79.0
+    },
+    {
+      suspect_name: "Md. Hardik Kant",
+      phone_number: "+91-8482336846",
+      total_threat_score: 73.4,
+      cctv_meeting_score: 70.0,
+      cdr_network_score: 76.0,
+      fir_severity_score: 71.0,
+      criminal_history_score: 74.0,
+      financial_risk_score: 72.0,
+      surveillance_score: 75.0
+    }
+  ]
+};
+
+export const fallbackCDRPairs: CDRSummaryResponse = {
+  total_cdr_logs: 1420,
+  total_interaction_pairs: 48,
+  frequent_pairs_count: 12,
+  pairs: [
+    {
+      suspect_1: "Md. Ranbir Bhalla",
+      suspect_2: "Md. Teerth Bhargava",
+      total_calls: 142,
+      total_duration_min: 384,
+      nocturnal_calls: 38,
+      sms_count: 64,
+      incoming_count: 72,
+      outgoing_count: 70
+    },
+    {
+      suspect_1: "Md. Ranbir Bhalla",
+      suspect_2: "Md. Vedant Padmanabhan",
+      total_calls: 98,
+      total_duration_min: 245,
+      nocturnal_calls: 24,
+      sms_count: 42,
+      incoming_count: 48,
+      outgoing_count: 50
+    },
+    {
+      suspect_1: "Md. Teerth Bhargava",
+      suspect_2: "Md. Pranit Arya",
+      total_calls: 86,
+      total_duration_min: 210,
+      nocturnal_calls: 19,
+      sms_count: 31,
+      incoming_count: 40,
+      outgoing_count: 46
+    }
+  ]
+};
+
+export const fallbackCDRGraph: NetworkGraphResponse = {
+  total_nodes: 6,
+  total_edges: 8,
+  top_key_influencers: [
+    {
+      id: "node-1",
+      label: "Md. Ranbir Bhalla",
+      phone: "+91-2236381844",
+      threat_score: 94.2,
+      degree_centrality: 0.85,
+      betweenness_centrality: 0.78,
+      total_calls_count: 240,
+      connected_entities_count: 5,
+      nocturnal_calls_count: 62,
+      risk_tier: "CRITICAL",
+      gang_id: "GANG-01",
+      gang_name: "Gang 1 — Byculla Syndicate"
+    }
+  ],
+  nodes: [
+    { id: "Md. Ranbir Bhalla", label: "Md. Ranbir Bhalla", phone: "+91-2236381844", threat_score: 94.2, degree_centrality: 0.85, betweenness_centrality: 0.78, total_calls_count: 240, connected_entities_count: 5, nocturnal_calls_count: 62, risk_tier: "CRITICAL", gang_id: "GANG-01", gang_name: "Gang 1 — Byculla Syndicate" },
+    { id: "Md. Teerth Bhargava", label: "Md. Teerth Bhargava", phone: "+91-7611970993", threat_score: 88.5, degree_centrality: 0.72, betweenness_centrality: 0.65, total_calls_count: 180, connected_entities_count: 4, nocturnal_calls_count: 41, risk_tier: "CRITICAL", gang_id: "GANG-01", gang_name: "Gang 1 — Byculla Syndicate" },
+    { id: "Md. Vedant Padmanabhan", label: "Md. Vedant Padmanabhan", phone: "+91-2530358841", threat_score: 84.1, degree_centrality: 0.68, betweenness_centrality: 0.54, total_calls_count: 150, connected_entities_count: 4, nocturnal_calls_count: 35, risk_tier: "HIGH", gang_id: "GANG-01", gang_name: "Gang 1 — Byculla Syndicate" },
+    { id: "Md. Pranit Arya", label: "Md. Pranit Arya", phone: "+91-7774789752", threat_score: 79.6, degree_centrality: 0.58, betweenness_centrality: 0.42, total_calls_count: 120, connected_entities_count: 3, nocturnal_calls_count: 28, risk_tier: "HIGH", gang_id: "GANG-02", gang_name: "Gang 2 — Lower Parel Ring" },
+    { id: "Md. Hardik Kant", label: "Md. Hardik Kant", phone: "+91-8482336846", threat_score: 73.4, degree_centrality: 0.45, betweenness_centrality: 0.30, total_calls_count: 90, connected_entities_count: 2, nocturnal_calls_count: 15, risk_tier: "MODERATE", gang_id: "GANG-02", gang_name: "Gang 2 — Lower Parel Ring" }
+  ],
+  edges: [
+    { source: "Md. Ranbir Bhalla", target: "Md. Teerth Bhargava", total_calls: 142, weight: 14.2 },
+    { source: "Md. Ranbir Bhalla", target: "Md. Vedant Padmanabhan", total_calls: 98, weight: 9.8 },
+    { source: "Md. Teerth Bhargava", target: "Md. Pranit Arya", total_calls: 86, weight: 8.6 },
+    { source: "Md. Vedant Padmanabhan", target: "Md. Hardik Kant", total_calls: 54, weight: 5.4 }
+  ]
+};
+
+export const fallbackCCTVMeetings: CCTVMeetingsResponse = {
+  total_encounters: 28,
+  avg_confidence_pct: 87.5,
+  mean_distance_meters: 4.2,
+  meetings: [
+    {
+      suspect_1: "Md. Ranbir Bhalla",
+      suspect_2: "Md. Teerth Bhargava",
+      camera_id: "MH-CCTV-9890",
+      camera_location: "Metro Access Road, Byculla West, Mumbai",
+      cdr_call_count: 14,
+      avg_distance_meters: 3.5,
+      avg_match_confidence: 0.92,
+      sighting_status: "Verified Match",
+      encounter_time: "2026-08-25 18:15:00"
+    },
+    {
+      suspect_1: "Md. Ranbir Bhalla",
+      suspect_2: "Md. Vedant Padmanabhan",
+      camera_id: "MH-CCTV-9173",
+      camera_location: "Public Footpath Corner, Lower Parel, Mumbai",
+      cdr_call_count: 9,
+      avg_distance_meters: 4.8,
+      avg_match_confidence: 0.88,
+      sighting_status: "Verified Match",
+      encounter_time: "2026-08-24 11:30:00"
+    }
+  ]
+};
+
+export const fallbackGangs: GangListResponse = {
+  total_gangs: 2,
+  confirmed_count: 1,
+  candidate_count: 1,
+  dismissed_count: 0,
+  gangs: [
+    {
+      gang_id: "GANG-01",
+      name: "Gang 1 — Byculla Extortion Syndicate",
+      status: "CONFIRMED",
+      member_count: 3,
+      members: ["Md. Ranbir Bhalla", "Md. Teerth Bhargava", "Md. Vedant Padmanabhan"],
+      ring_leader: "Md. Ranbir Bhalla",
+      leader_phone: "+91-2236381844",
+      aggregate_threat_score: 88.9,
+      primary_locations: ["Byculla West", "Station Road Footpath", "Venus Wine Shop"],
+      date_first_detected: "01 AUG 2026"
+    },
+    {
+      gang_id: "GANG-02",
+      name: "Gang 2 — Lower Parel Contraband Group",
+      status: "CANDIDATE",
+      member_count: 2,
+      members: ["Md. Pranit Arya", "Md. Hardik Kant"],
+      ring_leader: "Md. Pranit Arya",
+      leader_phone: "+91-7774789752",
+      aggregate_threat_score: 76.5,
+      primary_locations: ["Lower Parel", "Bhadakamkar Marg"],
+      date_first_detected: "05 AUG 2026"
+    }
+  ]
+};
+
+export const fallbackFinancial: FinancialIntelligenceResponse = {
+  total_transactions: 340,
+  total_volume_inr: 4850000,
+  high_risk_suspects_count: 4,
+  summaries: [
+    {
+      suspect_name: "Md. Ranbir Bhalla",
+      threat_score: 94.2,
+      total_transactions: 85,
+      total_volume_inr: 1850000,
+      failed_withdrawals: 12,
+      wine_shop_spent_inr: 45000,
+      peer_transfer_count: 34
+    },
+    {
+      suspect_name: "Md. Teerth Bhargava",
+      threat_score: 88.5,
+      total_transactions: 62,
+      total_volume_inr: 1240000,
+      failed_withdrawals: 8,
+      wine_shop_spent_inr: 28000,
+      peer_transfer_count: 22
+    }
+  ],
+  transactions: [
+    {
+      transaction_id: "TXN-99812",
+      sender_name: "Md. Ranbir Bhalla",
+      receiver_name: "Md. Teerth Bhargava",
+      merchant_category: "Peer Transfer (Hawala)",
+      amount_inr: 150000,
+      timestamp: "2026-08-25 14:20:00"
+    },
+    {
+      transaction_id: "TXN-88124",
+      sender_name: "Md. Ranbir Bhalla",
+      receiver_name: "Venus Wine Shop",
+      merchant_category: "Liquor Outlet",
+      amount_inr: 8500,
+      timestamp: "2026-08-24 23:45:00"
+    }
+  ]
+};
+
+export const fallbackNocturnal: NocturnalAnomaliesResponse = {
+  total_anomalies: 142,
+  hotspots_count: 4,
+  calls: [
+    {
+      caller_name: "Md. Ranbir Bhalla",
+      receiver_name: "Md. Teerth Bhargava",
+      call_type: "Outgoing Call",
+      duration_seconds: 480,
+      cell_tower_location: "Venus Wine Shop, N.M. Joshi Marg, Byculla (W)",
+      timestamp: "2026-08-25 02:45:00"
+    },
+    {
+      caller_name: "Md. Teerth Bhargava",
+      receiver_name: "Md. Vedant Padmanabhan",
+      call_type: "Incoming Call",
+      duration_seconds: 320,
+      cell_tower_location: "Station Road Footpath, Agripada, Mumbai",
+      timestamp: "2026-08-24 03:15:00"
+    }
+  ],
+  towers: [
+    { cell_tower_location: "Venus Wine Shop, Byculla (W)", nocturnal_call_count: 48 },
+    { cell_tower_location: "Station Road Footpath, Agripada", nocturnal_call_count: 36 },
+    { cell_tower_location: "Bhadakamkar Marg, Grant Road", nocturnal_call_count: 29 },
+    { cell_tower_location: "Senapati Bapat Marg, Lower Parel", nocturnal_call_count: 22 }
+  ]
+};
+
+export const fallbackSurveillance: SurveillanceHeatmapResponse = {
+  total_observations: 54,
+  reports: [
+    {
+      report_id: "SR-2026-9901",
+      fir_number: "0254/2026",
+      spot_location: "Venus Wine Shop, N.M. Joshi Marg, Byculla (W)",
+      patrol_officer_1: "Inspector R. Patil",
+      patrol_officer_2: "Sub-Inspector V. Kadam",
+      observation_details: "Suspect Md. Ranbir Bhalla observed exchanging illegal consignment cash parcel with co-accused.",
+      panchnama_conducted: true,
+      witness_count: 2
+    }
+  ]
+};
+
+export const fallbackAlerts: AlertsResponse = {
+  total_alerts: 4,
+  alerts: [
+    {
+      id: "1",
+      severity: "CRITICAL",
+      title: "Co-Location Alert: Md. Ranbir Bhalla & Md. Teerth Bhargava",
+      message: "Both suspects sighted simultaneously at Byculla Metro Access CCTV zone.",
+      timestamp: "07 SEP 2026 18:40 IST"
+    },
+    {
+      id: "2",
+      severity: "HIGH",
+      title: "Nocturnal Spike: 38 Calls Detected",
+      message: "Unusual surge in midnight communications between Gang 1 members.",
+      timestamp: "07 SEP 2026 18:15 IST"
+    }
+  ]
+};
+
+export const fallbackDossier: SuspectDossierDetails = {
+  suspect_name: "Md. Ranbir Bhalla",
+  phone_number: "+91-2236381844",
+  threat_score: 94.2,
+  cctv_meetings_count: 14,
+  fir_matches_count: 3,
+  cdr_calls_count: 240,
+  dossier_markdown: `# Confidential Police Dossier: Md. Ranbir Bhalla\n\n**Threat Score**: 94.2/100 (CRITICAL RISK)\n**Primary Area**: Byculla West, Mumbai\n\n### Summary\nKey leader of Gang 1 — Byculla Syndicate. Active in extortion, Hawala money transfers, and illegal contraband distribution.`
+};
+
+export const fallbackTimeline: TimelineResponse = {
+  suspect_name: "Md. Ranbir Bhalla",
+  phone_number: "+91-2236381844",
+  total_events: 4,
+  events: [
+    {
+      event_id: "evt-1",
+      timestamp: "2026-08-25 18:15:00",
+      source_module: "CCTV",
+      color: "#f59e0b",
+      title: "CCTV Camera MH-CCTV-9890 Sighting",
+      description: "Location: Metro Access Road, Byculla West | Facial Match Confidence: 92%",
+      metadata: { camera_id: "MH-CCTV-9890", confidence: 0.92 }
+    },
+    {
+      event_id: "evt-2",
+      timestamp: "2026-08-25 14:20:00",
+      source_module: "FINANCIAL",
+      color: "#10b981",
+      title: "UPI Hawala Transfer: INR 150,000",
+      description: "Payee: Md. Teerth Bhargava (SUCCESS)",
+      metadata: { amount: 150000, payee: "Md. Teerth Bhargava" }
+    },
+    {
+      event_id: "evt-3",
+      timestamp: "2026-08-25 02:45:00",
+      source_module: "CDR",
+      color: "#38bdf8",
+      title: "Midnight Call with Md. Teerth Bhargava",
+      description: "Duration: 480s | Cell Tower: Venus Wine Shop, Byculla",
+      metadata: { duration_sec: 480 }
+    },
+    {
+      event_id: "evt-4",
+      timestamp: "2026-08-20 10:00:00",
+      source_module: "FIR",
+      color: "#ef4444",
+      title: "FIR #0254/2026 Registered",
+      description: "Police Station: Byculla PS | IPC Sections: 384 (Extortion), 307 (Attempt to Murder)",
+      metadata: { fir_number: "0254/2026", police_station: "Byculla" }
+    }
+  ]
+};
+
+export const fallbackSocial: SocialMediaResponse = {
+  total_monitored_suspects: 5,
+  total_flagged_posts: 18,
+  total_location_clusters: 3,
+  location_clusters: [
+    {
+      approximate_location: "Byculla West, Mumbai",
+      suspect_count: 3,
+      platforms_used: "WhatsApp, Instagram",
+      devices_used: "Android Mobile, Desktop Browser",
+      suspects: ["Md. Ranbir Bhalla", "Md. Teerth Bhargava", "Md. Vedant Padmanabhan"]
+    },
+    {
+      approximate_location: "Lower Parel, Mumbai",
+      suspect_count: 2,
+      platforms_used: "WhatsApp, X / Twitter",
+      devices_used: "iPhone",
+      suspects: ["Md. Pranit Arya", "Md. Hardik Kant"]
+    }
+  ],
+  suspects: [
+    {
+      suspect_name: "Md. Ranbir Bhalla",
+      phone_number: "+91-2236381844",
+      total_platforms: 2,
+      total_posts: 6,
+      overall_sentiment: "SUSPICIOUS",
+      risk_score: 94.2,
+      profiles: [
+        {
+          platform: "Instagram",
+          handle: "@md_ranbir_bhalla",
+          followers_count: 4200,
+          following_count: 350,
+          is_verified: false,
+          status_flag: "MONITORED",
+          profile_url: "https://instagram.com/@md_ranbir_bhalla"
+        }
+      ],
+      recent_posts: [
+        {
+          post_id: "SM-41280",
+          platform: "Instagram",
+          timestamp: "2026-08-25 18:20:00",
+          content: "Late night operations near Byculla West. Ready for the next consignment.",
+          sentiment: "SUSPICIOUS",
+          risk_level: "HIGH",
+          likes: 340,
+          shares: 45,
+          hashtags: ["#MumbaiUnderworld", "#NightPatrol"],
+          tagged_users: ["@md_teerth_bhargava"],
+          location_checkin: "Station Road Footpath, Byculla"
+        }
+      ]
+    }
+  ]
+};
+
+export const fallbackGeo: GeoPointsResponse = {
+  total_points: 6,
+  points: [
+    { id: "pt-1", lat: 18.9780, lng: 72.8300, title: "CCTV Camera MH-CCTV-9890", category: "CCTV", timestamp: "2026-08-25 18:15", details: "Suspect: Md. Ranbir Bhalla | Match Confidence: 92%", color: "#f59e0b" },
+    { id: "pt-2", lat: 18.9750, lng: 72.8250, title: "Nocturnal Tower: Agripada", category: "NOCTURNAL", timestamp: "2026-08-25 02:45", details: "38 Midnight Call Handovers Detected", color: "#38bdf8" },
+    { id: "pt-3", lat: 18.9950, lng: 72.8300, title: "Field Patrol Spot: SR-2026-9901", category: "SURVEILLANCE", timestamp: "2026-08-25 14:00", details: "Special Branch Panchnama Conducted", color: "#ef4444" }
+  ]
+};

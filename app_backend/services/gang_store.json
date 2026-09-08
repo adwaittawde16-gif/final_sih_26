@@ -1,0 +1,8 @@
+{
+  "status_overrides": {
+    "GANG-01": "CONFIRMED"
+  },
+  "name_overrides": {},
+  "merged_gangs": {},
+  "entity_gang_overrides": {}
+}
