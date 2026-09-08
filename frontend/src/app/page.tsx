@@ -1,116 +1,78 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { useMemo, useState } from "react";
 import { Header } from "@/components/shared/Header";
-import { KPICard } from "@/components/shared/KPICard";
-import { LoadingSpinner, ErrorState } from "@/components/ui/loading";
-import { Card, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { api } from "@/lib/api";
-import { ThreatLeaderboardResponse, AlertsResponse } from "@/types";
-import { Flame, Network, Camera, Layers, Banknote, Moon, Eye, FileText, ArrowRight } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+import { Activity, AlertTriangle, ArrowDownRight, ArrowUpRight, Banknote, Camera, ChevronRight, Clock3, Eye, FileText, Flame, Layers3, MapPin, Moon, Network, Radio, RefreshCw, ShieldCheck, Signal, Sparkles, Users } from "lucide-react";
+
+const modules = [
+  { title: "Threat index", description: "Risk-ranked subject review", href: "/threat-index", icon: Flame, tone: "danger" },
+  { title: "CDR network", description: "Call relationships & clusters", href: "/cdr-network", icon: Network, tone: "blue" },
+  { title: "CCTV co-location", description: "Sighting correlation review", href: "/cctv-colocation", icon: Camera, tone: "amber" },
+  { title: "Syndicates", description: "Connected component analysis", href: "/syndicates", icon: Layers3, tone: "violet" },
+  { title: "Financial intelligence", description: "Transaction pattern review", href: "/financial-intelligence", icon: Banknote, tone: "green" },
+  { title: "Nocturnal anomalies", description: "Late-hour movement signals", href: "/nocturnal-anomalies", icon: Moon, tone: "cyan" },
+  { title: "Field surveillance", description: "Officer observations & density", href: "/field-surveillance", icon: Eye, tone: "indigo" },
+  { title: "Dossiers", description: "360° subject records", href: "/dossiers", icon: FileText, tone: "rose" },
+];
+
+const alerts = [
+  { id: "ALT-2409", title: "Cross-domain association detected", subject: "Subject M-047", detail: "CDR + CCTV + finance signals intersect within 1.8 km", priority: "Critical", time: "11 min ago" },
+  { id: "ALT-2408", title: "Night movement anomaly", subject: "Subject R-112", detail: "Four late-hour tower transitions across two jurisdictions", priority: "High", time: "34 min ago" },
+  { id: "ALT-2407", title: "Merchant concentration review", subject: "Cluster F-09", detail: "Unusual UPI velocity linked to three flagged accounts", priority: "Medium", time: "1 hr ago" },
+];
+
+const kpis = [
+  { label: "Active subjects", value: "1,284", delta: "+8.4%", note: "vs. prior 30 days", icon: Users, tone: "blue" },
+  { label: "Critical review queue", value: "38", delta: "+6", note: "requires human review", icon: AlertTriangle, tone: "danger" },
+  { label: "Open associations", value: "214", delta: "+12.1%", note: "cross-domain signals", icon: Network, tone: "violet" },
+  { label: "CCTV matches", value: "672", delta: "+18.7%", note: "confidence ≥ 0.82", icon: Camera, tone: "amber" },
+  { label: "Financial flags", value: "91", delta: "-4.2%", note: "settled + pending", icon: Banknote, tone: "green" },
+  { label: "Night anomalies", value: "47", delta: "+11.6%", note: "00:00–06:00 IST", icon: Moon, tone: "cyan" },
+];
+
+const toneMap: Record<string, string> = { blue: "text-blue-700 bg-blue-50 border-blue-100", danger: "text-red-700 bg-red-50 border-red-100", violet: "text-violet-700 bg-violet-50 border-violet-100", amber: "text-amber-700 bg-amber-50 border-amber-100", green: "text-emerald-700 bg-emerald-50 border-emerald-100", cyan: "text-cyan-700 bg-cyan-50 border-cyan-100", indigo: "text-indigo-700 bg-indigo-50 border-indigo-100", rose: "text-rose-700 bg-rose-50 border-rose-100" };
+
+function MiniSparkline({ tone = "blue" }: { tone?: string }) {
+  const points = tone === "danger" ? "0,26 12,22 24,25 36,12 48,18 60,7 72,10 84,3" : "0,24 12,18 24,21 36,15 48,18 60,7 72,12 84,4";
+  return <svg viewBox="0 0 84 30" className={cn("h-8 w-24", tone === "danger" ? "text-red-500" : "text-blue-500")} aria-hidden="true"><polyline fill="none" stroke="currentColor" strokeWidth="2" points={points} /><circle cx="84" cy="4" r="2.5" fill="currentColor" /></svg>;
+}
 
 export default function CommandCenterPage() {
-  const [data, setData] = useState<ThreatLeaderboardResponse | null>(null);
-  const [alerts, setAlerts] = useState<AlertsResponse | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [activeWindow, setActiveWindow] = useState("30 days");
+  const [showAllAlerts, setShowAllAlerts] = useState(false);
+  const visibleAlerts = useMemo(() => showAllAlerts ? alerts : alerts.slice(0, 2), [showAllAlerts]);
 
-  useEffect(() => {
-    async function loadData() {
-      try {
-        setLoading(true);
-        const [boardRes, alertRes] = await Promise.all([
-          api.getThreatLeaderboard(),
-          api.getAlerts()
-        ]);
-        setData(boardRes);
-        setAlerts(alertRes);
-      } catch (err: any) {
-        setError(err.message || "Failed to connect to Python FastAPI backend");
-      } finally {
-        setLoading(false);
-      }
-    }
-    loadData();
-  }, []);
+  return <div className="mx-auto flex max-w-[1500px] flex-col gap-5">
+    <Header title="Tactical Intelligence Command Center" subtitle="Unified signals for subject risk, networks, camera events, financial activity, and field observations." />
 
-  if (loading) return <LoadingSpinner label="Connecting to Tactical Intelligence Backend..." />;
-  if (error) return <ErrorState message={error} onRetry={() => window.location.reload()} />;
-
-  const topSuspect = data?.leaderboard[0];
-
-  return (
-    <div className="space-y-6">
-      <Header
-        title="Tactical Intelligence Command Center"
-        subtitle="Unified suspect risk scoring, CDR networks, CCTV tracking, and financial intelligence."
-      />
-
-      {/* KPI Cards Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-        <KPICard label="Suspects Profiled" value={data?.total_suspects || 100} accent="blue" icon={Flame} />
-        <KPICard label="Active Crime Rings" value="88" accent="red" icon={Layers} subtext="Priority RING-01" />
-        <KPICard label="Critical Risk Tiers" value={data?.critical_count || 6} accent="red" icon={Flame} />
-        <KPICard label="CCTV Encounters" value="12" accent="amber" icon={Camera} subtext="Confirmed matches" />
-        <KPICard label="Night Hotspots" value="16" accent="green" icon={Moon} subtext="00:00-06:00 IST" />
-      </div>
-
-      {/* Priority Top Suspect Alert Card */}
-      {topSuspect && (
-        <Card className="border-red-300 bg-red-50/40">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div className="space-y-1">
-              <div className="flex items-center gap-2">
-                <Badge variant="critical">CRITICAL RISK · PRIORITY DOSSIER</Badge>
-                <span className="text-xs font-mono text-slate-500">RING-01 LEAD</span>
-              </div>
-              <h2 className="text-xl font-bold text-slate-900">{topSuspect.suspect_name}</h2>
-              <p className="text-xs font-mono text-slate-600">{topSuspect.phone_number} · Composite Score {topSuspect.total_threat_score.toFixed(1)}/100</p>
-            </div>
-            <Link
-              href={`/dossiers?suspect=${encodeURIComponent(topSuspect.suspect_name)}`}
-              className="inline-flex items-center justify-center px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-semibold text-xs rounded-lg transition-colors font-mono shadow-sm"
-            >
-              Open 360° Suspect Dossier
-            </Link>
-          </div>
-        </Card>
-      )}
-
-      {/* 8 Module Navigation Grid */}
-      <div>
-        <h3 className="text-xs font-mono font-bold text-slate-500 uppercase tracking-widest mb-4">
-          Core Intelligence Modules
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {[
-            { title: "1. Suspect Threat Index", desc: "0-100 Suspect risk ranking & simulator", href: "/threat", icon: Flame, color: "text-red-600" },
-            { title: "2. CDR Network Graph", desc: "Call log pairings & physics network", href: "/cdr", icon: Network, color: "text-blue-600" },
-            { title: "3. CCTV Co-Location", desc: "Camera sightings & distance correlation", href: "/cctv", icon: Camera, color: "text-amber-600" },
-            { title: "4. Crime Syndicates", desc: "Connected component ring detection", href: "/crime-rings", icon: Layers, color: "text-purple-600" },
-            { title: "5. Financial Intelligence", desc: "UPI money trails & merchant flags", href: "/financial", icon: Banknote, color: "text-emerald-600" },
-            { title: "6. Nocturnal Anomalies", desc: "Late-night calls & cell tower hotspots", href: "/nocturnal", icon: Moon, color: "text-cyan-600" },
-            { title: "7. Field Surveillance", desc: "Field officer reports & density heatmap", href: "/surveillance", icon: Eye, color: "text-indigo-600" },
-            { title: "8. Suspect Dossiers", desc: "360° dossiers & real-time alert feed", href: "/dossiers", icon: FileText, color: "text-pink-600" },
-          ].map((m) => {
-            const Icon = m.icon;
-            return (
-              <Link key={m.href} href={m.href} className="group">
-                <Card className="h-full hover:border-slate-400 transition-all">
-                  <div className="flex items-center justify-between mb-3">
-                    <Icon className={`w-5 h-5 ${m.color}`} />
-                    <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-slate-900 group-hover:translate-x-1 transition-all" />
-                  </div>
-                  <CardTitle className="text-sm font-bold group-hover:text-blue-700 transition-colors">{m.title}</CardTitle>
-                  <CardDescription className="mt-1">{m.desc}</CardDescription>
-                </Card>
-              </Link>
-            );
-          })}
-        </div>
-      </div>
+    <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-blue-100 bg-blue-50/60 px-4 py-3 text-xs text-blue-900">
+      <div className="flex items-center gap-2"><ShieldCheck className="size-4" /><span><strong>Restricted workspace.</strong> All automated scores are non-conclusive signals and require officer review.</span></div>
+      <div className="flex items-center gap-2 font-mono text-[11px]"><Radio className="size-3.5 text-emerald-600" /> 8/8 sources healthy <span className="text-blue-400">·</span> refreshed 18:42 IST</div>
     </div>
-  );
+
+    <section className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6" aria-label="Platform metrics">
+      {kpis.map((item) => { const Icon = item.icon; return <Card key={item.label} className="overflow-hidden"><CardContent className="p-4"><div className="flex items-start justify-between gap-2"><div className={cn("flex size-8 items-center justify-center rounded-lg border", toneMap[item.tone])}><Icon className="size-4" /></div><MiniSparkline tone={item.tone} /></div><p className="mt-4 text-[11px] font-semibold uppercase tracking-wide text-slate-500">{item.label}</p><div className="mt-1 flex items-end justify-between gap-2"><p className="text-2xl font-semibold tracking-tight text-slate-950">{item.value}</p><span className={cn("flex items-center text-[11px] font-semibold", item.delta.startsWith("-") ? "text-emerald-600" : "text-red-600")}>{item.delta.startsWith("-") ? <ArrowDownRight className="size-3" /> : <ArrowUpRight className="size-3" />}{item.delta}</span></div><p className="mt-1 text-[11px] text-slate-500">{item.note}</p></CardContent></Card> })}
+    </section>
+
+    <div className="grid gap-5 xl:grid-cols-[1.35fr_0.65fr]">
+      <Card className="border-red-100 bg-gradient-to-br from-white to-red-50/40"><CardHeader className="flex-row items-start justify-between space-y-0"><div><div className="flex items-center gap-2"><Badge variant="critical">Priority review</Badge><span className="font-mono text-[10px] text-slate-500">MODEL SIGNAL · 0.94</span></div><CardTitle className="mt-3 text-xl">Subject M-047 <span className="font-mono text-sm font-normal text-slate-500">/ masked identity</span></CardTitle><CardDescription className="mt-1 max-w-xl">High-confidence intersection across communications, camera co-location, and transaction metadata. This is an investigative lead, not a finding.</CardDescription></div><div className="hidden rounded-full border border-red-200 bg-white px-3 py-2 text-center sm:block"><p className="font-mono text-[10px] text-slate-500">COMPOSITE</p><p className="text-2xl font-semibold text-red-700">92<span className="text-sm">/100</span></p></div></CardHeader><CardContent><div className="grid gap-3 sm:grid-cols-3"><div className="rounded-lg border border-slate-200 bg-white p-3"><p className="text-[10px] font-semibold uppercase text-slate-500">Signal coverage</p><p className="mt-1 text-lg font-semibold">4 of 6</p><p className="text-[11px] text-slate-500">domains connected</p></div><div className="rounded-lg border border-slate-200 bg-white p-3"><p className="text-[10px] font-semibold uppercase text-slate-500">Last observed</p><p className="mt-1 text-lg font-semibold">17:58</p><p className="text-[11px] text-slate-500">Andheri East · camera</p></div><div className="rounded-lg border border-slate-200 bg-white p-3"><p className="text-[10px] font-semibold uppercase text-slate-500">Review owner</p><p className="mt-1 text-lg font-semibold">Unassigned</p><p className="text-[11px] text-slate-500">queue position 01</p></div></div><Link href="/dossiers/M-047" className="mt-4 inline-flex items-center gap-2 rounded-lg bg-slate-950 px-4 py-2.5 text-xs font-semibold text-white transition hover:bg-blue-700">Open 360° dossier <ChevronRight className="size-4" /></Link></CardContent></Card>
+
+      <Card><CardHeader className="flex-row items-center justify-between space-y-0"><div><CardTitle className="text-base">Priority alerts</CardTitle><CardDescription>Signals awaiting disposition</CardDescription></div><Badge variant="outline" className="font-mono">{alerts.length} open</Badge></CardHeader><CardContent className="flex flex-col gap-3">{visibleAlerts.map((alert) => <div key={alert.id} className="rounded-lg border border-slate-200 p-3"><div className="flex items-center justify-between gap-2"><Badge variant={alert.priority === "Critical" ? "critical" : "high"}>{alert.priority}</Badge><span className="font-mono text-[10px] text-slate-400">{alert.time}</span></div><p className="mt-2 text-sm font-semibold text-slate-900">{alert.title}</p><p className="mt-1 text-xs text-slate-500">{alert.subject} · {alert.detail}</p></div>)}<button onClick={() => setShowAllAlerts((value) => !value)} className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-50">{showAllAlerts ? "Show fewer" : "View all alerts"}<ChevronRight className="size-3.5" /></button></CardContent></Card>
+    </div>
+
+    <section><div className="mb-3 flex items-end justify-between"><div><p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-blue-700">Core modules</p><h2 className="mt-1 text-lg font-semibold text-slate-950">Move from signal to review</h2></div><div className="hidden items-center gap-1 rounded-lg border border-slate-200 bg-white p-1 sm:flex">{["24 hours", "7 days", "30 days"].map((window) => <button key={window} onClick={() => setActiveWindow(window)} className={cn("rounded-md px-3 py-1.5 text-[11px] font-semibold", activeWindow === window ? "bg-slate-950 text-white" : "text-slate-500 hover:bg-slate-50")}>{window}</button>)}</div></div><div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{modules.map((module) => { const Icon = module.icon; return <Link key={module.href} href={module.href} className="group"><Card className="h-full transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md"><CardContent className="p-4"><div className="flex items-center justify-between"><div className={cn("flex size-9 items-center justify-center rounded-lg border", toneMap[module.tone])}><Icon className="size-4" /></div><ChevronRight className="size-4 text-slate-300 transition group-hover:translate-x-1 group-hover:text-blue-600" /></div><p className="mt-4 text-sm font-semibold text-slate-900">{module.title}</p><p className="mt-1 text-xs text-slate-500">{module.description}</p></CardContent></Card></Link> })}</div></section>
+
+    <div className="grid gap-5 lg:grid-cols-3">
+      <Card className="lg:col-span-2"><CardHeader className="flex-row items-center justify-between space-y-0"><div><CardTitle className="text-base">Risk movement</CardTitle><CardDescription>Composite signal volume by day · {activeWindow}</CardDescription></div><button className="rounded-md p-2 text-slate-400 hover:bg-slate-100 hover:text-slate-700" aria-label="Refresh chart"><RefreshCw className="size-4" /></button></CardHeader><CardContent><div className="flex h-48 items-end gap-2 border-b border-l border-slate-200 px-3 pb-0 pt-5">{[28,42,35,54,49,68,61,78,65,88,72,94,82,100].map((height, index) => <div key={index} className="group flex flex-1 flex-col items-center gap-2"><div className={cn("w-full max-w-8 rounded-t-sm transition group-hover:bg-blue-700", index > 9 ? "bg-blue-600" : "bg-blue-200")} style={{ height: `${height}%` }} title={`${height} signals`} /><span className="font-mono text-[9px] text-slate-400">{index + 1}</span></div>)}</div><div className="mt-3 flex items-center justify-between text-[10px] text-slate-400"><span>01 SEP</span><span>14 SEP 2026</span></div></CardContent></Card>
+      <Card><CardHeader><CardTitle className="text-base">Source connectivity</CardTitle><CardDescription>Last successful ingestion</CardDescription></CardHeader><CardContent className="flex flex-col gap-3">{[["CDR feeds", "18:40 IST"], ["CCTV index", "18:39 IST"], ["UPI ledger", "18:37 IST"], ["Field reports", "18:42 IST"]].map(([name, time]) => <div key={name} className="flex items-center justify-between border-b border-slate-100 pb-3 last:border-0 last:pb-0"><div className="flex items-center gap-2"><span className="size-2 rounded-full bg-emerald-500" /><span className="text-xs font-medium text-slate-700">{name}</span></div><span className="font-mono text-[10px] text-slate-400">{time}</span></div>)}<div className="mt-1 rounded-lg bg-emerald-50 p-3 text-[11px] text-emerald-800"><div className="flex items-center gap-2 font-semibold"><Activity className="size-3.5" /> Ingestion nominal</div><p className="mt-1 text-emerald-700/80">Next scheduled sync in 18 minutes.</p></div></CardContent></Card>
+    </div>
+
+    <div className="grid gap-5 lg:grid-cols-2"><Card><CardHeader><CardTitle className="text-base">Operational hotspots</CardTitle><CardDescription>Model-generated density signal · not a crime map</CardDescription></CardHeader><CardContent><div className="relative h-56 overflow-hidden rounded-lg border border-slate-200 bg-[#eef3f7]"><div className="absolute inset-0 opacity-50" style={{ backgroundImage: "linear-gradient(30deg, transparent 45%, #cbd5e1 46%, #cbd5e1 47%, transparent 48%), linear-gradient(120deg, transparent 45%, #cbd5e1 46%, #cbd5e1 47%, transparent 48%), linear-gradient(#dbe4ec 1px, transparent 1px), linear-gradient(90deg, #dbe4ec 1px, transparent 1px)", backgroundSize: "120px 120px, 150px 150px, 32px 32px, 32px 32px" }} />{[["Andheri E", "30%", "left-[25%] top-[28%]"], ["Kurla W", "20%", "left-[59%] top-[46%]"], ["Byculla", "14%", "left-[38%] top-[68%]"], ["Wadala", "10%", "left-[76%] top-[23%]"]].map(([label, intensity, position]) => <div key={label} className={cn("absolute flex -translate-x-1/2 -translate-y-1/2 flex-col items-center", position)}><span className="flex size-10 items-center justify-center rounded-full border-4 border-red-200 bg-red-500/75 text-[9px] font-bold text-white shadow-lg">{intensity}</span><span className="mt-1 rounded bg-white/90 px-1.5 py-0.5 text-[10px] font-semibold text-slate-700 shadow-sm">{label}</span></div>)}<div className="absolute bottom-3 left-3 rounded-md border border-slate-200 bg-white/90 px-2 py-1 font-mono text-[10px] text-slate-500"><MapPin className="mr-1 inline size-3" /> Mumbai jurisdiction</div></div></CardContent></Card><Card><CardHeader><CardTitle className="text-base">Live review timeline</CardTitle><CardDescription>Latest cross-domain events</CardDescription></CardHeader><CardContent className="flex flex-col gap-4">{[["18:41", "New CCTV co-location", "Subject M-047 · Andheri E", "blue"], ["18:34", "Association score updated", "Cluster N-12 · 3 members", "amber"], ["18:22", "Field observation filed", "Patrol unit 04 · Kurla W", "green"], ["18:07", "Financial flag queued", "Merchant F-09 · review required", "red"]].map(([time, title, detail, tone]) => <div key={time} className="flex gap-3"><div className="flex flex-col items-center"><span className={cn("mt-1 size-2.5 rounded-full", tone === "red" ? "bg-red-500" : tone === "amber" ? "bg-amber-500" : tone === "green" ? "bg-emerald-500" : "bg-blue-500")} /><span className="mt-1 h-full w-px bg-slate-200" /></div><div className="-mt-1 flex flex-1 items-start justify-between gap-3"><div><p className="text-xs font-semibold text-slate-800">{title}</p><p className="mt-0.5 text-[11px] text-slate-500">{detail}</p></div><time className="font-mono text-[10px] text-slate-400">{time}</time></div></div>)}</CardContent></Card></div>
+
+    <footer className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 py-4 text-[10px] text-slate-400"><span className="font-mono">BRIHANMUMBAI POLICE · SPECIAL CRIME ANALYSIS UNIT</span><span className="flex items-center gap-2"><Clock3 className="size-3" /> All timestamps in IST · synthetic demo dataset</span></footer>
+  </div>;
 }
