@@ -27,7 +27,10 @@ from app_backend.routers import (
     gangs,
     social_media,
     nlp,
-    geo
+    geo,
+    graph_analytics,
+    core_ai,
+    stream
 )
 
 app = FastAPI(
@@ -98,6 +101,9 @@ app.include_router(gangs.router)
 app.include_router(social_media.router)
 app.include_router(nlp.router)
 app.include_router(geo.router)
+app.include_router(graph_analytics.router)
+app.include_router(core_ai.router)
+app.include_router(stream.router)
 
 
 

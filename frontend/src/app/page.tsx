@@ -1,12 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Header } from "@/components/shared/Header";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { Activity, AlertTriangle, ArrowDownRight, ArrowUpRight, Banknote, Camera, ChevronRight, Clock3, Eye, FileText, Flame, Layers3, MapPin, Moon, Network, Radio, RefreshCw, ShieldCheck, Signal, Sparkles, Users } from "lucide-react";
+import { Activity, AlertTriangle, ArrowDownRight, ArrowUpRight, Banknote, Camera, ChevronRight, Clock3, Eye, FileText, Flame, Layers3, MapPin, Moon, Network, Radio, RefreshCw, ShieldCheck, Signal, Sparkles, Users, Wifi } from "lucide-react";
 
 const modules = [
   { title: "Threat index", description: "Risk-ranked subject review", href: "/threat-index", icon: Flame, tone: "danger" },
@@ -41,6 +41,78 @@ function MiniSparkline({ tone = "blue" }: { tone?: string }) {
   return <svg viewBox="0 0 84 30" className={cn("h-8 w-24", tone === "danger" ? "text-red-500" : "text-blue-500")} aria-hidden="true"><polyline fill="none" stroke="currentColor" strokeWidth="2" points={points} /><circle cx="84" cy="4" r="2.5" fill="currentColor" /></svg>;
 }
 
+// ─── Live SSE Event Ticker ────────────────────────────────────────────────────
+type LiveEvent = { id: string; event_type: string; severity: string; subject_id: string; detail: string; source_system: string; timestamp: string };
+const SEVERITY_STYLE: Record<string, string> = { CRITICAL: "bg-red-100 text-red-700 border-red-200", HIGH: "bg-orange-100 text-orange-700 border-orange-200", MODERATE: "bg-blue-100 text-blue-700 border-blue-200", LOW: "bg-slate-100 text-slate-600 border-slate-200" };
+const SEVERITY_DOT: Record<string, string> = { CRITICAL: "bg-red-500 animate-pulse", HIGH: "bg-orange-500 animate-pulse", MODERATE: "bg-blue-500", LOW: "bg-slate-400" };
+
+function LiveEventTicker() {
+  const [events, setEvents] = useState<LiveEvent[]>([]);
+  const [connected, setConnected] = useState(false);
+  const [error, setError] = useState(false);
+  const esRef = useRef<EventSource | null>(null);
+
+  useEffect(() => {
+    const API_BASE = typeof window !== "undefined" ? (process.env.NEXT_PUBLIC_API_URL || "") : "http://127.0.0.1:8080";
+    const url = `${API_BASE}/api/stream/events`;
+    try {
+      const es = new EventSource(url);
+      esRef.current = es;
+      es.onopen = () => { setConnected(true); setError(false); };
+      es.onmessage = (e) => {
+        try {
+          const evt: LiveEvent = JSON.parse(e.data);
+          setEvents((prev) => [evt, ...prev].slice(0, 6));
+        } catch { /* ignore malformed */ }
+      };
+      es.onerror = () => { setConnected(false); setError(true); };
+    } catch { setError(true); }
+    return () => { esRef.current?.close(); };
+  }, []);
+
+  return (
+    <Card className="border-slate-200">
+      <CardHeader className="flex-row items-center justify-between space-y-0 py-3">
+        <div className="flex items-center gap-2">
+          <Wifi className={cn("size-4", connected ? "text-emerald-500" : "text-slate-400")} />
+          <CardTitle className="text-base">Live Intelligence Feed</CardTitle>
+          <span className={cn("rounded-full px-2 py-0.5 font-mono text-[10px] font-bold", connected ? "bg-emerald-50 text-emerald-700" : error ? "bg-red-50 text-red-600" : "bg-slate-100 text-slate-500")}>
+            {connected ? "● LIVE" : error ? "DISCONNECTED" : "CONNECTING…"}
+          </span>
+        </div>
+        <span className="font-mono text-[10px] text-slate-400">SSE · /api/stream/events · auto-refresh</span>
+      </CardHeader>
+      <CardContent className="pb-4">
+        {events.length === 0 && !error && (
+          <div className="flex items-center gap-2 py-6 text-center text-sm text-slate-400">
+            <Activity className="mx-auto size-4 animate-pulse" />
+            <span>Waiting for intelligence events from backend stream…</span>
+          </div>
+        )}
+        {error && events.length === 0 && (
+          <p className="py-4 text-center text-xs text-red-500">Backend SSE stream unavailable. Start the FastAPI server on port 8080.</p>
+        )}
+        <div className="flex flex-col gap-2">
+          {events.map((ev, idx) => (
+            <div key={ev.id + idx} className={cn("flex items-start gap-3 rounded-lg border px-3 py-2.5 text-xs transition-all", idx === 0 ? "border-blue-100 bg-blue-50/60" : "border-slate-100 bg-white")}>
+              <span className={cn("mt-1 size-2 shrink-0 rounded-full", SEVERITY_DOT[ev.severity] ?? "bg-slate-400")} />
+              <div className="flex flex-1 flex-wrap items-start justify-between gap-x-4 gap-y-0.5">
+                <div>
+                  <span className={cn("mr-2 inline-block rounded border px-1.5 py-0 font-mono text-[10px] font-bold", SEVERITY_STYLE[ev.severity] ?? "bg-slate-100 text-slate-600")}>{ev.severity}</span>
+                  <span className="font-semibold text-slate-800">{ev.event_type.replaceAll("_", " ")}</span>
+                  <span className="ml-2 text-slate-500">· {ev.subject_id}</span>
+                </div>
+                <span className="font-mono text-[10px] text-slate-400">{ev.source_system}</span>
+              </div>
+              <p className="w-full pl-5 text-[11px] text-slate-500">{ev.detail}</p>
+            </div>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
 export default function CommandCenterPage() {
   const [activeWindow, setActiveWindow] = useState("30 days");
   const [showAllAlerts, setShowAllAlerts] = useState(false);
@@ -63,6 +135,8 @@ export default function CommandCenterPage() {
 
       <Card><CardHeader className="flex-row items-center justify-between space-y-0"><div><CardTitle className="text-base">Priority alerts</CardTitle><CardDescription>Signals awaiting disposition</CardDescription></div><Badge variant="outline" className="font-mono">{alerts.length} open</Badge></CardHeader><CardContent className="flex flex-col gap-3">{visibleAlerts.map((alert) => <div key={alert.id} className="rounded-lg border border-slate-200 p-3"><div className="flex items-center justify-between gap-2"><Badge variant={alert.priority === "Critical" ? "critical" : "high"}>{alert.priority}</Badge><span className="font-mono text-[10px] text-slate-400">{alert.time}</span></div><p className="mt-2 text-sm font-semibold text-slate-900">{alert.title}</p><p className="mt-1 text-xs text-slate-500">{alert.subject} · {alert.detail}</p></div>)}<button onClick={() => setShowAllAlerts((value) => !value)} className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-50">{showAllAlerts ? "Show fewer" : "View all alerts"}<ChevronRight className="size-3.5" /></button></CardContent></Card>
     </div>
+
+    <LiveEventTicker />
 
     <section><div className="mb-3 flex items-end justify-between"><div><p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-blue-700">Core modules</p><h2 className="mt-1 text-lg font-semibold text-slate-950">Move from signal to review</h2></div><div className="hidden items-center gap-1 rounded-lg border border-slate-200 bg-white p-1 sm:flex">{["24 hours", "7 days", "30 days"].map((window) => <button key={window} onClick={() => setActiveWindow(window)} className={cn("rounded-md px-3 py-1.5 text-[11px] font-semibold", activeWindow === window ? "bg-slate-950 text-white" : "text-slate-500 hover:bg-slate-50")}>{window}</button>)}</div></div><div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{modules.map((module) => { const Icon = module.icon; return <Link key={module.href} href={module.href} className="group"><Card className="h-full transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md"><CardContent className="p-4"><div className="flex items-center justify-between"><div className={cn("flex size-9 items-center justify-center rounded-lg border", toneMap[module.tone])}><Icon className="size-4" /></div><ChevronRight className="size-4 text-slate-300 transition group-hover:translate-x-1 group-hover:text-blue-600" /></div><p className="mt-4 text-sm font-semibold text-slate-900">{module.title}</p><p className="mt-1 text-xs text-slate-500">{module.description}</p></CardContent></Card></Link> })}</div></section>
 

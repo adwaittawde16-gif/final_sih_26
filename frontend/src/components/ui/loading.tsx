@@ -10,6 +10,10 @@ export function LoadingSpinner({ label = "Loading intelligence feeds..." }: { la
   );
 }
 
+export function Loading({ message }: { message?: string }) {
+  return <LoadingSpinner label={message} />;
+}
+
 export function ErrorState({ title = "Failed to load intelligence data", message, onRetry }: { title?: string; message?: string; onRetry?: () => void }) {
   return (
     <div className="flex flex-col items-center justify-center p-10 bg-red-950/20 border border-red-900/50 rounded-xl space-y-3 text-center my-6">

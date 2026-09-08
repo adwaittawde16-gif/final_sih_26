@@ -1,99 +1,108 @@
 """
 app_backend/services/nlp_service.py
 ----------------------------------
-NLP & Co-Accused Entity Extraction Service
+NLP & Co-Accused Entity Extraction Service using AdvancedNLPEngine.
 """
 
-import re
 from intelligence_engine import IntelligenceEngine
-from nlp_fir_analyzer import MO_CATEGORIES
-from co_accused_network import CoAccusedNetwork
+from app_backend.services.nlp_engine import AdvancedNLPEngine
 from app_backend.schemas.nlp import (
     FIRNLPRequest,
     ExtractedEntity,
     ExtractedRelationship,
+    SuspectDetail,
+    LegalStatuteDetail,
+    ModusOperandiDetail,
     FIRNLPResponse
 )
-
-KNOWN_LOCATIONS = [
-    "Dadar", "Lower Parel", "Byculla", "Agripada", "Lamington Road",
-    "Grant Road", "Station Road", "Madanpura", "Venus Wine Shop", "MIDC Road",
-    "Worli", "Bandra", "Andheri", "Kurla", "Colaba"
-]
 
 def parse_fir_narrative(engine: IntelligenceEngine, req: FIRNLPRequest) -> FIRNLPResponse:
     text = req.fir_text or ""
     fir_num = req.fir_number or "FIR-DRAFT-2026"
 
-    entities: list[ExtractedEntity] = []
-    suspects_found: set[str] = set()
-    locations_found: set[str] = set()
-    crimes_found: set[str] = set()
-    relationships: list[ExtractedRelationship] = []
+    # Initialize advanced NLP engine with master intelligence suspect registry
+    nlp_engine = AdvancedNLPEngine(
+        master_suspects=engine.all_suspects,
+        master_phones=engine.name_to_phone
+    )
 
-    # 1. Extract Suspect Names matching intelligence engine database
-    for name in engine.name_to_phone.keys():
-        # Case-insensitive substring or name part search
-        name_clean = str(name).strip()
-        first_last = name_clean.split()
-        if len(first_last) >= 2:
-            short_name = f"{first_last[0]} {first_last[-1]}"
-            if name_clean.lower() in text.lower() or short_name.lower() in text.lower():
-                suspects_found.add(name_clean)
-                entities.append(ExtractedEntity(text=name_clean, category="PERSON", confidence=0.95))
+    extraction = nlp_engine.extract_entities(text)
 
-    # 2. Extract Locations
-    for loc in KNOWN_LOCATIONS:
-        if loc.lower() in text.lower():
-            locations_found.add(loc)
-            entities.append(ExtractedEntity(text=loc, category="LOCATION", confidence=0.90))
+    # Format into Pydantic models
+    entities = [
+        ExtractedEntity(text=e["text"], category=e["category"], confidence=e["confidence"])
+        for e in extraction["entities"]
+    ]
 
-    # 3. Extract Crime Types (M.O.)
-    for category, keywords in MO_CATEGORIES.items():
-        for kw in keywords:
-            if kw.lower() in text.lower():
-                crimes_found.add(category)
-                entities.append(ExtractedEntity(text=category, category="CRIME_TYPE", confidence=0.88))
-                break
+    suspect_details = [
+        SuspectDetail(
+            name=s["name"],
+            raw_mention=s["raw_mention"],
+            matched_in_database=s["matched_in_database"],
+            confidence=s["confidence"],
+            phone_number=s["phone_number"],
+            inferred_role=s["inferred_role"]
+        )
+        for s in extraction["suspects"]
+    ]
 
-    # 4. Extract IPC Sections
-    ipc_matches = re.findall(r'(?:IPC|Section|Sec\.?)\s*([0-9]{3}[A-Z]?)', text, re.IGNORECASE)
-    for ipc in set(ipc_matches):
-        entities.append(ExtractedEntity(text=f"IPC Section {ipc}", category="IPC_SECTION", confidence=0.98))
+    suspect_names = [s["name"] for s in extraction["suspects"]]
+    co_accused_list = suspect_names[1:] if len(suspect_names) > 1 else []
 
-    # 5. Extract Phones
-    phone_matches = re.findall(r'\+?91-?[0-9]{10}', text)
-    for p in set(phone_matches):
-        entities.append(ExtractedEntity(text=p, category="PHONE", confidence=0.99))
+    statutes = [
+        LegalStatuteDetail(
+            raw_section=st["raw_section"],
+            code=st["code"],
+            title=st["title"],
+            bns_equivalent=st["bns_equivalent"],
+            severity_score=st["severity_score"],
+            category=st["category"],
+            bailable=st["bailable"],
+            confidence=st["confidence"]
+        )
+        for st in extraction["statutes"]
+    ]
 
-    # Build Relationships
-    suspect_list = list(suspects_found)
-    for i in range(len(suspect_list)):
-        for j in range(i + 1, len(suspect_list)):
-            relationships.append(ExtractedRelationship(
-                source=suspect_list[i],
-                target=suspect_list[j],
-                relation_type="CO_ACCUSED"
-            ))
+    modus_operandi = [
+        ModusOperandiDetail(
+            crime_category=mo["crime_category"],
+            confidence=mo["confidence"],
+            matched_indicators=mo["matched_indicators"],
+            count=mo["count"]
+        )
+        for mo in extraction["modus_operandi"]
+    ]
 
-    for s in suspect_list:
-        for loc in locations_found:
-            relationships.append(ExtractedRelationship(
-                source=s,
-                target=loc,
-                relation_type="OPERATED_AT"
-            ))
+    relationships = [
+        ExtractedRelationship(
+            source=rel["source"],
+            target=rel["target"],
+            relation_type=rel["relation_type"],
+            evidence=rel.get("evidence", ""),
+            confidence=rel.get("confidence", 0.9)
+        )
+        for rel in extraction["relationships"]
+    ]
 
-    co_accused_list = suspect_list[1:] if len(suspect_list) > 1 else []
+    crime_types = [mo.crime_category for mo in modus_operandi]
 
     return FIRNLPResponse(
-        fir_id=f"NLP-{len(text)}",
+        fir_id=f"NLP-EXT-{len(text)}-{hash(text) & 0xffff}",
         fir_number=fir_num,
         raw_text=text,
         entities=entities,
-        suspects=suspect_list,
+        suspects=suspect_names,
+        suspect_details=suspect_details,
         co_accused=co_accused_list,
-        locations=list(locations_found),
-        crime_types=list(crimes_found),
-        relationships=relationships
+        locations=extraction["locations"],
+        weapons=extraction["weapons"],
+        vehicles=extraction["vehicles"],
+        aliases=extraction["aliases"],
+        statutes=statutes,
+        modus_operandi=modus_operandi,
+        financial_amounts=extraction["financial_amounts"],
+        crime_types=crime_types,
+        relationships=relationships,
+        case_severity_score=extraction["case_severity_score"],
+        summary_verdict=extraction["summary_verdict"]
     )

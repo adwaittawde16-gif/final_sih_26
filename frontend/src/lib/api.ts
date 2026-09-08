@@ -204,5 +204,77 @@ export const api = {
 
   // Shared Geo Points
   getGeoPoints: (category?: string) =>
-    fetchAPI<import("../types").GeoPointsResponse>(`/api/geo/points${category ? `?category=${encodeURIComponent(category)}` : ""}`, undefined, fallbackGeo)
+    fetchAPI<import("../types").GeoPointsResponse>(`/api/geo/points${category ? `?category=${encodeURIComponent(category)}` : ""}`, undefined, fallbackGeo),
+
+  // Core AI & ML Graph Proofs
+  getGraphProofs: (louvainRes: number = 1.0, pagerankAlpha: number = 0.85) =>
+    fetchAPI<any>(`/api/graph-proof/metrics?louvain_resolution=${louvainRes}&pagerank_alpha=${pagerankAlpha}`),
+
+  getShortestPath: (source: string, target: string) =>
+    fetchAPI<any>(`/api/graph-proof/shortest-path?source=${encodeURIComponent(source)}&target=${encodeURIComponent(target)}`),
+
+  // FIR Samples
+  getFIRSamples: () =>
+    fetchAPI<any[]>("/api/fir/samples"),
+
+  // Multi-Source Ingestion
+  ingestCDR: (data: string, format: string = "csv") =>
+    fetchAPI<any>("/api/core-ai/ingest/cdr", {
+      method: "POST",
+      body: JSON.stringify({ data, format })
+    }),
+
+  ingestFinancial: (data: string, format: string = "csv") =>
+    fetchAPI<any>("/api/core-ai/ingest/financial", {
+      method: "POST",
+      body: JSON.stringify({ data, format })
+    }),
+
+  ingestFIR: (firText: string, firNumber?: string) =>
+    fetchAPI<any>("/api/core-ai/ingest/fir", {
+      method: "POST",
+      body: JSON.stringify({ fir_text: firText, fir_number: firNumber || "FIR-LIVE-2026" })
+    }),
+
+  // Statistical Anomaly Detection
+  getNocturnalZScore: (zThreshold: number = 2.0) =>
+    fetchAPI<any>(`/api/core-ai/anomaly/nocturnal?z_threshold=${zThreshold}`),
+
+  getFinancialIQR: () =>
+    fetchAPI<any>("/api/core-ai/anomaly/financial"),
+
+  getSpatioTemporalClusters: () =>
+    fetchAPI<any>("/api/core-ai/anomaly/spatiotemporal"),
+
+  // Role-Based Access Control & Audit
+  getAuthUsers: () =>
+    fetchAPI<any[]>("/api/core-ai/auth/users"),
+
+  loginOfficer: (username: string) =>
+    fetchAPI<any>("/api/core-ai/auth/login", {
+      method: "POST",
+      body: JSON.stringify({ username })
+    }),
+
+  getAuditTrail: (limit: number = 50) =>
+    fetchAPI<any[]>(`/api/core-ai/auth/audit-trail?limit=${limit}`),
+
+  // Explainable AI (XAI)
+  explainSuspect: (suspect: string) =>
+    fetchAPI<any>(`/api/core-ai/explain/suspect?suspect=${encodeURIComponent(suspect)}`),
+
+  // Big Data Benchmark
+  runStressTest: (records: number = 50000) =>
+    fetchAPI<any>(`/api/core-ai/benchmark/stress-test?records=${records}`),
+
+  // 360° Dossier helpers — convenience aliases
+  getThreatIndex: () =>
+    fetchAPI<any[]>("/api/threat/leaderboard", undefined, []).then((res: any) =>
+      Array.isArray(res) ? res : (res?.leaderboard ?? [])
+    ),
+
+  getCDRSummary: () =>
+    fetchAPI<any>("/api/cdr/pairs", undefined, { pair_summary: [] }).then((res: any) =>
+      Array.isArray(res) ? res : (res?.pair_summary ?? res?.pairs ?? [])
+    ),
 };
