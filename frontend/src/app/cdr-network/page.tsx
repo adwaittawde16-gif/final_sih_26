@@ -1,1 +1,3 @@
-export { default } from "../cdr/page";
+import CdrPage from "../cdr/page";
+
+export default CdrPage;
