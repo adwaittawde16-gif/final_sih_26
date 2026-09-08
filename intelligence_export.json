@@ -1,0 +1,5034 @@
+{
+  "system": "Brihanmumbai Police Intelligence Platform (SIH 26)",
+  "version": "1.0.0",
+  "kpis": {
+    "total_suspects": 100,
+    "total_crime_rings": 88,
+    "critical_risk_suspects": 0,
+    "cctv_encounters": 12,
+    "nocturnal_anomalies": 65
+  },
+  "suspect_leaderboard": [
+    {
+      "suspect_name": "Md. Ranbir Bhalla",
+      "phone_number": "+91-2236381844",
+      "total_threat_score": 86.6,
+      "cctv_meeting_score": 28.6,
+      "cdr_network_score": 20.0,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 9.0,
+      "financial_risk_score": 10.0,
+      "surveillance_score": 10.0
+    },
+    {
+      "suspect_name": "Md. Azad Mannan",
+      "phone_number": "+91-8472516266",
+      "total_threat_score": 81.8,
+      "cctv_meeting_score": 29.3,
+      "cdr_network_score": 20.0,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 15.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Advik Golla",
+      "phone_number": "+91-0751400478",
+      "total_threat_score": 79.1,
+      "cctv_meeting_score": 29.1,
+      "cdr_network_score": 20.0,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 10.0,
+      "surveillance_score": 10.0
+    },
+    {
+      "suspect_name": "Md. Balendra Nayak",
+      "phone_number": "+91-7309005344",
+      "total_threat_score": 72.3,
+      "cctv_meeting_score": 29.2,
+      "cdr_network_score": 13.5,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 12.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Darsh Sampath",
+      "phone_number": "+91-7458410398",
+      "total_threat_score": 70.6,
+      "cctv_meeting_score": 29.1,
+      "cdr_network_score": 20.0,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 6.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Zashil Mistry",
+      "phone_number": "+91-0356058771",
+      "total_threat_score": 70.5,
+      "cctv_meeting_score": 29.0,
+      "cdr_network_score": 12.9,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 8.5,
+      "surveillance_score": 10.0
+    },
+    {
+      "suspect_name": "Md. Indrajit Kunda",
+      "phone_number": "+91-6926567843",
+      "total_threat_score": 67.8,
+      "cctv_meeting_score": 29.3,
+      "cdr_network_score": 20.0,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Tarak Sahni",
+      "phone_number": "+91-8224462027",
+      "total_threat_score": 66.8,
+      "cctv_meeting_score": 29.2,
+      "cdr_network_score": 12.5,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 10.0,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Teerth Bhargava",
+      "phone_number": "+91-7611970993",
+      "total_threat_score": 66.5,
+      "cctv_meeting_score": 30.0,
+      "cdr_network_score": 20.0,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Pranit Arya",
+      "phone_number": "+91-7774789752",
+      "total_threat_score": 63.0,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 20.0,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 14.0,
+      "financial_risk_score": 10.0,
+      "surveillance_score": 10.0
+    },
+    {
+      "suspect_name": "Md. Samar Nagar",
+      "phone_number": "+91-3604313547",
+      "total_threat_score": 60.7,
+      "cctv_meeting_score": 29.3,
+      "cdr_network_score": 14.9,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Robert Narain",
+      "phone_number": "+91-0909634931",
+      "total_threat_score": 50.5,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 20.0,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 13.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Christopher Pillai",
+      "phone_number": "+91-4293362242",
+      "total_threat_score": 48.5,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 20.0,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 9.0,
+      "financial_risk_score": 5.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Umang Mody",
+      "phone_number": "+91-0953911949",
+      "total_threat_score": 48.5,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 20.0,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 8.5,
+      "surveillance_score": 10.0
+    },
+    {
+      "suspect_name": "Md. Laban Prakash",
+      "phone_number": "+91-5372652872",
+      "total_threat_score": 42.9,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.9,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 11.0,
+      "financial_risk_score": 10.0,
+      "surveillance_score": 10.0
+    },
+    {
+      "suspect_name": "Md. Zaid Nair",
+      "phone_number": "+91-2579426125",
+      "total_threat_score": 41.9,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.4,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 15.0,
+      "financial_risk_score": 5.5,
+      "surveillance_score": 10.0
+    },
+    {
+      "suspect_name": "Md. Nihal Rana",
+      "phone_number": "+91-5691317104",
+      "total_threat_score": 40.0,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.0,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 9.0,
+      "financial_risk_score": 10.0,
+      "surveillance_score": 10.0
+    },
+    {
+      "suspect_name": "Md. Simon Rai",
+      "phone_number": "+91-6754235346",
+      "total_threat_score": 38.8,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.8,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 7.0,
+      "financial_risk_score": 10.0,
+      "surveillance_score": 10.0
+    },
+    {
+      "suspect_name": "Md. Gagan Rao",
+      "phone_number": "+91-5714909698",
+      "total_threat_score": 38.6,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.0,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 9.0,
+      "financial_risk_score": 8.5,
+      "surveillance_score": 10.0
+    },
+    {
+      "suspect_name": "Md. Vedant Padmanabhan",
+      "phone_number": "+91-2530358841",
+      "total_threat_score": 38.5,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 20.0,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Arjun Sheth",
+      "phone_number": "+91-6111449019",
+      "total_threat_score": 37.9,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 3.9,
+      "fir_severity_score": 13.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 10.0,
+      "surveillance_score": 10.0
+    },
+    {
+      "suspect_name": "Md. Peter Barad",
+      "phone_number": "+91-9440790043",
+      "total_threat_score": 37.7,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.7,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 6.0,
+      "financial_risk_score": 10.0,
+      "surveillance_score": 10.0
+    },
+    {
+      "suspect_name": "Md. Karan Mistry",
+      "phone_number": "+91-3203295820",
+      "total_threat_score": 36.8,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.3,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 12.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 10.0
+    },
+    {
+      "suspect_name": "Md. Harsh Samra",
+      "phone_number": "+91-8762291976",
+      "total_threat_score": 36.6,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.1,
+      "fir_severity_score": 13.0,
+      "criminal_history_score": 15.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Harrison Sarna",
+      "phone_number": "+91-0277658032",
+      "total_threat_score": 36.5,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 20.0,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Harish Bali",
+      "phone_number": "+91-6463599241",
+      "total_threat_score": 36.5,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 20.0,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Maanav Tailor",
+      "phone_number": "+91-4860124675",
+      "total_threat_score": 36.5,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 20.0,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Amol Nagy",
+      "phone_number": "+91-3128261525",
+      "total_threat_score": 36.4,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.4,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 10.0,
+      "financial_risk_score": 10.0,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Ojas Bhavsar",
+      "phone_number": "+91-3088060716",
+      "total_threat_score": 36.4,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.4,
+      "fir_severity_score": 13.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 10.0,
+      "surveillance_score": 10.0
+    },
+    {
+      "suspect_name": "Md. Gopal Radhakrishnan",
+      "phone_number": "+91-9997632226",
+      "total_threat_score": 36.0,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.5,
+      "fir_severity_score": 15.0,
+      "criminal_history_score": 9.0,
+      "financial_risk_score": 5.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Kevin Ganesan",
+      "phone_number": "+91-5505012573",
+      "total_threat_score": 36.0,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.6,
+      "fir_severity_score": 13.0,
+      "criminal_history_score": 12.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Veer Devi",
+      "phone_number": "+91-5037744332",
+      "total_threat_score": 35.9,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.4,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 14.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Ayush Buch",
+      "phone_number": "+91-8561621656",
+      "total_threat_score": 35.2,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.6,
+      "fir_severity_score": 13.0,
+      "criminal_history_score": 9.0,
+      "financial_risk_score": 6.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Reyansh Mangal",
+      "phone_number": "+91-0193610079",
+      "total_threat_score": 35.1,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.6,
+      "fir_severity_score": 15.0,
+      "criminal_history_score": 9.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Elijah Rege",
+      "phone_number": "+91-1324892076",
+      "total_threat_score": 34.9,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.9,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 10.0,
+      "surveillance_score": 10.0
+    },
+    {
+      "suspect_name": "Md. Devansh Vohra",
+      "phone_number": "+91-7245876065",
+      "total_threat_score": 34.8,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.3,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 13.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Jeet Sachdeva",
+      "phone_number": "+91-4631009912",
+      "total_threat_score": 34.0,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.5,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 13.0,
+      "financial_risk_score": 5.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Naveen Tailor",
+      "phone_number": "+91-1549231524",
+      "total_threat_score": 33.1,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.6,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 11.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Reyansh Anne",
+      "phone_number": "+91-6922080797",
+      "total_threat_score": 32.9,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.9,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 10.0,
+      "surveillance_score": 10.0
+    },
+    {
+      "suspect_name": "Md. George Ramaswamy",
+      "phone_number": "+91-0077344960",
+      "total_threat_score": 32.7,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 16.2,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Wridesh Virk",
+      "phone_number": "+91-2343985265",
+      "total_threat_score": 32.6,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.1,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 13.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Nachiket Desai",
+      "phone_number": "+91-3029050253",
+      "total_threat_score": 32.4,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.8,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 11.0,
+      "financial_risk_score": 5.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Andrew Bora",
+      "phone_number": "+91-8714702226",
+      "total_threat_score": 32.1,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.1,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 10.0,
+      "surveillance_score": 10.0
+    },
+    {
+      "suspect_name": "Md. Daniel Raman",
+      "phone_number": "+91-5203140569",
+      "total_threat_score": 31.2,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.7,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 11.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Frado Raja",
+      "phone_number": "+91-3504184157",
+      "total_threat_score": 31.2,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.7,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 11.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Sathvik Mahajan",
+      "phone_number": "+91-4612031808",
+      "total_threat_score": 31.2,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.7,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 8.5,
+      "surveillance_score": 10.0
+    },
+    {
+      "suspect_name": "Md. Tanveer Choudhary",
+      "phone_number": "+91-1407733840",
+      "total_threat_score": 31.1,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.6,
+      "fir_severity_score": 15.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 5.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Wriddhish Varty",
+      "phone_number": "+91-8726663475",
+      "total_threat_score": 30.9,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.4,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 9.0,
+      "financial_risk_score": 5.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. David Nayak",
+      "phone_number": "+91-0908250618",
+      "total_threat_score": 30.6,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.1,
+      "fir_severity_score": 13.0,
+      "criminal_history_score": 3.0,
+      "financial_risk_score": 5.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Frederick Nori",
+      "phone_number": "+91-0009063115",
+      "total_threat_score": 30.5,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.0,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 11.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Vihaan Vohra",
+      "phone_number": "+91-1608300776",
+      "total_threat_score": 30.5,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 5.0,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 10.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Ayush Baria",
+      "phone_number": "+91-6993641756",
+      "total_threat_score": 30.1,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.6,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 5.0,
+      "financial_risk_score": 6.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Zehaan Wali",
+      "phone_number": "+91-8000129596",
+      "total_threat_score": 29.4,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.9,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 8.0,
+      "financial_risk_score": 5.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Wridesh Bali",
+      "phone_number": "+91-2971614670",
+      "total_threat_score": 28.9,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.4,
+      "fir_severity_score": 15.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 5.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Falan Krishna",
+      "phone_number": "+91-8579159927",
+      "total_threat_score": 28.8,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.3,
+      "fir_severity_score": 13.0,
+      "criminal_history_score": 7.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Ansh Sandal",
+      "phone_number": "+91-2507232638",
+      "total_threat_score": 27.6,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.1,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 5.5,
+      "surveillance_score": 10.0
+    },
+    {
+      "suspect_name": "Md. Frado Dhingra",
+      "phone_number": "+91-0333553548",
+      "total_threat_score": 27.4,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.9,
+      "fir_severity_score": 13.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Frederick Gade",
+      "phone_number": "+91-9749956561",
+      "total_threat_score": 27.4,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.9,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 5.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Akshay Lata",
+      "phone_number": "+91-2325906102",
+      "total_threat_score": 27.3,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.8,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 7.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Manan Subramanian",
+      "phone_number": "+91-8164539334",
+      "total_threat_score": 26.9,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.4,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 7.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Zaid Bhattacharyya",
+      "phone_number": "+91-9402246831",
+      "total_threat_score": 26.5,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.0,
+      "fir_severity_score": 15.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Qadim Solanki",
+      "phone_number": "+91-6530338206",
+      "total_threat_score": 26.4,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.9,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 7.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Onveer Bahl",
+      "phone_number": "+91-8335561055",
+      "total_threat_score": 26.4,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.9,
+      "fir_severity_score": 15.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Laban Sidhu",
+      "phone_number": "+91-1679781002",
+      "total_threat_score": 25.7,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.2,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 10.0
+    },
+    {
+      "suspect_name": "Md. Umang Sabharwal",
+      "phone_number": "+91-6997065590",
+      "total_threat_score": 25.6,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.1,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 10.0
+    },
+    {
+      "suspect_name": "Md. Hemang Shere",
+      "phone_number": "+91-1359460122",
+      "total_threat_score": 25.4,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.9,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 5.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Yagnesh Tak",
+      "phone_number": "+91-9377098052",
+      "total_threat_score": 25.3,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.8,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 7.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Baljiwan Hayer",
+      "phone_number": "+91-0327979516",
+      "total_threat_score": 25.3,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.8,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 3.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Jagdish Acharya",
+      "phone_number": "+91-6400189254",
+      "total_threat_score": 25.3,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.8,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 5.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Owen Ganesh",
+      "phone_number": "+91-4501079897",
+      "total_threat_score": 25.2,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.7,
+      "fir_severity_score": 13.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Rayaan Bhavsar",
+      "phone_number": "+91-9135444363",
+      "total_threat_score": 25.2,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.7,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 7.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Jatin Murthy",
+      "phone_number": "+91-0437844453",
+      "total_threat_score": 25.0,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.5,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 7.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Qarin Balan",
+      "phone_number": "+91-4277185805",
+      "total_threat_score": 24.8,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.3,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 5.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Alexander Master",
+      "phone_number": "+91-9405178098",
+      "total_threat_score": 24.1,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 3.6,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 5.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Anay Minhas",
+      "phone_number": "+91-4475823294",
+      "total_threat_score": 23.4,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.9,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 5.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Rudra Narula",
+      "phone_number": "+91-8771310836",
+      "total_threat_score": 23.0,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.5,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Fitan Mander",
+      "phone_number": "+91-0283885531",
+      "total_threat_score": 23.0,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.5,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Jeet Saha",
+      "phone_number": "+91-2751214628",
+      "total_threat_score": 23.0,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.5,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Warjas Khalsa",
+      "phone_number": "+91-2023838998",
+      "total_threat_score": 22.9,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.4,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 3.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Balhaar Sami",
+      "phone_number": "+91-1715766898",
+      "total_threat_score": 22.6,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.1,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Nicholas Karpe",
+      "phone_number": "+91-8749925305",
+      "total_threat_score": 22.6,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.0,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 5.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Gaurang Bhatti",
+      "phone_number": "+91-7194825001",
+      "total_threat_score": 22.5,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.0,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Samar Golla",
+      "phone_number": "+91-4830450019",
+      "total_threat_score": 21.2,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.7,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Chanakya Chaudhari",
+      "phone_number": "+91-7907250746",
+      "total_threat_score": 21.1,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.6,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Zayyan Ahluwalia",
+      "phone_number": "+91-0421607034",
+      "total_threat_score": 20.9,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.4,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Yagnesh Zacharia",
+      "phone_number": "+91-1681067925",
+      "total_threat_score": 20.8,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.3,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Dev Mani",
+      "phone_number": "+91-7339277969",
+      "total_threat_score": 20.8,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.3,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Dominic Gupta",
+      "phone_number": "+91-9954528199",
+      "total_threat_score": 20.6,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.1,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Amol Mody",
+      "phone_number": "+91-5730267951",
+      "total_threat_score": 20.4,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.9,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Sathvik Pant",
+      "phone_number": "+91-1554078824",
+      "total_threat_score": 20.4,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.9,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Raghav Manda",
+      "phone_number": "+91-9386771558",
+      "total_threat_score": 20.4,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.8,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Brijesh Goda",
+      "phone_number": "+91-6454080360",
+      "total_threat_score": 20.4,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.9,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Tejas Nigam",
+      "phone_number": "+91-4414875019",
+      "total_threat_score": 20.3,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.8,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Oliver Dasgupta",
+      "phone_number": "+91-0224687988",
+      "total_threat_score": 20.1,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.6,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 3.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Elijah Ganguly",
+      "phone_number": "+91-6320194538",
+      "total_threat_score": 19.4,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.9,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Ranbir Bains",
+      "phone_number": "+91-6072329900",
+      "total_threat_score": 19.4,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.9,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Matthew Om",
+      "phone_number": "+91-2323764440",
+      "total_threat_score": 19.1,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.6,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Rudra Sant",
+      "phone_number": "+91-7744695455",
+      "total_threat_score": 18.9,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.4,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Chakradhar Batta",
+      "phone_number": "+91-9000406254",
+      "total_threat_score": 18.4,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.9,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Aarnav Sekhon",
+      "phone_number": "+91-7235641635",
+      "total_threat_score": 18.4,
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.9,
+      "fir_severity_score": 9.0,
+      "criminal_history_score": 1.0,
+      "financial_risk_score": 1.5,
+      "surveillance_score": 5.0
+    }
+  ],
+  "suspect_tiers": [
+    {
+      "suspect_name": "Md. Ranbir Bhalla",
+      "phone_number": "+91-2236381844",
+      "total_threat_score": 86.6,
+      "risk_tier": "CRITICAL RISK (RED ALERT)",
+      "recommended_action": "IMMEDIATE SURVEILLANCE & LOOKOUT NOTICE. Issue location tracking orders.",
+      "cctv_meeting_score": 28.6,
+      "cdr_network_score": 20.0
+    },
+    {
+      "suspect_name": "Md. Azad Mannan",
+      "phone_number": "+91-8472516266",
+      "total_threat_score": 81.8,
+      "risk_tier": "CRITICAL RISK (RED ALERT)",
+      "recommended_action": "IMMEDIATE SURVEILLANCE & LOOKOUT NOTICE. Issue location tracking orders.",
+      "cctv_meeting_score": 29.3,
+      "cdr_network_score": 20.0
+    },
+    {
+      "suspect_name": "Md. Advik Golla",
+      "phone_number": "+91-0751400478",
+      "total_threat_score": 79.1,
+      "risk_tier": "CRITICAL RISK (RED ALERT)",
+      "recommended_action": "IMMEDIATE SURVEILLANCE & LOOKOUT NOTICE. Issue location tracking orders.",
+      "cctv_meeting_score": 29.1,
+      "cdr_network_score": 20.0
+    },
+    {
+      "suspect_name": "Md. Balendra Nayak",
+      "phone_number": "+91-7309005344",
+      "total_threat_score": 72.3,
+      "risk_tier": "CRITICAL RISK (RED ALERT)",
+      "recommended_action": "IMMEDIATE SURVEILLANCE & LOOKOUT NOTICE. Issue location tracking orders.",
+      "cctv_meeting_score": 29.2,
+      "cdr_network_score": 13.5
+    },
+    {
+      "suspect_name": "Md. Darsh Sampath",
+      "phone_number": "+91-7458410398",
+      "total_threat_score": 70.6,
+      "risk_tier": "CRITICAL RISK (RED ALERT)",
+      "recommended_action": "IMMEDIATE SURVEILLANCE & LOOKOUT NOTICE. Issue location tracking orders.",
+      "cctv_meeting_score": 29.1,
+      "cdr_network_score": 20.0
+    },
+    {
+      "suspect_name": "Md. Zashil Mistry",
+      "phone_number": "+91-0356058771",
+      "total_threat_score": 70.5,
+      "risk_tier": "CRITICAL RISK (RED ALERT)",
+      "recommended_action": "IMMEDIATE SURVEILLANCE & LOOKOUT NOTICE. Issue location tracking orders.",
+      "cctv_meeting_score": 29.0,
+      "cdr_network_score": 12.9
+    },
+    {
+      "suspect_name": "Md. Indrajit Kunda",
+      "phone_number": "+91-6926567843",
+      "total_threat_score": 67.8,
+      "risk_tier": "HIGH RISK (AMBER ALERT)",
+      "recommended_action": "ENHANCED FIELD PATROL. Interrogate frequent CDR call contacts.",
+      "cctv_meeting_score": 29.3,
+      "cdr_network_score": 20.0
+    },
+    {
+      "suspect_name": "Md. Tarak Sahni",
+      "phone_number": "+91-8224462027",
+      "total_threat_score": 66.8,
+      "risk_tier": "HIGH RISK (AMBER ALERT)",
+      "recommended_action": "ENHANCED FIELD PATROL. Interrogate frequent CDR call contacts.",
+      "cctv_meeting_score": 29.2,
+      "cdr_network_score": 12.5
+    },
+    {
+      "suspect_name": "Md. Teerth Bhargava",
+      "phone_number": "+91-7611970993",
+      "total_threat_score": 66.5,
+      "risk_tier": "HIGH RISK (AMBER ALERT)",
+      "recommended_action": "ENHANCED FIELD PATROL. Interrogate frequent CDR call contacts.",
+      "cctv_meeting_score": 30.0,
+      "cdr_network_score": 20.0
+    },
+    {
+      "suspect_name": "Md. Pranit Arya",
+      "phone_number": "+91-7774789752",
+      "total_threat_score": 63.0,
+      "risk_tier": "HIGH RISK (AMBER ALERT)",
+      "recommended_action": "ENHANCED FIELD PATROL. Interrogate frequent CDR call contacts.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 20.0
+    },
+    {
+      "suspect_name": "Md. Samar Nagar",
+      "phone_number": "+91-3604313547",
+      "total_threat_score": 60.7,
+      "risk_tier": "HIGH RISK (AMBER ALERT)",
+      "recommended_action": "ENHANCED FIELD PATROL. Interrogate frequent CDR call contacts.",
+      "cctv_meeting_score": 29.3,
+      "cdr_network_score": 14.9
+    },
+    {
+      "suspect_name": "Md. Robert Narain",
+      "phone_number": "+91-0909634931",
+      "total_threat_score": 50.5,
+      "risk_tier": "HIGH RISK (AMBER ALERT)",
+      "recommended_action": "ENHANCED FIELD PATROL. Interrogate frequent CDR call contacts.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 20.0
+    },
+    {
+      "suspect_name": "Md. Christopher Pillai",
+      "phone_number": "+91-4293362242",
+      "total_threat_score": 48.5,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 20.0
+    },
+    {
+      "suspect_name": "Md. Umang Mody",
+      "phone_number": "+91-0953911949",
+      "total_threat_score": 48.5,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 20.0
+    },
+    {
+      "suspect_name": "Md. Laban Prakash",
+      "phone_number": "+91-5372652872",
+      "total_threat_score": 42.9,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.9
+    },
+    {
+      "suspect_name": "Md. Zaid Nair",
+      "phone_number": "+91-2579426125",
+      "total_threat_score": 41.9,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.4
+    },
+    {
+      "suspect_name": "Md. Nihal Rana",
+      "phone_number": "+91-5691317104",
+      "total_threat_score": 40.0,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.0
+    },
+    {
+      "suspect_name": "Md. Simon Rai",
+      "phone_number": "+91-6754235346",
+      "total_threat_score": 38.8,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.8
+    },
+    {
+      "suspect_name": "Md. Gagan Rao",
+      "phone_number": "+91-5714909698",
+      "total_threat_score": 38.6,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.0
+    },
+    {
+      "suspect_name": "Md. Vedant Padmanabhan",
+      "phone_number": "+91-2530358841",
+      "total_threat_score": 38.5,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 20.0
+    },
+    {
+      "suspect_name": "Md. Arjun Sheth",
+      "phone_number": "+91-6111449019",
+      "total_threat_score": 37.9,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 3.9
+    },
+    {
+      "suspect_name": "Md. Peter Barad",
+      "phone_number": "+91-9440790043",
+      "total_threat_score": 37.7,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.7
+    },
+    {
+      "suspect_name": "Md. Karan Mistry",
+      "phone_number": "+91-3203295820",
+      "total_threat_score": 36.8,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.3
+    },
+    {
+      "suspect_name": "Md. Harsh Samra",
+      "phone_number": "+91-8762291976",
+      "total_threat_score": 36.6,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.1
+    },
+    {
+      "suspect_name": "Md. Harrison Sarna",
+      "phone_number": "+91-0277658032",
+      "total_threat_score": 36.5,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 20.0
+    },
+    {
+      "suspect_name": "Md. Harish Bali",
+      "phone_number": "+91-6463599241",
+      "total_threat_score": 36.5,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 20.0
+    },
+    {
+      "suspect_name": "Md. Maanav Tailor",
+      "phone_number": "+91-4860124675",
+      "total_threat_score": 36.5,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 20.0
+    },
+    {
+      "suspect_name": "Md. Amol Nagy",
+      "phone_number": "+91-3128261525",
+      "total_threat_score": 36.4,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.4
+    },
+    {
+      "suspect_name": "Md. Ojas Bhavsar",
+      "phone_number": "+91-3088060716",
+      "total_threat_score": 36.4,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.4
+    },
+    {
+      "suspect_name": "Md. Gopal Radhakrishnan",
+      "phone_number": "+91-9997632226",
+      "total_threat_score": 36.0,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.5
+    },
+    {
+      "suspect_name": "Md. Kevin Ganesan",
+      "phone_number": "+91-5505012573",
+      "total_threat_score": 36.0,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.6
+    },
+    {
+      "suspect_name": "Md. Veer Devi",
+      "phone_number": "+91-5037744332",
+      "total_threat_score": 35.9,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.4
+    },
+    {
+      "suspect_name": "Md. Ayush Buch",
+      "phone_number": "+91-8561621656",
+      "total_threat_score": 35.2,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.6
+    },
+    {
+      "suspect_name": "Md. Reyansh Mangal",
+      "phone_number": "+91-0193610079",
+      "total_threat_score": 35.1,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.6
+    },
+    {
+      "suspect_name": "Md. Elijah Rege",
+      "phone_number": "+91-1324892076",
+      "total_threat_score": 34.9,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.9
+    },
+    {
+      "suspect_name": "Md. Devansh Vohra",
+      "phone_number": "+91-7245876065",
+      "total_threat_score": 34.8,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.3
+    },
+    {
+      "suspect_name": "Md. Jeet Sachdeva",
+      "phone_number": "+91-4631009912",
+      "total_threat_score": 34.0,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.5
+    },
+    {
+      "suspect_name": "Md. Naveen Tailor",
+      "phone_number": "+91-1549231524",
+      "total_threat_score": 33.1,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.6
+    },
+    {
+      "suspect_name": "Md. Reyansh Anne",
+      "phone_number": "+91-6922080797",
+      "total_threat_score": 32.9,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.9
+    },
+    {
+      "suspect_name": "Md. George Ramaswamy",
+      "phone_number": "+91-0077344960",
+      "total_threat_score": 32.7,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 16.2
+    },
+    {
+      "suspect_name": "Md. Wridesh Virk",
+      "phone_number": "+91-2343985265",
+      "total_threat_score": 32.6,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.1
+    },
+    {
+      "suspect_name": "Md. Nachiket Desai",
+      "phone_number": "+91-3029050253",
+      "total_threat_score": 32.4,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.8
+    },
+    {
+      "suspect_name": "Md. Andrew Bora",
+      "phone_number": "+91-8714702226",
+      "total_threat_score": 32.1,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.1
+    },
+    {
+      "suspect_name": "Md. Daniel Raman",
+      "phone_number": "+91-5203140569",
+      "total_threat_score": 31.2,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.7
+    },
+    {
+      "suspect_name": "Md. Frado Raja",
+      "phone_number": "+91-3504184157",
+      "total_threat_score": 31.2,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.7
+    },
+    {
+      "suspect_name": "Md. Sathvik Mahajan",
+      "phone_number": "+91-4612031808",
+      "total_threat_score": 31.2,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.7
+    },
+    {
+      "suspect_name": "Md. Tanveer Choudhary",
+      "phone_number": "+91-1407733840",
+      "total_threat_score": 31.1,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.6
+    },
+    {
+      "suspect_name": "Md. Wriddhish Varty",
+      "phone_number": "+91-8726663475",
+      "total_threat_score": 30.9,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.4
+    },
+    {
+      "suspect_name": "Md. David Nayak",
+      "phone_number": "+91-0908250618",
+      "total_threat_score": 30.6,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.1
+    },
+    {
+      "suspect_name": "Md. Frederick Nori",
+      "phone_number": "+91-0009063115",
+      "total_threat_score": 30.5,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.0
+    },
+    {
+      "suspect_name": "Md. Vihaan Vohra",
+      "phone_number": "+91-1608300776",
+      "total_threat_score": 30.5,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 5.0
+    },
+    {
+      "suspect_name": "Md. Ayush Baria",
+      "phone_number": "+91-6993641756",
+      "total_threat_score": 30.1,
+      "risk_tier": "MODERATE RISK (YELLOW)",
+      "recommended_action": "ROUTINE CHECK-IN. Monitor financial transactions and CCTV sightings.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.6
+    },
+    {
+      "suspect_name": "Md. Zehaan Wali",
+      "phone_number": "+91-8000129596",
+      "total_threat_score": 29.4,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.9
+    },
+    {
+      "suspect_name": "Md. Wridesh Bali",
+      "phone_number": "+91-2971614670",
+      "total_threat_score": 28.9,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.4
+    },
+    {
+      "suspect_name": "Md. Falan Krishna",
+      "phone_number": "+91-8579159927",
+      "total_threat_score": 28.8,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.3
+    },
+    {
+      "suspect_name": "Md. Ansh Sandal",
+      "phone_number": "+91-2507232638",
+      "total_threat_score": 27.6,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.1
+    },
+    {
+      "suspect_name": "Md. Frado Dhingra",
+      "phone_number": "+91-0333553548",
+      "total_threat_score": 27.4,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.9
+    },
+    {
+      "suspect_name": "Md. Frederick Gade",
+      "phone_number": "+91-9749956561",
+      "total_threat_score": 27.4,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.9
+    },
+    {
+      "suspect_name": "Md. Akshay Lata",
+      "phone_number": "+91-2325906102",
+      "total_threat_score": 27.3,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.8
+    },
+    {
+      "suspect_name": "Md. Manan Subramanian",
+      "phone_number": "+91-8164539334",
+      "total_threat_score": 26.9,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.4
+    },
+    {
+      "suspect_name": "Md. Zaid Bhattacharyya",
+      "phone_number": "+91-9402246831",
+      "total_threat_score": 26.5,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.0
+    },
+    {
+      "suspect_name": "Md. Qadim Solanki",
+      "phone_number": "+91-6530338206",
+      "total_threat_score": 26.4,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.9
+    },
+    {
+      "suspect_name": "Md. Onveer Bahl",
+      "phone_number": "+91-8335561055",
+      "total_threat_score": 26.4,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.9
+    },
+    {
+      "suspect_name": "Md. Laban Sidhu",
+      "phone_number": "+91-1679781002",
+      "total_threat_score": 25.7,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.2
+    },
+    {
+      "suspect_name": "Md. Umang Sabharwal",
+      "phone_number": "+91-6997065590",
+      "total_threat_score": 25.6,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.1
+    },
+    {
+      "suspect_name": "Md. Hemang Shere",
+      "phone_number": "+91-1359460122",
+      "total_threat_score": 25.4,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.9
+    },
+    {
+      "suspect_name": "Md. Yagnesh Tak",
+      "phone_number": "+91-9377098052",
+      "total_threat_score": 25.3,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.8
+    },
+    {
+      "suspect_name": "Md. Baljiwan Hayer",
+      "phone_number": "+91-0327979516",
+      "total_threat_score": 25.3,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.8
+    },
+    {
+      "suspect_name": "Md. Jagdish Acharya",
+      "phone_number": "+91-6400189254",
+      "total_threat_score": 25.3,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.8
+    },
+    {
+      "suspect_name": "Md. Owen Ganesh",
+      "phone_number": "+91-4501079897",
+      "total_threat_score": 25.2,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.7
+    },
+    {
+      "suspect_name": "Md. Rayaan Bhavsar",
+      "phone_number": "+91-9135444363",
+      "total_threat_score": 25.2,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.7
+    },
+    {
+      "suspect_name": "Md. Jatin Murthy",
+      "phone_number": "+91-0437844453",
+      "total_threat_score": 25.0,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.5
+    },
+    {
+      "suspect_name": "Md. Qarin Balan",
+      "phone_number": "+91-4277185805",
+      "total_threat_score": 24.8,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.3
+    },
+    {
+      "suspect_name": "Md. Alexander Master",
+      "phone_number": "+91-9405178098",
+      "total_threat_score": 24.1,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 3.6
+    },
+    {
+      "suspect_name": "Md. Anay Minhas",
+      "phone_number": "+91-4475823294",
+      "total_threat_score": 23.4,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.9
+    },
+    {
+      "suspect_name": "Md. Rudra Narula",
+      "phone_number": "+91-8771310836",
+      "total_threat_score": 23.0,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.5
+    },
+    {
+      "suspect_name": "Md. Fitan Mander",
+      "phone_number": "+91-0283885531",
+      "total_threat_score": 23.0,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.5
+    },
+    {
+      "suspect_name": "Md. Jeet Saha",
+      "phone_number": "+91-2751214628",
+      "total_threat_score": 23.0,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.5
+    },
+    {
+      "suspect_name": "Md. Warjas Khalsa",
+      "phone_number": "+91-2023838998",
+      "total_threat_score": 22.9,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.4
+    },
+    {
+      "suspect_name": "Md. Balhaar Sami",
+      "phone_number": "+91-1715766898",
+      "total_threat_score": 22.6,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.1
+    },
+    {
+      "suspect_name": "Md. Nicholas Karpe",
+      "phone_number": "+91-8749925305",
+      "total_threat_score": 22.6,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.0
+    },
+    {
+      "suspect_name": "Md. Gaurang Bhatti",
+      "phone_number": "+91-7194825001",
+      "total_threat_score": 22.5,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.0
+    },
+    {
+      "suspect_name": "Md. Samar Golla",
+      "phone_number": "+91-4830450019",
+      "total_threat_score": 21.2,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.7
+    },
+    {
+      "suspect_name": "Md. Chanakya Chaudhari",
+      "phone_number": "+91-7907250746",
+      "total_threat_score": 21.1,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.6
+    },
+    {
+      "suspect_name": "Md. Zayyan Ahluwalia",
+      "phone_number": "+91-0421607034",
+      "total_threat_score": 20.9,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.4
+    },
+    {
+      "suspect_name": "Md. Yagnesh Zacharia",
+      "phone_number": "+91-1681067925",
+      "total_threat_score": 20.8,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.3
+    },
+    {
+      "suspect_name": "Md. Dev Mani",
+      "phone_number": "+91-7339277969",
+      "total_threat_score": 20.8,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.3
+    },
+    {
+      "suspect_name": "Md. Dominic Gupta",
+      "phone_number": "+91-9954528199",
+      "total_threat_score": 20.6,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 4.1
+    },
+    {
+      "suspect_name": "Md. Amol Mody",
+      "phone_number": "+91-5730267951",
+      "total_threat_score": 20.4,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.9
+    },
+    {
+      "suspect_name": "Md. Sathvik Pant",
+      "phone_number": "+91-1554078824",
+      "total_threat_score": 20.4,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.9
+    },
+    {
+      "suspect_name": "Md. Raghav Manda",
+      "phone_number": "+91-9386771558",
+      "total_threat_score": 20.4,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.8
+    },
+    {
+      "suspect_name": "Md. Brijesh Goda",
+      "phone_number": "+91-6454080360",
+      "total_threat_score": 20.4,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.9
+    },
+    {
+      "suspect_name": "Md. Tejas Nigam",
+      "phone_number": "+91-4414875019",
+      "total_threat_score": 20.3,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.8
+    },
+    {
+      "suspect_name": "Md. Oliver Dasgupta",
+      "phone_number": "+91-0224687988",
+      "total_threat_score": 20.1,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.6
+    },
+    {
+      "suspect_name": "Md. Elijah Ganguly",
+      "phone_number": "+91-6320194538",
+      "total_threat_score": 19.4,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.9
+    },
+    {
+      "suspect_name": "Md. Ranbir Bains",
+      "phone_number": "+91-6072329900",
+      "total_threat_score": 19.4,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.9
+    },
+    {
+      "suspect_name": "Md. Matthew Om",
+      "phone_number": "+91-2323764440",
+      "total_threat_score": 19.1,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.6
+    },
+    {
+      "suspect_name": "Md. Rudra Sant",
+      "phone_number": "+91-7744695455",
+      "total_threat_score": 18.9,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 2.4
+    },
+    {
+      "suspect_name": "Md. Chakradhar Batta",
+      "phone_number": "+91-9000406254",
+      "total_threat_score": 18.4,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.9
+    },
+    {
+      "suspect_name": "Md. Aarnav Sekhon",
+      "phone_number": "+91-7235641635",
+      "total_threat_score": 18.4,
+      "risk_tier": "LOW RISK (GREEN)",
+      "recommended_action": "MONITORING ONLY. Standard background verification.",
+      "cctv_meeting_score": 0.0,
+      "cdr_network_score": 1.9
+    }
+  ],
+  "crime_rings": [
+    {
+      "syndicate_id": "RING-01",
+      "ring_size": 12,
+      "ring_leader": "Md. Ranbir Bhalla",
+      "leader_threat_score": 86.6,
+      "total_internal_calls": 38,
+      "physical_meetings_count": 6,
+      "members": [
+        "Md. Ranbir Bhalla",
+        "Md. Zashil Mistry",
+        "Md. Teerth Bhargava",
+        "Md. Pranit Arya",
+        "Md. Samar Nagar",
+        "Md. Vedant Padmanabhan",
+        "+91-6304508680",
+        "+91-8975030242",
+        "+91-9967968993",
+        "+91-1951231046",
+        "+91-0988006174",
+        "+91-0122059359"
+      ]
+    },
+    {
+      "syndicate_id": "RING-03",
+      "ring_size": 4,
+      "ring_leader": "Md. Advik Golla",
+      "leader_threat_score": 79.1,
+      "total_internal_calls": 10,
+      "physical_meetings_count": 2,
+      "members": [
+        "Md. Advik Golla",
+        "Md. Darsh Sampath",
+        "+91-3684198529",
+        "+91-3904615590"
+      ]
+    },
+    {
+      "syndicate_id": "RING-06",
+      "ring_size": 4,
+      "ring_leader": "Md. Azad Mannan",
+      "leader_threat_score": 81.8,
+      "total_internal_calls": 9,
+      "physical_meetings_count": 2,
+      "members": [
+        "Md. Azad Mannan",
+        "Md. Indrajit Kunda",
+        "+91-1298742862",
+        "+91-2769136542"
+      ]
+    },
+    {
+      "syndicate_id": "RING-07",
+      "ring_size": 4,
+      "ring_leader": "Md. Balendra Nayak",
+      "leader_threat_score": 72.3,
+      "total_internal_calls": 6,
+      "physical_meetings_count": 2,
+      "members": [
+        "Md. Balendra Nayak",
+        "Md. Tarak Sahni",
+        "+91-8535218781",
+        "+91-9937146397"
+      ]
+    },
+    {
+      "syndicate_id": "RING-04",
+      "ring_size": 6,
+      "ring_leader": "Md. Umang Mody",
+      "leader_threat_score": 48.5,
+      "total_internal_calls": 17,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Umang Mody",
+        "Md. Maanav Tailor",
+        "Md. George Ramaswamy",
+        "+91-2779148518",
+        "+91-5405416287",
+        "+91-3211806618"
+      ]
+    },
+    {
+      "syndicate_id": "RING-02",
+      "ring_size": 4,
+      "ring_leader": "Md. Robert Narain",
+      "leader_threat_score": 50.5,
+      "total_internal_calls": 11,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Robert Narain",
+        "Md. Christopher Pillai",
+        "+91-8841380062",
+        "+91-1525809736"
+      ]
+    },
+    {
+      "syndicate_id": "RING-05",
+      "ring_size": 4,
+      "ring_leader": "Md. Harrison Sarna",
+      "leader_threat_score": 36.5,
+      "total_internal_calls": 10,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Harrison Sarna",
+        "Md. Harish Bali",
+        "+91-8267178405",
+        "+91-3758973716"
+      ]
+    },
+    {
+      "syndicate_id": "RING-08",
+      "ring_size": 2,
+      "ring_leader": "Md. Ojas Bhavsar",
+      "leader_threat_score": 36.4,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Ojas Bhavsar",
+        "+91-7155522441"
+      ]
+    },
+    {
+      "syndicate_id": "RING-09",
+      "ring_size": 2,
+      "ring_leader": "Md. Sathvik Mahajan",
+      "leader_threat_score": 31.2,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Sathvik Mahajan",
+        "+91-6658277894"
+      ]
+    },
+    {
+      "syndicate_id": "RING-10",
+      "ring_size": 2,
+      "ring_leader": "Md. Elijah Rege",
+      "leader_threat_score": 34.9,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Elijah Rege",
+        "+91-0083322930"
+      ]
+    },
+    {
+      "syndicate_id": "RING-11",
+      "ring_size": 2,
+      "ring_leader": "Md. Simon Rai",
+      "leader_threat_score": 38.8,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Simon Rai",
+        "+91-8261621115"
+      ]
+    },
+    {
+      "syndicate_id": "RING-12",
+      "ring_size": 2,
+      "ring_leader": "Md. Ayush Buch",
+      "leader_threat_score": 35.2,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Ayush Buch",
+        "+91-7380064908"
+      ]
+    },
+    {
+      "syndicate_id": "RING-13",
+      "ring_size": 2,
+      "ring_leader": "Md. Amol Nagy",
+      "leader_threat_score": 36.4,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Amol Nagy",
+        "+91-2249298044"
+      ]
+    },
+    {
+      "syndicate_id": "RING-14",
+      "ring_size": 2,
+      "ring_leader": "Md. Baljiwan Hayer",
+      "leader_threat_score": 25.3,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Baljiwan Hayer",
+        "+91-1296901195"
+      ]
+    },
+    {
+      "syndicate_id": "RING-15",
+      "ring_size": 2,
+      "ring_leader": "Md. Devansh Vohra",
+      "leader_threat_score": 34.8,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Devansh Vohra",
+        "+91-7036067702"
+      ]
+    },
+    {
+      "syndicate_id": "RING-16",
+      "ring_size": 2,
+      "ring_leader": "Md. Gopal Radhakrishnan",
+      "leader_threat_score": 36.0,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Gopal Radhakrishnan",
+        "+91-5529660417"
+      ]
+    },
+    {
+      "syndicate_id": "RING-17",
+      "ring_size": 2,
+      "ring_leader": "Md. Zayyan Ahluwalia",
+      "leader_threat_score": 20.9,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Zayyan Ahluwalia",
+        "+91-9530679275"
+      ]
+    },
+    {
+      "syndicate_id": "RING-18",
+      "ring_size": 2,
+      "ring_leader": "Md. Rudra Sant",
+      "leader_threat_score": 18.9,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Rudra Sant",
+        "+91-3566383950"
+      ]
+    },
+    {
+      "syndicate_id": "RING-19",
+      "ring_size": 2,
+      "ring_leader": "Md. Fitan Mander",
+      "leader_threat_score": 23.0,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Fitan Mander",
+        "+91-8101692629"
+      ]
+    },
+    {
+      "syndicate_id": "RING-20",
+      "ring_size": 2,
+      "ring_leader": "Md. Nachiket Desai",
+      "leader_threat_score": 32.4,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Nachiket Desai",
+        "+91-5376571151"
+      ]
+    },
+    {
+      "syndicate_id": "RING-21",
+      "ring_size": 2,
+      "ring_leader": "Md. Tanveer Choudhary",
+      "leader_threat_score": 31.1,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Tanveer Choudhary",
+        "+91-3531160657"
+      ]
+    },
+    {
+      "syndicate_id": "RING-22",
+      "ring_size": 2,
+      "ring_leader": "Md. Amol Mody",
+      "leader_threat_score": 20.4,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Amol Mody",
+        "+91-8324791927"
+      ]
+    },
+    {
+      "syndicate_id": "RING-23",
+      "ring_size": 2,
+      "ring_leader": "Md. Zaid Bhattacharyya",
+      "leader_threat_score": 26.5,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Zaid Bhattacharyya",
+        "+91-8831730519"
+      ]
+    },
+    {
+      "syndicate_id": "RING-24",
+      "ring_size": 2,
+      "ring_leader": "Md. Nicholas Karpe",
+      "leader_threat_score": 22.6,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Nicholas Karpe",
+        "+91-4969103950"
+      ]
+    },
+    {
+      "syndicate_id": "RING-25",
+      "ring_size": 2,
+      "ring_leader": "Md. Reyansh Anne",
+      "leader_threat_score": 32.9,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Reyansh Anne",
+        "+91-4754813913"
+      ]
+    },
+    {
+      "syndicate_id": "RING-26",
+      "ring_size": 2,
+      "ring_leader": "Md. Andrew Bora",
+      "leader_threat_score": 32.1,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Andrew Bora",
+        "+91-6216694266"
+      ]
+    },
+    {
+      "syndicate_id": "RING-27",
+      "ring_size": 2,
+      "ring_leader": "Md. Gagan Rao",
+      "leader_threat_score": 38.6,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Gagan Rao",
+        "+91-5915263172"
+      ]
+    },
+    {
+      "syndicate_id": "RING-28",
+      "ring_size": 2,
+      "ring_leader": "Md. Peter Barad",
+      "leader_threat_score": 37.7,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Peter Barad",
+        "+91-1313704144"
+      ]
+    },
+    {
+      "syndicate_id": "RING-29",
+      "ring_size": 2,
+      "ring_leader": "Md. Nihal Rana",
+      "leader_threat_score": 40.0,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Nihal Rana",
+        "+91-7799749261"
+      ]
+    },
+    {
+      "syndicate_id": "RING-30",
+      "ring_size": 2,
+      "ring_leader": "Md. Arjun Sheth",
+      "leader_threat_score": 37.9,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Arjun Sheth",
+        "+91-4273670069"
+      ]
+    },
+    {
+      "syndicate_id": "RING-31",
+      "ring_size": 2,
+      "ring_leader": "Md. Laban Prakash",
+      "leader_threat_score": 42.9,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Laban Prakash",
+        "+91-4598784260"
+      ]
+    },
+    {
+      "syndicate_id": "RING-32",
+      "ring_size": 2,
+      "ring_leader": "Md. Ayush Baria",
+      "leader_threat_score": 30.1,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Ayush Baria",
+        "+91-8935396640"
+      ]
+    },
+    {
+      "syndicate_id": "RING-33",
+      "ring_size": 2,
+      "ring_leader": "Md. Dominic Gupta",
+      "leader_threat_score": 20.6,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Dominic Gupta",
+        "+91-4983630267"
+      ]
+    },
+    {
+      "syndicate_id": "RING-34",
+      "ring_size": 2,
+      "ring_leader": "Md. Naveen Tailor",
+      "leader_threat_score": 33.1,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Naveen Tailor",
+        "+91-3691955937"
+      ]
+    },
+    {
+      "syndicate_id": "RING-35",
+      "ring_size": 2,
+      "ring_leader": "Md. Frado Dhingra",
+      "leader_threat_score": 27.4,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Frado Dhingra",
+        "+91-7507465885"
+      ]
+    },
+    {
+      "syndicate_id": "RING-36",
+      "ring_size": 2,
+      "ring_leader": "Md. Kevin Ganesan",
+      "leader_threat_score": 36.0,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Kevin Ganesan",
+        "+91-6641847435"
+      ]
+    },
+    {
+      "syndicate_id": "RING-37",
+      "ring_size": 2,
+      "ring_leader": "Md. Wriddhish Varty",
+      "leader_threat_score": 30.9,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Wriddhish Varty",
+        "+91-6822881229"
+      ]
+    },
+    {
+      "syndicate_id": "RING-38",
+      "ring_size": 2,
+      "ring_leader": "Md. Jeet Saha",
+      "leader_threat_score": 23.0,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Jeet Saha",
+        "+91-4171972095"
+      ]
+    },
+    {
+      "syndicate_id": "RING-39",
+      "ring_size": 2,
+      "ring_leader": "Md. Anay Minhas",
+      "leader_threat_score": 23.4,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Anay Minhas",
+        "+91-1250436793"
+      ]
+    },
+    {
+      "syndicate_id": "RING-40",
+      "ring_size": 2,
+      "ring_leader": "Md. Jatin Murthy",
+      "leader_threat_score": 25.0,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Jatin Murthy",
+        "+91-2278623406"
+      ]
+    },
+    {
+      "syndicate_id": "RING-41",
+      "ring_size": 2,
+      "ring_leader": "Md. Reyansh Mangal",
+      "leader_threat_score": 35.1,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Reyansh Mangal",
+        "+91-1746159750"
+      ]
+    },
+    {
+      "syndicate_id": "RING-42",
+      "ring_size": 2,
+      "ring_leader": "Md. Elijah Ganguly",
+      "leader_threat_score": 19.4,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Elijah Ganguly",
+        "+91-4684812524"
+      ]
+    },
+    {
+      "syndicate_id": "RING-43",
+      "ring_size": 2,
+      "ring_leader": "Md. Tejas Nigam",
+      "leader_threat_score": 20.3,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Tejas Nigam",
+        "+91-8667541428"
+      ]
+    },
+    {
+      "syndicate_id": "RING-44",
+      "ring_size": 2,
+      "ring_leader": "Md. Akshay Lata",
+      "leader_threat_score": 27.3,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Akshay Lata",
+        "+91-3450312271"
+      ]
+    },
+    {
+      "syndicate_id": "RING-45",
+      "ring_size": 2,
+      "ring_leader": "Md. Frederick Nori",
+      "leader_threat_score": 30.5,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Frederick Nori",
+        "+91-1189756397"
+      ]
+    },
+    {
+      "syndicate_id": "RING-46",
+      "ring_size": 2,
+      "ring_leader": "Md. Brijesh Goda",
+      "leader_threat_score": 20.4,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Brijesh Goda",
+        "+91-6799582777"
+      ]
+    },
+    {
+      "syndicate_id": "RING-47",
+      "ring_size": 2,
+      "ring_leader": "Md. Qadim Solanki",
+      "leader_threat_score": 26.4,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Qadim Solanki",
+        "+91-1395100063"
+      ]
+    },
+    {
+      "syndicate_id": "RING-48",
+      "ring_size": 2,
+      "ring_leader": "Md. Daniel Raman",
+      "leader_threat_score": 31.2,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Daniel Raman",
+        "+91-1044800820"
+      ]
+    },
+    {
+      "syndicate_id": "RING-49",
+      "ring_size": 2,
+      "ring_leader": "Md. Frederick Gade",
+      "leader_threat_score": 27.4,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Frederick Gade",
+        "+91-4702317695"
+      ]
+    },
+    {
+      "syndicate_id": "RING-50",
+      "ring_size": 2,
+      "ring_leader": "Md. Raghav Manda",
+      "leader_threat_score": 20.4,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Raghav Manda",
+        "+91-4521265079"
+      ]
+    },
+    {
+      "syndicate_id": "RING-51",
+      "ring_size": 2,
+      "ring_leader": "Md. Laban Sidhu",
+      "leader_threat_score": 25.7,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Laban Sidhu",
+        "+91-5833469312"
+      ]
+    },
+    {
+      "syndicate_id": "RING-52",
+      "ring_size": 2,
+      "ring_leader": "Md. Vihaan Vohra",
+      "leader_threat_score": 30.5,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Vihaan Vohra",
+        "+91-9641070073"
+      ]
+    },
+    {
+      "syndicate_id": "RING-53",
+      "ring_size": 2,
+      "ring_leader": "Md. David Nayak",
+      "leader_threat_score": 30.6,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. David Nayak",
+        "+91-3923216148"
+      ]
+    },
+    {
+      "syndicate_id": "RING-54",
+      "ring_size": 2,
+      "ring_leader": "Md. Matthew Om",
+      "leader_threat_score": 19.1,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Matthew Om",
+        "+91-9156712697"
+      ]
+    },
+    {
+      "syndicate_id": "RING-55",
+      "ring_size": 2,
+      "ring_leader": "Md. Rayaan Bhavsar",
+      "leader_threat_score": 25.2,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Rayaan Bhavsar",
+        "+91-0340298591"
+      ]
+    },
+    {
+      "syndicate_id": "RING-56",
+      "ring_size": 2,
+      "ring_leader": "Md. Hemang Shere",
+      "leader_threat_score": 25.4,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Hemang Shere",
+        "+91-1364678894"
+      ]
+    },
+    {
+      "syndicate_id": "RING-57",
+      "ring_size": 2,
+      "ring_leader": "Md. Jeet Sachdeva",
+      "leader_threat_score": 34.0,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Jeet Sachdeva",
+        "+91-8163791530"
+      ]
+    },
+    {
+      "syndicate_id": "RING-58",
+      "ring_size": 2,
+      "ring_leader": "Md. Zehaan Wali",
+      "leader_threat_score": 29.4,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Zehaan Wali",
+        "+91-3997099578"
+      ]
+    },
+    {
+      "syndicate_id": "RING-59",
+      "ring_size": 2,
+      "ring_leader": "Md. Aarnav Sekhon",
+      "leader_threat_score": 18.4,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Aarnav Sekhon",
+        "+91-7486245083"
+      ]
+    },
+    {
+      "syndicate_id": "RING-60",
+      "ring_size": 2,
+      "ring_leader": "Md. Qarin Balan",
+      "leader_threat_score": 24.8,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Qarin Balan",
+        "+91-8418562933"
+      ]
+    },
+    {
+      "syndicate_id": "RING-61",
+      "ring_size": 2,
+      "ring_leader": "Md. Balhaar Sami",
+      "leader_threat_score": 22.6,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Balhaar Sami",
+        "+91-7171626711"
+      ]
+    },
+    {
+      "syndicate_id": "RING-62",
+      "ring_size": 2,
+      "ring_leader": "Md. Warjas Khalsa",
+      "leader_threat_score": 22.9,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Warjas Khalsa",
+        "+91-9080085208"
+      ]
+    },
+    {
+      "syndicate_id": "RING-63",
+      "ring_size": 2,
+      "ring_leader": "Md. Alexander Master",
+      "leader_threat_score": 24.1,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Alexander Master",
+        "+91-0524161213"
+      ]
+    },
+    {
+      "syndicate_id": "RING-64",
+      "ring_size": 2,
+      "ring_leader": "Md. Yagnesh Zacharia",
+      "leader_threat_score": 20.8,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Yagnesh Zacharia",
+        "+91-0162900589"
+      ]
+    },
+    {
+      "syndicate_id": "RING-65",
+      "ring_size": 2,
+      "ring_leader": "Md. Gaurang Bhatti",
+      "leader_threat_score": 22.5,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Gaurang Bhatti",
+        "+91-7740381949"
+      ]
+    },
+    {
+      "syndicate_id": "RING-66",
+      "ring_size": 2,
+      "ring_leader": "Md. Ansh Sandal",
+      "leader_threat_score": 27.6,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Ansh Sandal",
+        "+91-4373688889"
+      ]
+    },
+    {
+      "syndicate_id": "RING-67",
+      "ring_size": 2,
+      "ring_leader": "Md. Harsh Samra",
+      "leader_threat_score": 36.6,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Harsh Samra",
+        "+91-0139452164"
+      ]
+    },
+    {
+      "syndicate_id": "RING-68",
+      "ring_size": 2,
+      "ring_leader": "Md. Zaid Nair",
+      "leader_threat_score": 41.9,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Zaid Nair",
+        "+91-5482105475"
+      ]
+    },
+    {
+      "syndicate_id": "RING-69",
+      "ring_size": 2,
+      "ring_leader": "Md. Frado Raja",
+      "leader_threat_score": 31.2,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Frado Raja",
+        "+91-8951032064"
+      ]
+    },
+    {
+      "syndicate_id": "RING-70",
+      "ring_size": 2,
+      "ring_leader": "Md. Owen Ganesh",
+      "leader_threat_score": 25.2,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Owen Ganesh",
+        "+91-6161680532"
+      ]
+    },
+    {
+      "syndicate_id": "RING-71",
+      "ring_size": 2,
+      "ring_leader": "Md. Rudra Narula",
+      "leader_threat_score": 23.0,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Rudra Narula",
+        "+91-9204164298"
+      ]
+    },
+    {
+      "syndicate_id": "RING-72",
+      "ring_size": 2,
+      "ring_leader": "Md. Onveer Bahl",
+      "leader_threat_score": 26.4,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Onveer Bahl",
+        "+91-5940579305"
+      ]
+    },
+    {
+      "syndicate_id": "RING-73",
+      "ring_size": 2,
+      "ring_leader": "Md. Wridesh Virk",
+      "leader_threat_score": 32.6,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Wridesh Virk",
+        "+91-1980611562"
+      ]
+    },
+    {
+      "syndicate_id": "RING-74",
+      "ring_size": 2,
+      "ring_leader": "Md. Wridesh Bali",
+      "leader_threat_score": 28.9,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Wridesh Bali",
+        "+91-4778000151"
+      ]
+    },
+    {
+      "syndicate_id": "RING-75",
+      "ring_size": 2,
+      "ring_leader": "Md. Manan Subramanian",
+      "leader_threat_score": 26.9,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Manan Subramanian",
+        "+91-2150790686"
+      ]
+    },
+    {
+      "syndicate_id": "RING-76",
+      "ring_size": 2,
+      "ring_leader": "Md. Samar Golla",
+      "leader_threat_score": 21.2,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Samar Golla",
+        "+91-2818487325"
+      ]
+    },
+    {
+      "syndicate_id": "RING-77",
+      "ring_size": 2,
+      "ring_leader": "Md. Jagdish Acharya",
+      "leader_threat_score": 25.3,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Jagdish Acharya",
+        "+91-7418523271"
+      ]
+    },
+    {
+      "syndicate_id": "RING-78",
+      "ring_size": 2,
+      "ring_leader": "Md. Yagnesh Tak",
+      "leader_threat_score": 25.3,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Yagnesh Tak",
+        "+91-2050251598"
+      ]
+    },
+    {
+      "syndicate_id": "RING-79",
+      "ring_size": 2,
+      "ring_leader": "Md. Falan Krishna",
+      "leader_threat_score": 28.8,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Falan Krishna",
+        "+91-8352292464"
+      ]
+    },
+    {
+      "syndicate_id": "RING-80",
+      "ring_size": 2,
+      "ring_leader": "Md. Veer Devi",
+      "leader_threat_score": 35.9,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Veer Devi",
+        "+91-1540172781"
+      ]
+    },
+    {
+      "syndicate_id": "RING-81",
+      "ring_size": 2,
+      "ring_leader": "Md. Umang Sabharwal",
+      "leader_threat_score": 25.6,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Umang Sabharwal",
+        "+91-7079832489"
+      ]
+    },
+    {
+      "syndicate_id": "RING-82",
+      "ring_size": 2,
+      "ring_leader": "Md. Chanakya Chaudhari",
+      "leader_threat_score": 21.1,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Chanakya Chaudhari",
+        "+91-7007685069"
+      ]
+    },
+    {
+      "syndicate_id": "RING-83",
+      "ring_size": 2,
+      "ring_leader": "Md. Sathvik Pant",
+      "leader_threat_score": 20.4,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Sathvik Pant",
+        "+91-6939681756"
+      ]
+    },
+    {
+      "syndicate_id": "RING-84",
+      "ring_size": 2,
+      "ring_leader": "Md. Chakradhar Batta",
+      "leader_threat_score": 18.4,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Chakradhar Batta",
+        "+91-2481972339"
+      ]
+    },
+    {
+      "syndicate_id": "RING-85",
+      "ring_size": 2,
+      "ring_leader": "Md. Oliver Dasgupta",
+      "leader_threat_score": 20.1,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Oliver Dasgupta",
+        "+91-7813014202"
+      ]
+    },
+    {
+      "syndicate_id": "RING-86",
+      "ring_size": 2,
+      "ring_leader": "Md. Ranbir Bains",
+      "leader_threat_score": 19.4,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Ranbir Bains",
+        "+91-2913723000"
+      ]
+    },
+    {
+      "syndicate_id": "RING-87",
+      "ring_size": 2,
+      "ring_leader": "Md. Karan Mistry",
+      "leader_threat_score": 36.8,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Karan Mistry",
+        "+91-0863104046"
+      ]
+    },
+    {
+      "syndicate_id": "RING-88",
+      "ring_size": 2,
+      "ring_leader": "Md. Dev Mani",
+      "leader_threat_score": 20.8,
+      "total_internal_calls": 1,
+      "physical_meetings_count": 0,
+      "members": [
+        "Md. Dev Mani",
+        "+91-4911446112"
+      ]
+    }
+  ],
+  "cctv_meetings": [
+    {
+      "suspect_1": "Md. Samar Nagar",
+      "suspect_2": "Md. Teerth Bhargava",
+      "cdr_call_count": 5,
+      "camera_id": "MH-CCTV-2466",
+      "camera_location": "Main Road Traffic Signal, Agripada, Mumbai",
+      "sighting_time_s1": "2026-08-27 18:15:00",
+      "sighting_time_s2": "2026-08-27 18:25:00",
+      "time_delta_minutes": 10.0,
+      "avg_distance_meters": 179.0,
+      "avg_match_confidence": 0.97,
+      "sighting_status": "Verified Match"
+    },
+    {
+      "suspect_1": "Md. Balendra Nayak",
+      "suspect_2": "Md. Tarak Sahni",
+      "cdr_call_count": 4,
+      "camera_id": "MH-CCTV-1652",
+      "camera_location": "Market Entrance, Byculla West, Mumbai",
+      "sighting_time_s1": "2026-08-14 20:15:00",
+      "sighting_time_s2": "2026-08-14 20:25:00",
+      "time_delta_minutes": 10.0,
+      "avg_distance_meters": 207.0,
+      "avg_match_confidence": 0.96,
+      "sighting_status": "Verified Match"
+    },
+    {
+      "suspect_1": "Md. Azad Mannan",
+      "suspect_2": "Md. Indrajit Kunda",
+      "cdr_call_count": 7,
+      "camera_id": "MH-CCTV-1652",
+      "camera_location": "Market Entrance, Byculla West, Mumbai",
+      "sighting_time_s1": "2026-08-18 21:25:00",
+      "sighting_time_s2": "2026-08-18 21:15:00",
+      "time_delta_minutes": 10.0,
+      "avg_distance_meters": 152.0,
+      "avg_match_confidence": 0.95,
+      "sighting_status": "Verified Match"
+    },
+    {
+      "suspect_1": "Md. Advik Golla",
+      "suspect_2": "Md. Darsh Sampath",
+      "cdr_call_count": 8,
+      "camera_id": "MH-CCTV-5719",
+      "camera_location": "Flyover Service Road, Lower Parel, Mumbai",
+      "sighting_time_s1": "2026-08-08 15:25:00",
+      "sighting_time_s2": "2026-08-08 15:15:00",
+      "time_delta_minutes": 10.0,
+      "avg_distance_meters": 104.5,
+      "avg_match_confidence": 0.91,
+      "sighting_status": "Verified Match"
+    },
+    {
+      "suspect_1": "Md. Advik Golla",
+      "suspect_2": "Md. Darsh Sampath",
+      "cdr_call_count": 8,
+      "camera_id": "MH-CCTV-1652",
+      "camera_location": "Market Entrance, Byculla West, Mumbai",
+      "sighting_time_s1": "2026-08-28 13:25:00",
+      "sighting_time_s2": "2026-08-28 13:15:00",
+      "time_delta_minutes": 10.0,
+      "avg_distance_meters": 193.5,
+      "avg_match_confidence": 0.91,
+      "sighting_status": "Verified Match"
+    },
+    {
+      "suspect_1": "Md. Azad Mannan",
+      "suspect_2": "Md. Indrajit Kunda",
+      "cdr_call_count": 7,
+      "camera_id": "MH-CCTV-9173",
+      "camera_location": "Metro Access Road, Byculla West, Mumbai",
+      "sighting_time_s1": "2026-08-18 15:25:00",
+      "sighting_time_s2": "2026-08-18 15:15:00",
+      "time_delta_minutes": 10.0,
+      "avg_distance_meters": 173.0,
+      "avg_match_confidence": 0.91,
+      "sighting_status": "Verified Match"
+    },
+    {
+      "suspect_1": "Md. Teerth Bhargava",
+      "suspect_2": "Md. Zashil Mistry",
+      "cdr_call_count": 4,
+      "camera_id": "MH-CCTV-2466",
+      "camera_location": "Main Road Traffic Signal, Agripada, Mumbai",
+      "sighting_time_s1": "2026-08-09 19:15:00",
+      "sighting_time_s2": "2026-08-09 19:25:00",
+      "time_delta_minutes": 10.0,
+      "avg_distance_meters": 94.5,
+      "avg_match_confidence": 0.91,
+      "sighting_status": "Verified Match"
+    },
+    {
+      "suspect_1": "Md. Teerth Bhargava",
+      "suspect_2": "Md. Zashil Mistry",
+      "cdr_call_count": 4,
+      "camera_id": "MH-CCTV-5719",
+      "camera_location": "Flyover Service Road, Lower Parel, Mumbai",
+      "sighting_time_s1": "2026-08-18 13:15:00",
+      "sighting_time_s2": "2026-08-18 13:25:00",
+      "time_delta_minutes": 10.0,
+      "avg_distance_meters": 121.5,
+      "avg_match_confidence": 0.9,
+      "sighting_status": "Verified Match"
+    },
+    {
+      "suspect_1": "Md. Ranbir Bhalla",
+      "suspect_2": "Md. Teerth Bhargava",
+      "cdr_call_count": 5,
+      "camera_id": "MH-CCTV-9173",
+      "camera_location": "Metro Access Road, Byculla West, Mumbai",
+      "sighting_time_s1": "2026-08-25 18:15:00",
+      "sighting_time_s2": "2026-08-25 18:25:00",
+      "time_delta_minutes": 10.0,
+      "avg_distance_meters": 172.0,
+      "avg_match_confidence": 0.89,
+      "sighting_status": "Verified Match"
+    },
+    {
+      "suspect_1": "Md. Samar Nagar",
+      "suspect_2": "Md. Teerth Bhargava",
+      "cdr_call_count": 5,
+      "camera_id": "MH-CCTV-2466",
+      "camera_location": "Main Road Traffic Signal, Agripada, Mumbai",
+      "sighting_time_s1": "2026-08-03 18:15:00",
+      "sighting_time_s2": "2026-08-03 18:25:00",
+      "time_delta_minutes": 10.0,
+      "avg_distance_meters": 166.5,
+      "avg_match_confidence": 0.89,
+      "sighting_status": "Verified Match"
+    },
+    {
+      "suspect_1": "Md. Balendra Nayak",
+      "suspect_2": "Md. Tarak Sahni",
+      "cdr_call_count": 4,
+      "camera_id": "MH-CCTV-9890",
+      "camera_location": "Public Footpath Corner, Lower Parel, Mumbai",
+      "sighting_time_s1": "2026-08-09 15:15:00",
+      "sighting_time_s2": "2026-08-09 15:25:00",
+      "time_delta_minutes": 10.0,
+      "avg_distance_meters": 236.0,
+      "avg_match_confidence": 0.89,
+      "sighting_status": "Verified Match"
+    },
+    {
+      "suspect_1": "Md. Ranbir Bhalla",
+      "suspect_2": "Md. Teerth Bhargava",
+      "cdr_call_count": 5,
+      "camera_id": "MH-CCTV-9890",
+      "camera_location": "Public Footpath Corner, Lower Parel, Mumbai",
+      "sighting_time_s1": "2026-08-16 18:15:00",
+      "sighting_time_s2": "2026-08-16 18:25:00",
+      "time_delta_minutes": 10.0,
+      "avg_distance_meters": 174.0,
+      "avg_match_confidence": 0.84,
+      "sighting_status": "Verified Match"
+    }
+  ],
+  "financial_intelligence": {
+    "summary": [
+      {
+        "suspect_name": "Md. Pranit Arya",
+        "threat_score": 63.0,
+        "total_transactions": 3,
+        "total_volume_inr": 53533.19,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 48864.19,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Tarak Sahni",
+        "threat_score": 66.8,
+        "total_transactions": 3,
+        "total_volume_inr": 37403.67,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 34268.67,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Elijah Rege",
+        "threat_score": 34.9,
+        "total_transactions": 3,
+        "total_volume_inr": 32044.14,
+        "failed_withdrawals": 2,
+        "wine_shop_spent_inr": 28459.14,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Gagan Rao",
+        "threat_score": 38.6,
+        "total_transactions": 3,
+        "total_volume_inr": 36783.68,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 26471.6,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Umang Mody",
+        "threat_score": 48.5,
+        "total_transactions": 3,
+        "total_volume_inr": 36690.73,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 23831.41,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Amol Nagy",
+        "threat_score": 36.4,
+        "total_transactions": 3,
+        "total_volume_inr": 29161.53,
+        "failed_withdrawals": 2,
+        "wine_shop_spent_inr": 22941.35,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Simon Rai",
+        "threat_score": 38.8,
+        "total_transactions": 3,
+        "total_volume_inr": 31407.38,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 22040.38,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Reyansh Anne",
+        "threat_score": 32.9,
+        "total_transactions": 3,
+        "total_volume_inr": 29337.18,
+        "failed_withdrawals": 2,
+        "wine_shop_spent_inr": 19755.21,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Laban Prakash",
+        "threat_score": 42.9,
+        "total_transactions": 3,
+        "total_volume_inr": 32011.01,
+        "failed_withdrawals": 2,
+        "wine_shop_spent_inr": 18038.71,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Andrew Bora",
+        "threat_score": 32.1,
+        "total_transactions": 3,
+        "total_volume_inr": 23773.33,
+        "failed_withdrawals": 2,
+        "wine_shop_spent_inr": 15520.41,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Ranbir Bhalla",
+        "threat_score": 86.6,
+        "total_transactions": 3,
+        "total_volume_inr": 16172.47,
+        "failed_withdrawals": 2,
+        "wine_shop_spent_inr": 15438.47,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Nihal Rana",
+        "threat_score": 40.0,
+        "total_transactions": 3,
+        "total_volume_inr": 32640.98,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 14239.3,
+        "peer_transfer_count": 2
+      },
+      {
+        "suspect_name": "Md. Advik Golla",
+        "threat_score": 79.1,
+        "total_transactions": 3,
+        "total_volume_inr": 12138.63,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 11880.63,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Peter Barad",
+        "threat_score": 37.7,
+        "total_transactions": 3,
+        "total_volume_inr": 30521.36,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 10177.7,
+        "peer_transfer_count": 2
+      },
+      {
+        "suspect_name": "Md. Arjun Sheth",
+        "threat_score": 37.9,
+        "total_transactions": 3,
+        "total_volume_inr": 33068.37,
+        "failed_withdrawals": 2,
+        "wine_shop_spent_inr": 7986.93,
+        "peer_transfer_count": 2
+      },
+      {
+        "suspect_name": "Md. Ayush Baria",
+        "threat_score": 30.1,
+        "total_transactions": 3,
+        "total_volume_inr": 34655.03,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 7618.37,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Nachiket Desai",
+        "threat_score": 32.4,
+        "total_transactions": 1,
+        "total_volume_inr": 4961.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 4961.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Ojas Bhavsar",
+        "threat_score": 36.4,
+        "total_transactions": 3,
+        "total_volume_inr": 35290.67,
+        "failed_withdrawals": 3,
+        "wine_shop_spent_inr": 4913.0,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Vedant Padmanabhan",
+        "threat_score": 38.5,
+        "total_transactions": 1,
+        "total_volume_inr": 4869.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 4869.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Naveen Tailor",
+        "threat_score": 33.1,
+        "total_transactions": 1,
+        "total_volume_inr": 4826.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 4826.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Frederick Nori",
+        "threat_score": 30.5,
+        "total_transactions": 1,
+        "total_volume_inr": 4813.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 4813.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Jeet Sachdeva",
+        "threat_score": 34.0,
+        "total_transactions": 1,
+        "total_volume_inr": 4743.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 4743.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Daniel Raman",
+        "threat_score": 31.2,
+        "total_transactions": 1,
+        "total_volume_inr": 4718.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 4718.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Indrajit Kunda",
+        "threat_score": 67.8,
+        "total_transactions": 1,
+        "total_volume_inr": 4505.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 4505.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Raghav Manda",
+        "threat_score": 20.4,
+        "total_transactions": 1,
+        "total_volume_inr": 4319.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 4319.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Wriddhish Varty",
+        "threat_score": 30.9,
+        "total_transactions": 1,
+        "total_volume_inr": 3808.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 3808.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Gaurang Bhatti",
+        "threat_score": 22.5,
+        "total_transactions": 1,
+        "total_volume_inr": 3768.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 3768.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Frado Raja",
+        "threat_score": 31.2,
+        "total_transactions": 1,
+        "total_volume_inr": 3767.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 3767.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Christopher Pillai",
+        "threat_score": 48.5,
+        "total_transactions": 1,
+        "total_volume_inr": 3763.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 3763.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Balendra Nayak",
+        "threat_score": 72.3,
+        "total_transactions": 1,
+        "total_volume_inr": 3541.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 3541.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Balhaar Sami",
+        "threat_score": 22.6,
+        "total_transactions": 1,
+        "total_volume_inr": 2376.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 2376.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Tanveer Choudhary",
+        "threat_score": 31.1,
+        "total_transactions": 1,
+        "total_volume_inr": 2213.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 2213.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Amol Mody",
+        "threat_score": 20.4,
+        "total_transactions": 1,
+        "total_volume_inr": 2012.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 2012.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Onveer Bahl",
+        "threat_score": 26.4,
+        "total_transactions": 1,
+        "total_volume_inr": 1509.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 1509.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Robert Narain",
+        "threat_score": 50.5,
+        "total_transactions": 1,
+        "total_volume_inr": 1078.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 1078.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Azad Mannan",
+        "threat_score": 81.8,
+        "total_transactions": 1,
+        "total_volume_inr": 303.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 303.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Zehaan Wali",
+        "threat_score": 29.4,
+        "total_transactions": 1,
+        "total_volume_inr": 302.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 302.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Sathvik Mahajan",
+        "threat_score": 31.2,
+        "total_transactions": 3,
+        "total_volume_inr": 35944.39,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 2
+      },
+      {
+        "suspect_name": "Md. Zashil Mistry",
+        "threat_score": 70.5,
+        "total_transactions": 3,
+        "total_volume_inr": 21577.76,
+        "failed_withdrawals": 2,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Ayush Buch",
+        "threat_score": 35.2,
+        "total_transactions": 3,
+        "total_volume_inr": 20023.84,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Akshay Lata",
+        "threat_score": 27.3,
+        "total_transactions": 1,
+        "total_volume_inr": 4984.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Karan Mistry",
+        "threat_score": 36.8,
+        "total_transactions": 1,
+        "total_volume_inr": 4935.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Frederick Gade",
+        "threat_score": 27.4,
+        "total_transactions": 1,
+        "total_volume_inr": 4919.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Jatin Murthy",
+        "threat_score": 25.0,
+        "total_transactions": 1,
+        "total_volume_inr": 4727.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Wridesh Virk",
+        "threat_score": 32.6,
+        "total_transactions": 1,
+        "total_volume_inr": 4705.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Matthew Om",
+        "threat_score": 19.1,
+        "total_transactions": 1,
+        "total_volume_inr": 4700.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Maanav Tailor",
+        "threat_score": 36.5,
+        "total_transactions": 1,
+        "total_volume_inr": 4682.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Owen Ganesh",
+        "threat_score": 25.2,
+        "total_transactions": 1,
+        "total_volume_inr": 4654.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Gopal Radhakrishnan",
+        "threat_score": 36.0,
+        "total_transactions": 1,
+        "total_volume_inr": 4465.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. David Nayak",
+        "threat_score": 30.6,
+        "total_transactions": 1,
+        "total_volume_inr": 4459.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Devansh Vohra",
+        "threat_score": 34.8,
+        "total_transactions": 1,
+        "total_volume_inr": 4426.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Fitan Mander",
+        "threat_score": 23.0,
+        "total_transactions": 1,
+        "total_volume_inr": 4395.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Umang Sabharwal",
+        "threat_score": 25.6,
+        "total_transactions": 1,
+        "total_volume_inr": 4366.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Laban Sidhu",
+        "threat_score": 25.7,
+        "total_transactions": 1,
+        "total_volume_inr": 4311.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Warjas Khalsa",
+        "threat_score": 22.9,
+        "total_transactions": 1,
+        "total_volume_inr": 4305.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Qadim Solanki",
+        "threat_score": 26.4,
+        "total_transactions": 1,
+        "total_volume_inr": 4164.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Harsh Samra",
+        "threat_score": 36.6,
+        "total_transactions": 1,
+        "total_volume_inr": 4110.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Rudra Narula",
+        "threat_score": 23.0,
+        "total_transactions": 1,
+        "total_volume_inr": 4042.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Reyansh Mangal",
+        "threat_score": 35.1,
+        "total_transactions": 1,
+        "total_volume_inr": 3855.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Wridesh Bali",
+        "threat_score": 28.9,
+        "total_transactions": 1,
+        "total_volume_inr": 3732.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Harrison Sarna",
+        "threat_score": 36.5,
+        "total_transactions": 1,
+        "total_volume_inr": 3681.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Manan Subramanian",
+        "threat_score": 26.9,
+        "total_transactions": 1,
+        "total_volume_inr": 3675.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Ranbir Bains",
+        "threat_score": 19.4,
+        "total_transactions": 1,
+        "total_volume_inr": 3654.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Teerth Bhargava",
+        "threat_score": 66.5,
+        "total_transactions": 1,
+        "total_volume_inr": 3477.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Elijah Ganguly",
+        "threat_score": 19.4,
+        "total_transactions": 1,
+        "total_volume_inr": 3442.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Dominic Gupta",
+        "threat_score": 20.6,
+        "total_transactions": 1,
+        "total_volume_inr": 3421.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Veer Devi",
+        "threat_score": 35.9,
+        "total_transactions": 1,
+        "total_volume_inr": 3399.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Hemang Shere",
+        "threat_score": 25.4,
+        "total_transactions": 1,
+        "total_volume_inr": 3252.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Samar Nagar",
+        "threat_score": 60.7,
+        "total_transactions": 1,
+        "total_volume_inr": 3240.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Aarnav Sekhon",
+        "threat_score": 18.4,
+        "total_transactions": 1,
+        "total_volume_inr": 3237.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Oliver Dasgupta",
+        "threat_score": 20.1,
+        "total_transactions": 1,
+        "total_volume_inr": 3211.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Brijesh Goda",
+        "threat_score": 20.4,
+        "total_transactions": 1,
+        "total_volume_inr": 3171.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Frado Dhingra",
+        "threat_score": 27.4,
+        "total_transactions": 1,
+        "total_volume_inr": 3028.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Nicholas Karpe",
+        "threat_score": 22.6,
+        "total_transactions": 1,
+        "total_volume_inr": 2900.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Sathvik Pant",
+        "threat_score": 20.4,
+        "total_transactions": 1,
+        "total_volume_inr": 2794.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Falan Krishna",
+        "threat_score": 28.8,
+        "total_transactions": 1,
+        "total_volume_inr": 2787.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Tejas Nigam",
+        "threat_score": 20.3,
+        "total_transactions": 1,
+        "total_volume_inr": 2694.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Zaid Bhattacharyya",
+        "threat_score": 26.5,
+        "total_transactions": 1,
+        "total_volume_inr": 2579.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Alexander Master",
+        "threat_score": 24.1,
+        "total_transactions": 1,
+        "total_volume_inr": 2495.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Qarin Balan",
+        "threat_score": 24.8,
+        "total_transactions": 1,
+        "total_volume_inr": 2446.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. George Ramaswamy",
+        "threat_score": 32.7,
+        "total_transactions": 1,
+        "total_volume_inr": 2242.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Darsh Sampath",
+        "threat_score": 70.6,
+        "total_transactions": 1,
+        "total_volume_inr": 1980.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Rudra Sant",
+        "threat_score": 18.9,
+        "total_transactions": 1,
+        "total_volume_inr": 1933.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Samar Golla",
+        "threat_score": 21.2,
+        "total_transactions": 1,
+        "total_volume_inr": 1696.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Yagnesh Tak",
+        "threat_score": 25.3,
+        "total_transactions": 1,
+        "total_volume_inr": 1664.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Jeet Saha",
+        "threat_score": 23.0,
+        "total_transactions": 1,
+        "total_volume_inr": 1662.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Zaid Nair",
+        "threat_score": 41.9,
+        "total_transactions": 1,
+        "total_volume_inr": 1568.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Chakradhar Batta",
+        "threat_score": 18.4,
+        "total_transactions": 1,
+        "total_volume_inr": 1447.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Jagdish Acharya",
+        "threat_score": 25.3,
+        "total_transactions": 1,
+        "total_volume_inr": 1019.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Anay Minhas",
+        "threat_score": 23.4,
+        "total_transactions": 1,
+        "total_volume_inr": 890.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Baljiwan Hayer",
+        "threat_score": 25.3,
+        "total_transactions": 1,
+        "total_volume_inr": 862.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Ansh Sandal",
+        "threat_score": 27.6,
+        "total_transactions": 1,
+        "total_volume_inr": 857.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Yagnesh Zacharia",
+        "threat_score": 20.8,
+        "total_transactions": 1,
+        "total_volume_inr": 854.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Dev Mani",
+        "threat_score": 20.8,
+        "total_transactions": 1,
+        "total_volume_inr": 842.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Rayaan Bhavsar",
+        "threat_score": 25.2,
+        "total_transactions": 1,
+        "total_volume_inr": 765.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Harish Bali",
+        "threat_score": 36.5,
+        "total_transactions": 1,
+        "total_volume_inr": 662.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Vihaan Vohra",
+        "threat_score": 30.5,
+        "total_transactions": 1,
+        "total_volume_inr": 550.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Chanakya Chaudhari",
+        "threat_score": 21.1,
+        "total_transactions": 1,
+        "total_volume_inr": 354.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      },
+      {
+        "suspect_name": "Md. Kevin Ganesan",
+        "threat_score": 36.0,
+        "total_transactions": 1,
+        "total_volume_inr": 321.0,
+        "failed_withdrawals": 0,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 1
+      },
+      {
+        "suspect_name": "Md. Zayyan Ahluwalia",
+        "threat_score": 20.9,
+        "total_transactions": 1,
+        "total_volume_inr": 186.0,
+        "failed_withdrawals": 1,
+        "wine_shop_spent_inr": 0.0,
+        "peer_transfer_count": 0
+      }
+    ],
+    "total_volume_inr": 854246.34,
+    "transaction_count": 140
+  },
+  "nocturnal_anomalies": {
+    "total_anomalies": 65,
+    "calls": [
+      {
+        "record_id": "CDR-75e1ca1c",
+        "fir_number": "0288/2026",
+        "caller_number": "+91-1324892076",
+        "receiver_number": "+91-0083322930",
+        "call_type": "Incoming",
+        "duration_seconds": 821,
+        "timestamp": "2026-07-13 00:09:04",
+        "cell_tower_location": "Venus Wine Shop, N.M. Joshi Marg, Byculla (W)",
+        "caller_name": "Md. Elijah Rege",
+        "receiver_name": "+91-0083322930"
+      },
+      {
+        "record_id": "CDR-79464b39",
+        "fir_number": "0513/2026",
+        "caller_number": "+91-6111449019",
+        "receiver_number": "+91-4273670069",
+        "call_type": "SMS",
+        "duration_seconds": 265,
+        "timestamp": "2026-08-14 03:17:07",
+        "cell_tower_location": "Bhadakamkar Marg, Lamington Road, Grant Road",
+        "caller_name": "Md. Arjun Sheth",
+        "receiver_name": "+91-4273670069"
+      },
+      {
+        "record_id": "CDR-5aa80d4c",
+        "fir_number": "0635/2026",
+        "caller_number": "+91-0953911949",
+        "receiver_number": "+91-3211806618",
+        "call_type": "Incoming",
+        "duration_seconds": 653,
+        "timestamp": "2026-08-19 00:25:17",
+        "cell_tower_location": "Senapati Bapat Marg, Lower Parel, Mumbai",
+        "caller_name": "Md. Umang Mody",
+        "receiver_name": "+91-3211806618"
+      },
+      {
+        "record_id": "CDR-52f5ac41",
+        "fir_number": "0052/2026",
+        "caller_number": "+91-6993641756",
+        "receiver_number": "+91-8935396640",
+        "call_type": "Outgoing",
+        "duration_seconds": 664,
+        "timestamp": "2026-07-21 02:11:39",
+        "cell_tower_location": "Venus Wine Shop, N.M. Joshi Marg, Byculla (W)",
+        "caller_name": "Md. Ayush Baria",
+        "receiver_name": "+91-8935396640"
+      },
+      {
+        "record_id": "CDR-9bef94ad",
+        "fir_number": "0161/2026",
+        "caller_number": "+91-0327979516",
+        "receiver_number": "+91-1296901195",
+        "call_type": "Incoming",
+        "duration_seconds": 785,
+        "timestamp": "2026-07-19 04:28:00",
+        "cell_tower_location": "Bhadakamkar Marg, Lamington Road, Grant Road",
+        "caller_name": "Md. Baljiwan Hayer",
+        "receiver_name": "+91-1296901195"
+      },
+      {
+        "record_id": "CDR-c1c8eaf9",
+        "fir_number": "0538/2026",
+        "caller_number": "+91-7245876065",
+        "receiver_number": "+91-7036067702",
+        "call_type": "SMS",
+        "duration_seconds": 465,
+        "timestamp": "2026-09-01 00:49:33",
+        "cell_tower_location": "Station Road Footpath, Agripada, Mumbai",
+        "caller_name": "Md. Devansh Vohra",
+        "receiver_name": "+91-7036067702"
+      },
+      {
+        "record_id": "CDR-c538142c",
+        "fir_number": "0869/2026",
+        "caller_number": "+91-0283885531",
+        "receiver_number": "+91-8101692629",
+        "call_type": "SMS",
+        "duration_seconds": 583,
+        "timestamp": "2026-08-19 00:46:30",
+        "cell_tower_location": "Bhadakamkar Marg, Lamington Road, Grant Road",
+        "caller_name": "Md. Fitan Mander",
+        "receiver_name": "+91-8101692629"
+      },
+      {
+        "record_id": "CDR-19a95182",
+        "fir_number": "0370/2026",
+        "caller_number": "+91-0909634931",
+        "receiver_number": "+91-8841380062",
+        "call_type": "Incoming",
+        "duration_seconds": 708,
+        "timestamp": "2026-08-27 01:07:01",
+        "cell_tower_location": "Station Road Footpath, Agripada, Mumbai",
+        "caller_name": "Md. Robert Narain",
+        "receiver_name": "+91-8841380062"
+      },
+      {
+        "record_id": "CDR-c3769942",
+        "fir_number": "0593/2026",
+        "caller_number": "+91-1407733840",
+        "receiver_number": "+91-3531160657",
+        "call_type": "Outgoing",
+        "duration_seconds": 681,
+        "timestamp": "2026-09-05 02:40:33",
+        "cell_tower_location": "Venus Wine Shop, N.M. Joshi Marg, Byculla (W)",
+        "caller_name": "Md. Tanveer Choudhary",
+        "receiver_name": "+91-3531160657"
+      },
+      {
+        "record_id": "CDR-c6c7d658",
+        "fir_number": "0634/2026",
+        "caller_number": "+91-8472516266",
+        "receiver_number": "+91-2769136542",
+        "call_type": "Incoming",
+        "duration_seconds": 224,
+        "timestamp": "2026-09-04 00:47:56",
+        "cell_tower_location": "MIDC Road, Gavdevi, Thakurli (East), Thane",
+        "caller_name": "Md. Azad Mannan",
+        "receiver_name": "+91-2769136542"
+      },
+      {
+        "record_id": "CDR-52a02471",
+        "fir_number": "0605/2026",
+        "caller_number": "+91-0193610079",
+        "receiver_number": "+91-1746159750",
+        "call_type": "SMS",
+        "duration_seconds": 633,
+        "timestamp": "2026-08-25 01:07:33",
+        "cell_tower_location": "Senapati Bapat Marg, Lower Parel, Mumbai",
+        "caller_name": "Md. Reyansh Mangal",
+        "receiver_name": "+91-1746159750"
+      },
+      {
+        "record_id": "CDR-d342f360",
+        "fir_number": "0456/2026",
+        "caller_number": "+91-2751214628",
+        "receiver_number": "+91-4171972095",
+        "call_type": "Incoming",
+        "duration_seconds": 584,
+        "timestamp": "2026-07-17 00:17:08",
+        "cell_tower_location": "Venus Wine Shop, N.M. Joshi Marg, Byculla (W)",
+        "caller_name": "Md. Jeet Saha",
+        "receiver_name": "+91-4171972095"
+      },
+      {
+        "record_id": "CDR-3420991d",
+        "fir_number": "0263/2026",
+        "caller_number": "+91-0333553548",
+        "receiver_number": "+91-7507465885",
+        "call_type": "Incoming",
+        "duration_seconds": 857,
+        "timestamp": "2026-07-15 04:41:45",
+        "cell_tower_location": "Senapati Bapat Marg, Lower Parel, Mumbai",
+        "caller_name": "Md. Frado Dhingra",
+        "receiver_name": "+91-7507465885"
+      },
+      {
+        "record_id": "CDR-5b9c03e9",
+        "fir_number": "0039/2026",
+        "caller_number": "+91-1549231524",
+        "receiver_number": "+91-3691955937",
+        "call_type": "Outgoing",
+        "duration_seconds": 662,
+        "timestamp": "2026-07-22 06:21:53",
+        "cell_tower_location": "Senapati Bapat Marg, Lower Parel, Mumbai",
+        "caller_name": "Md. Naveen Tailor",
+        "receiver_name": "+91-3691955937"
+      },
+      {
+        "record_id": "CDR-89ee722a",
+        "fir_number": "0856/2026",
+        "caller_number": "+91-9954528199",
+        "receiver_number": "+91-4983630267",
+        "call_type": "Incoming",
+        "duration_seconds": 364,
+        "timestamp": "2026-09-02 00:02:52",
+        "cell_tower_location": "Venus Wine Shop, N.M. Joshi Marg, Byculla (W)",
+        "caller_name": "Md. Dominic Gupta",
+        "receiver_name": "+91-4983630267"
+      },
+      {
+        "record_id": "CDR-697147f1",
+        "fir_number": "0225/2026",
+        "caller_number": "+91-1608300776",
+        "receiver_number": "+91-9641070073",
+        "call_type": "SMS",
+        "duration_seconds": 882,
+        "timestamp": "2026-07-27 02:29:13",
+        "cell_tower_location": "Madanpura, Baban Galli, Byculla (W)",
+        "caller_name": "Md. Vihaan Vohra",
+        "receiver_name": "+91-9641070073"
+      },
+      {
+        "record_id": "CDR-bca6e856",
+        "fir_number": "0683/2026",
+        "caller_number": "+91-0908250618",
+        "receiver_number": "+91-3923216148",
+        "call_type": "Incoming",
+        "duration_seconds": 382,
+        "timestamp": "2026-08-01 05:04:02",
+        "cell_tower_location": "Venus Wine Shop, N.M. Joshi Marg, Byculla (W)",
+        "caller_name": "Md. David Nayak",
+        "receiver_name": "+91-3923216148"
+      },
+      {
+        "record_id": "CDR-057b2fce",
+        "fir_number": "0755/2026",
+        "caller_number": "+91-1359460122",
+        "receiver_number": "+91-1364678894",
+        "call_type": "SMS",
+        "duration_seconds": 833,
+        "timestamp": "2026-08-16 03:53:19",
+        "cell_tower_location": "Station Road Footpath, Agripada, Mumbai",
+        "caller_name": "Md. Hemang Shere",
+        "receiver_name": "+91-1364678894"
+      },
+      {
+        "record_id": "CDR-689a8b71",
+        "fir_number": "0353/2026",
+        "caller_number": "+91-1715766898",
+        "receiver_number": "+91-7171626711",
+        "call_type": "Outgoing",
+        "duration_seconds": 343,
+        "timestamp": "2026-08-27 04:46:31",
+        "cell_tower_location": "Bhadakamkar Marg, Lamington Road, Grant Road",
+        "caller_name": "Md. Balhaar Sami",
+        "receiver_name": "+91-7171626711"
+      },
+      {
+        "record_id": "CDR-ebae7ca9",
+        "fir_number": "0112/2026",
+        "caller_number": "+91-9749956561",
+        "receiver_number": "+91-4702317695",
+        "call_type": "Incoming",
+        "duration_seconds": 860,
+        "timestamp": "2026-08-09 04:43:46",
+        "cell_tower_location": "Station Road Footpath, Agripada, Mumbai",
+        "caller_name": "Md. Frederick Gade",
+        "receiver_name": "+91-4702317695"
+      },
+      {
+        "record_id": "CDR-ef3fd39b",
+        "fir_number": "0009/2026",
+        "caller_number": "+91-8771310836",
+        "receiver_number": "+91-9204164298",
+        "call_type": "SMS",
+        "duration_seconds": 589,
+        "timestamp": "2026-07-13 02:32:39",
+        "cell_tower_location": "MIDC Road, Gavdevi, Thakurli (East), Thane",
+        "caller_name": "Md. Rudra Narula",
+        "receiver_name": "+91-9204164298"
+      },
+      {
+        "record_id": "CDR-6accf278",
+        "fir_number": "0871/2026",
+        "caller_number": "+91-0277658032",
+        "receiver_number": "+91-8267178405",
+        "call_type": "Incoming",
+        "duration_seconds": 26,
+        "timestamp": "2026-07-31 06:41:21",
+        "cell_tower_location": "Bhadakamkar Marg, Lamington Road, Grant Road",
+        "caller_name": "Md. Harrison Sarna",
+        "receiver_name": "+91-8267178405"
+      },
+      {
+        "record_id": "CDR-7be17fb5",
+        "fir_number": "0895/2026",
+        "caller_number": "+91-7194825001",
+        "receiver_number": "+91-7740381949",
+        "call_type": "SMS",
+        "duration_seconds": 288,
+        "timestamp": "2026-08-13 00:49:52",
+        "cell_tower_location": "Madanpura, Baban Galli, Byculla (W)",
+        "caller_name": "Md. Gaurang Bhatti",
+        "receiver_name": "+91-7740381949"
+      },
+      {
+        "record_id": "CDR-e1abf8df",
+        "fir_number": "0055/2026",
+        "caller_number": "+91-1681067925",
+        "receiver_number": "+91-0162900589",
+        "call_type": "Incoming",
+        "duration_seconds": 500,
+        "timestamp": "2026-07-22 01:05:39",
+        "cell_tower_location": "Station Road Footpath, Agripada, Mumbai",
+        "caller_name": "Md. Yagnesh Zacharia",
+        "receiver_name": "+91-0162900589"
+      },
+      {
+        "record_id": "CDR-6195e218",
+        "fir_number": "0762/2026",
+        "caller_number": "+91-9405178098",
+        "receiver_number": "+91-0524161213",
+        "call_type": "Outgoing",
+        "duration_seconds": 85,
+        "timestamp": "2026-07-14 04:40:29",
+        "cell_tower_location": "Madanpura, Baban Galli, Byculla (W)",
+        "caller_name": "Md. Alexander Master",
+        "receiver_name": "+91-0524161213"
+      },
+      {
+        "record_id": "CDR-a83c3f3d",
+        "fir_number": "0943/2026",
+        "caller_number": "+91-3604313547",
+        "receiver_number": "+91-0122059359",
+        "call_type": "Outgoing",
+        "duration_seconds": 738,
+        "timestamp": "2026-08-16 03:54:30",
+        "cell_tower_location": "Station Road Footpath, Agripada, Mumbai",
+        "caller_name": "Md. Samar Nagar",
+        "receiver_name": "+91-0122059359"
+      },
+      {
+        "record_id": "CDR-1349b1d7",
+        "fir_number": "0173/2026",
+        "caller_number": "+91-7907250746",
+        "receiver_number": "+91-7007685069",
+        "call_type": "SMS",
+        "duration_seconds": 650,
+        "timestamp": "2026-08-20 03:38:42",
+        "cell_tower_location": "Senapati Bapat Marg, Lower Parel, Mumbai",
+        "caller_name": "Md. Chanakya Chaudhari",
+        "receiver_name": "+91-7007685069"
+      },
+      {
+        "record_id": "CDR-21d3dcb0",
+        "fir_number": "0021/2026",
+        "caller_number": "+91-5037744332",
+        "receiver_number": "+91-1540172781",
+        "call_type": "SMS",
+        "duration_seconds": 554,
+        "timestamp": "2026-09-01 03:37:48",
+        "cell_tower_location": "Venus Wine Shop, N.M. Joshi Marg, Byculla (W)",
+        "caller_name": "Md. Veer Devi",
+        "receiver_name": "+91-1540172781"
+      },
+      {
+        "record_id": "CDR-5c775ae2",
+        "fir_number": "0716/2026",
+        "caller_number": "+91-6400189254",
+        "receiver_number": "+91-7418523271",
+        "call_type": "SMS",
+        "duration_seconds": 768,
+        "timestamp": "2026-08-27 01:07:44",
+        "cell_tower_location": "Venus Wine Shop, N.M. Joshi Marg, Byculla (W)",
+        "caller_name": "Md. Jagdish Acharya",
+        "receiver_name": "+91-7418523271"
+      },
+      {
+        "record_id": "CDR-07bd1f65",
+        "fir_number": "0983/2026",
+        "caller_number": "+91-7611970993",
+        "receiver_number": "+91-9967968993",
+        "call_type": "SMS",
+        "duration_seconds": 434,
+        "timestamp": "2026-07-25 02:26:55",
+        "cell_tower_location": "Senapati Bapat Marg, Lower Parel, Mumbai",
+        "caller_name": "Md. Teerth Bhargava",
+        "receiver_name": "+91-9967968993"
+      },
+      {
+        "record_id": "CDR-4afb0a7b",
+        "fir_number": "0499/2026",
+        "caller_number": "+91-8164539334",
+        "receiver_number": "+91-2150790686",
+        "call_type": "Outgoing",
+        "duration_seconds": 514,
+        "timestamp": "2026-07-14 02:57:43",
+        "cell_tower_location": "Venus Wine Shop, N.M. Joshi Marg, Byculla (W)",
+        "caller_name": "Md. Manan Subramanian",
+        "receiver_name": "+91-2150790686"
+      },
+      {
+        "record_id": "CDR-e010d845",
+        "fir_number": "0777/2026",
+        "caller_number": "+91-3203295820",
+        "receiver_number": "+91-0863104046",
+        "call_type": "Incoming",
+        "duration_seconds": 472,
+        "timestamp": "2026-09-04 04:03:36",
+        "cell_tower_location": "Bhadakamkar Marg, Lamington Road, Grant Road",
+        "caller_name": "Md. Karan Mistry",
+        "receiver_name": "+91-0863104046"
+      },
+      {
+        "record_id": "CDR-9c08adad",
+        "fir_number": "0702/2026",
+        "caller_number": "+91-7339277969",
+        "receiver_number": "+91-4911446112",
+        "call_type": "SMS",
+        "duration_seconds": 473,
+        "timestamp": "2026-08-18 03:36:05",
+        "cell_tower_location": "Bhadakamkar Marg, Lamington Road, Grant Road",
+        "caller_name": "Md. Dev Mani",
+        "receiver_name": "+91-4911446112"
+      },
+      {
+        "record_id": "CDR-3ea",
+        "fir_number": "0760/2026",
+        "caller_number": "+91-7458410398",
+        "receiver_number": "+91-0751400478",
+        "call_type": "Outgoing",
+        "duration_seconds": 858,
+        "timestamp": "2026-08-28 01:58:20",
+        "cell_tower_location": "Senapati Bapat Marg, Lower Parel, Mumbai",
+        "caller_name": "Md. Darsh Sampath",
+        "receiver_name": "Md. Advik Golla"
+      },
+      {
+        "record_id": "CDR-3ed",
+        "fir_number": "0760/2026",
+        "caller_number": "+91-7458410398",
+        "receiver_number": "+91-0751400478",
+        "call_type": "Incoming",
+        "duration_seconds": 777,
+        "timestamp": "2026-08-15 02:34:15",
+        "cell_tower_location": "Madanpura, Baban Galli, Byculla (W)",
+        "caller_name": "Md. Darsh Sampath",
+        "receiver_name": "Md. Advik Golla"
+      },
+      {
+        "record_id": "CDR-3f1",
+        "fir_number": "0254/2026",
+        "caller_number": "+91-2236381844",
+        "receiver_number": "+91-7611970993",
+        "call_type": "SMS",
+        "duration_seconds": 0,
+        "timestamp": "2026-08-09 02:48:50",
+        "cell_tower_location": "Venus Wine Shop, N.M. Joshi Marg, Byculla (W)",
+        "caller_name": "Md. Ranbir Bhalla",
+        "receiver_name": "Md. Teerth Bhargava"
+      },
+      {
+        "record_id": "CDR-3f6",
+        "fir_number": "0847/2026",
+        "caller_number": "+91-6926567843",
+        "receiver_number": "+91-8472516266",
+        "call_type": "SMS",
+        "duration_seconds": 0,
+        "timestamp": "2026-08-15 03:26:18",
+        "cell_tower_location": "Venus Wine Shop, N.M. Joshi Marg, Byculla (W)",
+        "caller_name": "Md. Indrajit Kunda",
+        "receiver_name": "Md. Azad Mannan"
+      },
+      {
+        "record_id": "CDR-3f9",
+        "fir_number": "0847/2026",
+        "caller_number": "+91-6926567843",
+        "receiver_number": "+91-8472516266",
+        "call_type": "Outgoing",
+        "duration_seconds": 123,
+        "timestamp": "2026-08-25 01:17:19",
+        "cell_tower_location": "Venus Wine Shop, N.M. Joshi Marg, Byculla (W)",
+        "caller_name": "Md. Indrajit Kunda",
+        "receiver_name": "Md. Azad Mannan"
+      },
+      {
+        "record_id": "CDR-3fa",
+        "fir_number": "0847/2026",
+        "caller_number": "+91-6926567843",
+        "receiver_number": "+91-8472516266",
+        "call_type": "SMS",
+        "duration_seconds": 0,
+        "timestamp": "2026-08-14 02:34:34",
+        "cell_tower_location": "Madanpura, Baban Galli, Byculla (W)",
+        "caller_name": "Md. Indrajit Kunda",
+        "receiver_name": "Md. Azad Mannan"
+      },
+      {
+        "record_id": "CDR-3fb",
+        "fir_number": "0847/2026",
+        "caller_number": "+91-6926567843",
+        "receiver_number": "+91-8472516266",
+        "call_type": "Outgoing",
+        "duration_seconds": 571,
+        "timestamp": "2026-08-09 01:53:56",
+        "cell_tower_location": "Station Road Footpath, Agripada, Mumbai",
+        "caller_name": "Md. Indrajit Kunda",
+        "receiver_name": "Md. Azad Mannan"
+      },
+      {
+        "record_id": "CDR-3fe",
+        "fir_number": "0191/2026",
+        "caller_number": "+91-7309005344",
+        "receiver_number": "+91-8224462027",
+        "call_type": "SMS",
+        "duration_seconds": 0,
+        "timestamp": "2026-08-25 03:42:16",
+        "cell_tower_location": "Bhadakamkar Marg, Lamington Road, Grant Road",
+        "caller_name": "Md. Balendra Nayak",
+        "receiver_name": "Md. Tarak Sahni"
+      },
+      {
+        "record_id": "CDR-400",
+        "fir_number": "0191/2026",
+        "caller_number": "+91-7309005344",
+        "receiver_number": "+91-8224462027",
+        "call_type": "SMS",
+        "duration_seconds": 0,
+        "timestamp": "2026-08-25 01:48:30",
+        "cell_tower_location": "Senapati Bapat Marg, Lower Parel, Mumbai",
+        "caller_name": "Md. Balendra Nayak",
+        "receiver_name": "Md. Tarak Sahni"
+      },
+      {
+        "record_id": "CDR-402",
+        "fir_number": "0983/2026",
+        "caller_number": "+91-7611970993",
+        "receiver_number": "+91-0356058771",
+        "call_type": "SMS",
+        "duration_seconds": 0,
+        "timestamp": "2026-08-03 02:56:41",
+        "cell_tower_location": "Station Road Footpath, Agripada, Mumbai",
+        "caller_name": "Md. Teerth Bhargava",
+        "receiver_name": "Md. Zashil Mistry"
+      },
+      {
+        "record_id": "CDR-403",
+        "fir_number": "0983/2026",
+        "caller_number": "+91-7611970993",
+        "receiver_number": "+91-0356058771",
+        "call_type": "SMS",
+        "duration_seconds": 0,
+        "timestamp": "2026-08-25 03:18:52",
+        "cell_tower_location": "Senapati Bapat Marg, Lower Parel, Mumbai",
+        "caller_name": "Md. Teerth Bhargava",
+        "receiver_name": "Md. Zashil Mistry"
+      },
+      {
+        "record_id": "CDR-407",
+        "fir_number": "0943/2026",
+        "caller_number": "+91-3604313547",
+        "receiver_number": "+91-7611970993",
+        "call_type": "Incoming",
+        "duration_seconds": 283,
+        "timestamp": "2026-08-08 02:31:11",
+        "cell_tower_location": "Madanpura, Baban Galli, Byculla (W)",
+        "caller_name": "Md. Samar Nagar",
+        "receiver_name": "Md. Teerth Bhargava"
+      },
+      {
+        "record_id": "CDR-40d",
+        "fir_number": "0468/2026",
+        "caller_number": "+91-0077344960",
+        "receiver_number": "+91-0953911949",
+        "call_type": "Outgoing",
+        "duration_seconds": 776,
+        "timestamp": "2026-08-02 02:13:35",
+        "cell_tower_location": "Bhadakamkar Marg, Lamington Road, Grant Road",
+        "caller_name": "Md. George Ramaswamy",
+        "receiver_name": "Md. Umang Mody"
+      },
+      {
+        "record_id": "CDR-410",
+        "fir_number": "0871/2026",
+        "caller_number": "+91-0277658032",
+        "receiver_number": "+91-6463599241",
+        "call_type": "Incoming",
+        "duration_seconds": 81,
+        "timestamp": "2026-08-21 01:15:58",
+        "cell_tower_location": "Venus Wine Shop, N.M. Joshi Marg, Byculla (W)",
+        "caller_name": "Md. Harrison Sarna",
+        "receiver_name": "Md. Harish Bali"
+      },
+      {
+        "record_id": "CDR-414",
+        "fir_number": "0871/2026",
+        "caller_number": "+91-0277658032",
+        "receiver_number": "+91-6463599241",
+        "call_type": "Incoming",
+        "duration_seconds": 89,
+        "timestamp": "2026-08-19 01:57:30",
+        "cell_tower_location": "Station Road Footpath, Agripada, Mumbai",
+        "caller_name": "Md. Harrison Sarna",
+        "receiver_name": "Md. Harish Bali"
+      },
+      {
+        "record_id": "CDR-415",
+        "fir_number": "0871/2026",
+        "caller_number": "+91-0277658032",
+        "receiver_number": "+91-6463599241",
+        "call_type": "Incoming",
+        "duration_seconds": 628,
+        "timestamp": "2026-08-16 03:13:42",
+        "cell_tower_location": "Station Road Footpath, Agripada, Mumbai",
+        "caller_name": "Md. Harrison Sarna",
+        "receiver_name": "Md. Harish Bali"
+      },
+      {
+        "record_id": "CDR-416",
+        "fir_number": "0871/2026",
+        "caller_number": "+91-0277658032",
+        "receiver_number": "+91-6463599241",
+        "call_type": "Incoming",
+        "duration_seconds": 100,
+        "timestamp": "2026-08-20 02:53:25",
+        "cell_tower_location": "Senapati Bapat Marg, Lower Parel, Mumbai",
+        "caller_name": "Md. Harrison Sarna",
+        "receiver_name": "Md. Harish Bali"
+      },
+      {
+        "record_id": "CDR-417",
+        "fir_number": "0871/2026",
+        "caller_number": "+91-0277658032",
+        "receiver_number": "+91-6463599241",
+        "call_type": "Incoming",
+        "duration_seconds": 613,
+        "timestamp": "2026-08-08 01:49:15",
+        "cell_tower_location": "Senapati Bapat Marg, Lower Parel, Mumbai",
+        "caller_name": "Md. Harrison Sarna",
+        "receiver_name": "Md. Harish Bali"
+      },
+      {
+        "record_id": "CDR-419",
+        "fir_number": "0320/2026",
+        "caller_number": "+91-7774789752",
+        "receiver_number": "+91-2236381844",
+        "call_type": "Incoming",
+        "duration_seconds": 301,
+        "timestamp": "2026-08-13 03:52:51",
+        "cell_tower_location": "Bhadakamkar Marg, Lamington Road, Grant Road",
+        "caller_name": "Md. Pranit Arya",
+        "receiver_name": "Md. Ranbir Bhalla"
+      },
+      {
+        "record_id": "CDR-41a",
+        "fir_number": "0320/2026",
+        "caller_number": "+91-7774789752",
+        "receiver_number": "+91-2236381844",
+        "call_type": "Outgoing",
+        "duration_seconds": 353,
+        "timestamp": "2026-08-25 02:10:39",
+        "cell_tower_location": "Madanpura, Baban Galli, Byculla (W)",
+        "caller_name": "Md. Pranit Arya",
+        "receiver_name": "Md. Ranbir Bhalla"
+      },
+      {
+        "record_id": "CDR-41b",
+        "fir_number": "0320/2026",
+        "caller_number": "+91-7774789752",
+        "receiver_number": "+91-2236381844",
+        "call_type": "SMS",
+        "duration_seconds": 0,
+        "timestamp": "2026-08-04 02:44:23",
+        "cell_tower_location": "Madanpura, Baban Galli, Byculla (W)",
+        "caller_name": "Md. Pranit Arya",
+        "receiver_name": "Md. Ranbir Bhalla"
+      },
+      {
+        "record_id": "CDR-41c",
+        "fir_number": "0320/2026",
+        "caller_number": "+91-7774789752",
+        "receiver_number": "+91-2236381844",
+        "call_type": "Outgoing",
+        "duration_seconds": 165,
+        "timestamp": "2026-08-12 02:25:33",
+        "cell_tower_location": "Bhadakamkar Marg, Lamington Road, Grant Road",
+        "caller_name": "Md. Pranit Arya",
+        "receiver_name": "Md. Ranbir Bhalla"
+      },
+      {
+        "record_id": "CDR-41f",
+        "fir_number": "0320/2026",
+        "caller_number": "+91-7774789752",
+        "receiver_number": "+91-2236381844",
+        "call_type": "Outgoing",
+        "duration_seconds": 148,
+        "timestamp": "2026-08-04 03:27:28",
+        "cell_tower_location": "Madanpura, Baban Galli, Byculla (W)",
+        "caller_name": "Md. Pranit Arya",
+        "receiver_name": "Md. Ranbir Bhalla"
+      },
+      {
+        "record_id": "CDR-421",
+        "fir_number": "0635/2026",
+        "caller_number": "+91-0953911949",
+        "receiver_number": "+91-4860124675",
+        "call_type": "Outgoing",
+        "duration_seconds": 287,
+        "timestamp": "2026-08-28 01:15:50",
+        "cell_tower_location": "Senapati Bapat Marg, Lower Parel, Mumbai",
+        "caller_name": "Md. Umang Mody",
+        "receiver_name": "Md. Maanav Tailor"
+      },
+      {
+        "record_id": "CDR-424",
+        "fir_number": "0635/2026",
+        "caller_number": "+91-0953911949",
+        "receiver_number": "+91-4860124675",
+        "call_type": "Incoming",
+        "duration_seconds": 737,
+        "timestamp": "2026-08-05 01:33:47",
+        "cell_tower_location": "Madanpura, Baban Galli, Byculla (W)",
+        "caller_name": "Md. Umang Mody",
+        "receiver_name": "Md. Maanav Tailor"
+      },
+      {
+        "record_id": "CDR-425",
+        "fir_number": "0635/2026",
+        "caller_number": "+91-0953911949",
+        "receiver_number": "+91-4860124675",
+        "call_type": "Incoming",
+        "duration_seconds": 470,
+        "timestamp": "2026-08-05 01:29:33",
+        "cell_tower_location": "Station Road Footpath, Agripada, Mumbai",
+        "caller_name": "Md. Umang Mody",
+        "receiver_name": "Md. Maanav Tailor"
+      },
+      {
+        "record_id": "CDR-428",
+        "fir_number": "0635/2026",
+        "caller_number": "+91-0953911949",
+        "receiver_number": "+91-4860124675",
+        "call_type": "Incoming",
+        "duration_seconds": 196,
+        "timestamp": "2026-08-26 03:36:11",
+        "cell_tower_location": "Venus Wine Shop, N.M. Joshi Marg, Byculla (W)",
+        "caller_name": "Md. Umang Mody",
+        "receiver_name": "Md. Maanav Tailor"
+      },
+      {
+        "record_id": "CDR-42c",
+        "fir_number": "0370/2026",
+        "caller_number": "+91-0909634931",
+        "receiver_number": "+91-4293362242",
+        "call_type": "Outgoing",
+        "duration_seconds": 366,
+        "timestamp": "2026-08-09 02:59:27",
+        "cell_tower_location": "Bhadakamkar Marg, Lamington Road, Grant Road",
+        "caller_name": "Md. Robert Narain",
+        "receiver_name": "Md. Christopher Pillai"
+      },
+      {
+        "record_id": "CDR-42e",
+        "fir_number": "0370/2026",
+        "caller_number": "+91-0909634931",
+        "receiver_number": "+91-4293362242",
+        "call_type": "Incoming",
+        "duration_seconds": 148,
+        "timestamp": "2026-08-09 03:47:26",
+        "cell_tower_location": "Station Road Footpath, Agripada, Mumbai",
+        "caller_name": "Md. Robert Narain",
+        "receiver_name": "Md. Christopher Pillai"
+      },
+      {
+        "record_id": "CDR-430",
+        "fir_number": "0370/2026",
+        "caller_number": "+91-0909634931",
+        "receiver_number": "+91-4293362242",
+        "call_type": "SMS",
+        "duration_seconds": 0,
+        "timestamp": "2026-08-17 02:34:46",
+        "cell_tower_location": "Venus Wine Shop, N.M. Joshi Marg, Byculla (W)",
+        "caller_name": "Md. Robert Narain",
+        "receiver_name": "Md. Christopher Pillai"
+      },
+      {
+        "record_id": "CDR-436",
+        "fir_number": "0881/2026",
+        "caller_number": "+91-2530358841",
+        "receiver_number": "+91-2236381844",
+        "call_type": "SMS",
+        "duration_seconds": 0,
+        "timestamp": "2026-08-24 03:49:46",
+        "cell_tower_location": "Bhadakamkar Marg, Lamington Road, Grant Road",
+        "caller_name": "Md. Vedant Padmanabhan",
+        "receiver_name": "Md. Ranbir Bhalla"
+      },
+      {
+        "record_id": "CDR-437",
+        "fir_number": "0881/2026",
+        "caller_number": "+91-2530358841",
+        "receiver_number": "+91-2236381844",
+        "call_type": "Outgoing",
+        "duration_seconds": 591,
+        "timestamp": "2026-08-27 01:29:28",
+        "cell_tower_location": "Venus Wine Shop, N.M. Joshi Marg, Byculla (W)",
+        "caller_name": "Md. Vedant Padmanabhan",
+        "receiver_name": "Md. Ranbir Bhalla"
+      }
+    ],
+    "towers": [
+      {
+        "cell_tower_location": "Venus Wine Shop, N.M. Joshi Marg, Byculla (W)",
+        "nocturnal_call_count": 16
+      },
+      {
+        "cell_tower_location": "Bhadakamkar Marg, Lamington Road, Grant Road",
+        "nocturnal_call_count": 13
+      },
+      {
+        "cell_tower_location": "Senapati Bapat Marg, Lower Parel, Mumbai",
+        "nocturnal_call_count": 12
+      },
+      {
+        "cell_tower_location": "Station Road Footpath, Agripada, Mumbai",
+        "nocturnal_call_count": 12
+      },
+      {
+        "cell_tower_location": "Madanpura, Baban Galli, Byculla (W)",
+        "nocturnal_call_count": 10
+      },
+      {
+        "cell_tower_location": "MIDC Road, Gavdevi, Thakurli (East), Thane",
+        "nocturnal_call_count": 2
+      }
+    ]
+  },
+  "alerts": [
+    {
+      "level": "CRITICAL (RED ALERT)",
+      "title": "HIGH THREAT SUSPECT: Md. Ranbir Bhalla",
+      "details": "Threat Score 86.6/100. Phone: +91-2236381844. Action: IMMEDIATE SURVEILLANCE & LOOKOUT NOTICE. Issue location tracking orders."
+    },
+    {
+      "level": "CRITICAL (RED ALERT)",
+      "title": "HIGH THREAT SUSPECT: Md. Azad Mannan",
+      "details": "Threat Score 81.8/100. Phone: +91-8472516266. Action: IMMEDIATE SURVEILLANCE & LOOKOUT NOTICE. Issue location tracking orders."
+    },
+    {
+      "level": "CRITICAL (RED ALERT)",
+      "title": "HIGH THREAT SUSPECT: Md. Advik Golla",
+      "details": "Threat Score 79.1/100. Phone: +91-0751400478. Action: IMMEDIATE SURVEILLANCE & LOOKOUT NOTICE. Issue location tracking orders."
+    },
+    {
+      "level": "CRITICAL (RED ALERT)",
+      "title": "HIGH THREAT SUSPECT: Md. Balendra Nayak",
+      "details": "Threat Score 72.3/100. Phone: +91-7309005344. Action: IMMEDIATE SURVEILLANCE & LOOKOUT NOTICE. Issue location tracking orders."
+    },
+    {
+      "level": "CRITICAL (RED ALERT)",
+      "title": "HIGH THREAT SUSPECT: Md. Darsh Sampath",
+      "details": "Threat Score 70.6/100. Phone: +91-7458410398. Action: IMMEDIATE SURVEILLANCE & LOOKOUT NOTICE. Issue location tracking orders."
+    },
+    {
+      "level": "CRITICAL (RED ALERT)",
+      "title": "HIGH THREAT SUSPECT: Md. Zashil Mistry",
+      "details": "Threat Score 70.5/100. Phone: +91-0356058771. Action: IMMEDIATE SURVEILLANCE & LOOKOUT NOTICE. Issue location tracking orders."
+    },
+    {
+      "level": "URGENT MEETING ALERT",
+      "title": "CONFIRMED PHYSICAL MEETING: Md. Samar Nagar & Md. Teerth Bhargava",
+      "details": "Sighted at camera MH-CCTV-2466 (Main Road Traffic Signal, Agripada, Mumbai) with 5 prior calls. Time gap: 10.0 min. Match Confidence: 97.0%"
+    },
+    {
+      "level": "URGENT MEETING ALERT",
+      "title": "CONFIRMED PHYSICAL MEETING: Md. Balendra Nayak & Md. Tarak Sahni",
+      "details": "Sighted at camera MH-CCTV-1652 (Market Entrance, Byculla West, Mumbai) with 4 prior calls. Time gap: 10.0 min. Match Confidence: 96.0%"
+    },
+    {
+      "level": "URGENT MEETING ALERT",
+      "title": "CONFIRMED PHYSICAL MEETING: Md. Azad Mannan & Md. Indrajit Kunda",
+      "details": "Sighted at camera MH-CCTV-1652 (Market Entrance, Byculla West, Mumbai) with 7 prior calls. Time gap: 10.0 min. Match Confidence: 95.0%"
+    },
+    {
+      "level": "URGENT MEETING ALERT",
+      "title": "CONFIRMED PHYSICAL MEETING: Md. Advik Golla & Md. Darsh Sampath",
+      "details": "Sighted at camera MH-CCTV-5719 (Flyover Service Road, Lower Parel, Mumbai) with 8 prior calls. Time gap: 10.0 min. Match Confidence: 91.0%"
+    },
+    {
+      "level": "URGENT MEETING ALERT",
+      "title": "CONFIRMED PHYSICAL MEETING: Md. Advik Golla & Md. Darsh Sampath",
+      "details": "Sighted at camera MH-CCTV-1652 (Market Entrance, Byculla West, Mumbai) with 8 prior calls. Time gap: 10.0 min. Match Confidence: 91.0%"
+    },
+    {
+      "level": "CRIME RING ACTIVATION",
+      "title": "ACTIVE SYNDICATE RING-01 (Leader: Md. Ranbir Bhalla)",
+      "details": "12 members active. 38 calls & 6 CCTV meetings recorded."
+    }
+  ]
+}
