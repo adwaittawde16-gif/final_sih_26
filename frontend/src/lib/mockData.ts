@@ -127,36 +127,147 @@ export const fallbackCDRPairs: CDRSummaryResponse = {
 };
 
 export const fallbackCDRGraph: NetworkGraphResponse = {
-  total_nodes: 6,
-  total_edges: 8,
+  total_nodes: 20,
+  total_edges: 28,
   top_key_influencers: [
     {
-      id: "node-1",
+      id: "Md. Ranbir Bhalla",
       label: "Md. Ranbir Bhalla",
       phone: "+91-2236381844",
       threat_score: 94.2,
       degree_centrality: 0.85,
       betweenness_centrality: 0.78,
       total_calls_count: 240,
-      connected_entities_count: 5,
+      connected_entities_count: 7,
       nocturnal_calls_count: 62,
+      risk_tier: "CRITICAL",
+      gang_id: "GANG-01",
+      gang_name: "Gang 1 — Byculla Syndicate"
+    },
+    {
+      id: "Md. Advik Golla",
+      label: "Md. Advik Golla",
+      phone: "+91-0751400478",
+      threat_score: 91.0,
+      degree_centrality: 0.76,
+      betweenness_centrality: 0.71,
+      total_calls_count: 195,
+      connected_entities_count: 6,
+      nocturnal_calls_count: 48,
+      risk_tier: "CRITICAL",
+      gang_id: "GANG-02",
+      gang_name: "Gang 2 — Lower Parel Ring"
+    },
+    {
+      id: "Md. Azad Mannan",
+      label: "Md. Azad Mannan",
+      phone: "+91-8472516266",
+      threat_score: 87.4,
+      degree_centrality: 0.69,
+      betweenness_centrality: 0.64,
+      total_calls_count: 172,
+      connected_entities_count: 5,
+      nocturnal_calls_count: 39,
+      risk_tier: "CRITICAL",
+      gang_id: "GANG-03",
+      gang_name: "Gang 3 — Kurla Mule Network"
+    },
+    {
+      id: "Md. Maanav Tailor",
+      label: "Md. Maanav Tailor",
+      phone: "+91-5405416287",
+      threat_score: 84.8,
+      degree_centrality: 0.65,
+      betweenness_centrality: 0.58,
+      total_calls_count: 160,
+      connected_entities_count: 5,
+      nocturnal_calls_count: 34,
+      risk_tier: "HIGH",
+      gang_id: "GANG-04",
+      gang_name: "Gang 4 — Dharavi Extortion Group"
+    },
+    {
+      id: "Md. Teerth Bhargava",
+      label: "Md. Teerth Bhargava",
+      phone: "+91-7611970993",
+      threat_score: 88.5,
+      degree_centrality: 0.72,
+      betweenness_centrality: 0.65,
+      total_calls_count: 180,
+      connected_entities_count: 5,
+      nocturnal_calls_count: 41,
       risk_tier: "CRITICAL",
       gang_id: "GANG-01",
       gang_name: "Gang 1 — Byculla Syndicate"
     }
   ],
   nodes: [
-    { id: "Md. Ranbir Bhalla", label: "Md. Ranbir Bhalla", phone: "+91-2236381844", threat_score: 94.2, degree_centrality: 0.85, betweenness_centrality: 0.78, total_calls_count: 240, connected_entities_count: 5, nocturnal_calls_count: 62, risk_tier: "CRITICAL", gang_id: "GANG-01", gang_name: "Gang 1 — Byculla Syndicate" },
-    { id: "Md. Teerth Bhargava", label: "Md. Teerth Bhargava", phone: "+91-7611970993", threat_score: 88.5, degree_centrality: 0.72, betweenness_centrality: 0.65, total_calls_count: 180, connected_entities_count: 4, nocturnal_calls_count: 41, risk_tier: "CRITICAL", gang_id: "GANG-01", gang_name: "Gang 1 — Byculla Syndicate" },
+    // GANG-01 (Byculla / Alpha)
+    { id: "Md. Ranbir Bhalla", label: "Md. Ranbir Bhalla", phone: "+91-2236381844", threat_score: 94.2, degree_centrality: 0.85, betweenness_centrality: 0.78, total_calls_count: 240, connected_entities_count: 7, nocturnal_calls_count: 62, risk_tier: "CRITICAL", gang_id: "GANG-01", gang_name: "Gang 1 — Byculla Syndicate" },
+    { id: "Md. Teerth Bhargava", label: "Md. Teerth Bhargava", phone: "+91-7611970993", threat_score: 88.5, degree_centrality: 0.72, betweenness_centrality: 0.65, total_calls_count: 180, connected_entities_count: 5, nocturnal_calls_count: 41, risk_tier: "CRITICAL", gang_id: "GANG-01", gang_name: "Gang 1 — Byculla Syndicate" },
     { id: "Md. Vedant Padmanabhan", label: "Md. Vedant Padmanabhan", phone: "+91-2530358841", threat_score: 84.1, degree_centrality: 0.68, betweenness_centrality: 0.54, total_calls_count: 150, connected_entities_count: 4, nocturnal_calls_count: 35, risk_tier: "HIGH", gang_id: "GANG-01", gang_name: "Gang 1 — Byculla Syndicate" },
-    { id: "Md. Pranit Arya", label: "Md. Pranit Arya", phone: "+91-7774789752", threat_score: 79.6, degree_centrality: 0.58, betweenness_centrality: 0.42, total_calls_count: 120, connected_entities_count: 3, nocturnal_calls_count: 28, risk_tier: "HIGH", gang_id: "GANG-02", gang_name: "Gang 2 — Lower Parel Ring" },
-    { id: "Md. Hardik Kant", label: "Md. Hardik Kant", phone: "+91-8482336846", threat_score: 73.4, degree_centrality: 0.45, betweenness_centrality: 0.30, total_calls_count: 90, connected_entities_count: 2, nocturnal_calls_count: 15, risk_tier: "MODERATE", gang_id: "GANG-02", gang_name: "Gang 2 — Lower Parel Ring" }
+    { id: "Md. Zashil Mistry", label: "Md. Zashil Mistry", phone: "+91-9820145612", threat_score: 68.2, degree_centrality: 0.45, betweenness_centrality: 0.28, total_calls_count: 85, connected_entities_count: 3, nocturnal_calls_count: 18, risk_tier: "MODERATE", gang_id: "GANG-01", gang_name: "Gang 1 — Byculla Syndicate" },
+    { id: "Md. Samar Nagar", label: "Md. Samar Nagar", phone: "+91-9123847560", threat_score: 62.0, degree_centrality: 0.38, betweenness_centrality: 0.19, total_calls_count: 70, connected_entities_count: 3, nocturnal_calls_count: 14, risk_tier: "MODERATE", gang_id: "GANG-01", gang_name: "Gang 1 — Byculla Syndicate" },
+
+    // GANG-02 (Lower Parel / Beta)
+    { id: "Md. Advik Golla", label: "Md. Advik Golla", phone: "+91-0751400478", threat_score: 91.0, degree_centrality: 0.76, betweenness_centrality: 0.71, total_calls_count: 195, connected_entities_count: 6, nocturnal_calls_count: 48, risk_tier: "CRITICAL", gang_id: "GANG-02", gang_name: "Gang 2 — Lower Parel Ring" },
+    { id: "Md. Darsh Sampath", label: "Md. Darsh Sampath", phone: "+91-7458410398", threat_score: 78.4, degree_centrality: 0.55, betweenness_centrality: 0.38, total_calls_count: 110, connected_entities_count: 4, nocturnal_calls_count: 24, risk_tier: "HIGH", gang_id: "GANG-02", gang_name: "Gang 2 — Lower Parel Ring" },
+    { id: "Md. Pranit Arya", label: "Md. Pranit Arya", phone: "+91-7774789752", threat_score: 79.6, degree_centrality: 0.58, betweenness_centrality: 0.42, total_calls_count: 120, connected_entities_count: 4, nocturnal_calls_count: 28, risk_tier: "HIGH", gang_id: "GANG-02", gang_name: "Gang 2 — Lower Parel Ring" },
+    { id: "Md. Hardik Kant", label: "Md. Hardik Kant", phone: "+91-8482336846", threat_score: 73.4, degree_centrality: 0.45, betweenness_centrality: 0.30, total_calls_count: 90, connected_entities_count: 3, nocturnal_calls_count: 15, risk_tier: "MODERATE", gang_id: "GANG-02", gang_name: "Gang 2 — Lower Parel Ring" },
+    { id: "Md. Christopher Pillai", label: "Md. Christopher Pillai", phone: "+91-4293362242", threat_score: 65.1, degree_centrality: 0.40, betweenness_centrality: 0.22, total_calls_count: 75, connected_entities_count: 3, nocturnal_calls_count: 12, risk_tier: "MODERATE", gang_id: "GANG-02", gang_name: "Gang 2 — Lower Parel Ring" },
+
+    // GANG-03 (Kurla / Gamma)
+    { id: "Md. Azad Mannan", label: "Md. Azad Mannan", phone: "+91-8472516266", threat_score: 87.4, degree_centrality: 0.69, betweenness_centrality: 0.64, total_calls_count: 172, connected_entities_count: 5, nocturnal_calls_count: 39, risk_tier: "CRITICAL", gang_id: "GANG-03", gang_name: "Gang 3 — Kurla Mule Network" },
+    { id: "Md. Indrajit Kunda", label: "Md. Indrajit Kunda", phone: "+91-9876543210", threat_score: 76.5, degree_centrality: 0.52, betweenness_centrality: 0.35, total_calls_count: 105, connected_entities_count: 4, nocturnal_calls_count: 22, risk_tier: "HIGH", gang_id: "GANG-03", gang_name: "Gang 3 — Kurla Mule Network" },
+    { id: "Md. Harish Bali", label: "Md. Harish Bali", phone: "+91-9456123789", threat_score: 71.0, degree_centrality: 0.48, betweenness_centrality: 0.29, total_calls_count: 95, connected_entities_count: 3, nocturnal_calls_count: 18, risk_tier: "MODERATE", gang_id: "GANG-03", gang_name: "Gang 3 — Kurla Mule Network" },
+    { id: "Md. Harrison Sarna", label: "Md. Harrison Sarna", phone: "+91-9123456780", threat_score: 64.2, degree_centrality: 0.39, betweenness_centrality: 0.18, total_calls_count: 68, connected_entities_count: 3, nocturnal_calls_count: 11, risk_tier: "MODERATE", gang_id: "GANG-03", gang_name: "Gang 3 — Kurla Mule Network" },
+    { id: "Md. Tanveer Choudhary", label: "Md. Tanveer Choudhary", phone: "+91-3531160657", threat_score: 58.0, degree_centrality: 0.32, betweenness_centrality: 0.14, total_calls_count: 52, connected_entities_count: 2, nocturnal_calls_count: 8, risk_tier: "MODERATE", gang_id: "GANG-03", gang_name: "Gang 3 — Kurla Mule Network" },
+
+    // GANG-04 (Dharavi / Delta)
+    { id: "Md. Maanav Tailor", label: "Md. Maanav Tailor", phone: "+91-5405416287", threat_score: 84.8, degree_centrality: 0.65, betweenness_centrality: 0.58, total_calls_count: 160, connected_entities_count: 5, nocturnal_calls_count: 34, risk_tier: "HIGH", gang_id: "GANG-04", gang_name: "Gang 4 — Dharavi Extortion Group" },
+    { id: "Md. Umang Mody", label: "Md. Umang Mody", phone: "+91-9321456789", threat_score: 77.2, degree_centrality: 0.54, betweenness_centrality: 0.36, total_calls_count: 112, connected_entities_count: 4, nocturnal_calls_count: 25, risk_tier: "HIGH", gang_id: "GANG-04", gang_name: "Gang 4 — Dharavi Extortion Group" },
+    { id: "Md. George Ramaswamy", label: "Md. George Ramaswamy", phone: "+91-9456781234", threat_score: 69.8, degree_centrality: 0.44, betweenness_centrality: 0.25, total_calls_count: 84, connected_entities_count: 3, nocturnal_calls_count: 16, risk_tier: "MODERATE", gang_id: "GANG-04", gang_name: "Gang 4 — Dharavi Extortion Group" },
+    { id: "Md. Balendra Nayak", label: "Md. Balendra Nayak", phone: "+91-9937146397", threat_score: 63.5, degree_centrality: 0.37, betweenness_centrality: 0.17, total_calls_count: 65, connected_entities_count: 3, nocturnal_calls_count: 10, risk_tier: "MODERATE", gang_id: "GANG-04", gang_name: "Gang 4 — Dharavi Extortion Group" },
+    { id: "Md. Tarak Sahni", label: "Md. Tarak Sahni", phone: "+91-8535218781", threat_score: 55.0, degree_centrality: 0.30, betweenness_centrality: 0.12, total_calls_count: 45, connected_entities_count: 2, nocturnal_calls_count: 6, risk_tier: "LOW", gang_id: "GANG-04", gang_name: "Gang 4 — Dharavi Extortion Group" }
   ],
   edges: [
+    // Intra-gang GANG-01
     { source: "Md. Ranbir Bhalla", target: "Md. Teerth Bhargava", total_calls: 142, weight: 14.2 },
     { source: "Md. Ranbir Bhalla", target: "Md. Vedant Padmanabhan", total_calls: 98, weight: 9.8 },
-    { source: "Md. Teerth Bhargava", target: "Md. Pranit Arya", total_calls: 86, weight: 8.6 },
-    { source: "Md. Vedant Padmanabhan", target: "Md. Hardik Kant", total_calls: 54, weight: 5.4 }
+    { source: "Md. Teerth Bhargava", target: "Md. Zashil Mistry", total_calls: 48, weight: 4.8 },
+    { source: "Md. Vedant Padmanabhan", target: "Md. Samar Nagar", total_calls: 42, weight: 4.2 },
+    { source: "Md. Ranbir Bhalla", target: "Md. Samar Nagar", total_calls: 36, weight: 3.6 },
+
+    // Intra-gang GANG-02
+    { source: "Md. Advik Golla", target: "Md. Darsh Sampath", total_calls: 88, weight: 8.8 },
+    { source: "Md. Advik Golla", target: "Md. Pranit Arya", total_calls: 76, weight: 7.6 },
+    { source: "Md. Darsh Sampath", target: "Md. Hardik Kant", total_calls: 54, weight: 5.4 },
+    { source: "Md. Pranit Arya", target: "Md. Christopher Pillai", total_calls: 45, weight: 4.5 },
+    { source: "Md. Advik Golla", target: "Md. Christopher Pillai", total_calls: 38, weight: 3.8 },
+
+    // Intra-gang GANG-03
+    { source: "Md. Azad Mannan", target: "Md. Indrajit Kunda", total_calls: 92, weight: 9.2 },
+    { source: "Md. Azad Mannan", target: "Md. Harish Bali", total_calls: 64, weight: 6.4 },
+    { source: "Md. Indrajit Kunda", target: "Md. Harrison Sarna", total_calls: 46, weight: 4.6 },
+    { source: "Md. Harish Bali", target: "Md. Tanveer Choudhary", total_calls: 35, weight: 3.5 },
+    { source: "Md. Azad Mannan", target: "Md. Harrison Sarna", total_calls: 30, weight: 3.0 },
+
+    // Intra-gang GANG-04
+    { source: "Md. Maanav Tailor", target: "Md. Umang Mody", total_calls: 82, weight: 8.2 },
+    { source: "Md. Maanav Tailor", target: "Md. George Ramaswamy", total_calls: 60, weight: 6.0 },
+    { source: "Md. Umang Mody", target: "Md. Balendra Nayak", total_calls: 44, weight: 4.4 },
+    { source: "Md. George Ramaswamy", target: "Md. Tarak Sahni", total_calls: 32, weight: 3.2 },
+    { source: "Md. Balendra Nayak", target: "Md. Tarak Sahni", total_calls: 28, weight: 2.8 },
+
+    // Inter-gang Cross-Links (Bridges & Syndicates)
+    { source: "Md. Ranbir Bhalla", target: "Md. Advik Golla", total_calls: 24, weight: 2.4 }, // Kingpin to Kingpin
+    { source: "Md. Teerth Bhargava", target: "Md. Pranit Arya", total_calls: 86, weight: 8.6 }, // Major Cross-Gang Bridge
+    { source: "Md. Vedant Padmanabhan", target: "Md. Hardik Kant", total_calls: 54, weight: 5.4 }, // Secondary Bridge
+    { source: "Md. Advik Golla", target: "Md. Azad Mannan", total_calls: 18, weight: 1.8 }, // Beta to Gamma Kingpin
+    { source: "Md. Darsh Sampath", target: "Md. Indrajit Kunda", total_calls: 32, weight: 3.2 }, // Logistics to Mule Bridge
+    { source: "Md. Azad Mannan", target: "Md. Maanav Tailor", total_calls: 22, weight: 2.2 }, // Gamma to Delta Kingpin
+    { source: "Md. Harish Bali", target: "Md. Umang Mody", total_calls: 28, weight: 2.8 }, // Mule to Extortion Bridge
+    { source: "Md. Ranbir Bhalla", target: "Md. Maanav Tailor", total_calls: 15, weight: 1.5 } // Alpha to Delta
   ]
 };
 
