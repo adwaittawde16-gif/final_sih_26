@@ -210,99 +210,124 @@ export default function ChargesheetGeneratorPage() {
 
         {/* Section III: Forensic Evidence Trail */}
         <div className="space-y-3 mb-6">
-          <h2 className="text-sm font-black uppercase tracking-wider text-slate-950 border-b border-slate-300 pb-1 font-sans">
-            III. MULTI-DOMAIN FORENSIC EVIDENCE CORROBORATION
-          </h2>
-
-          {/* (1) Telecom Evidence — Dynamic from XAI forensic trail */}
-          <div className="rounded border border-slate-300 p-3 text-xs font-sans space-y-1">
-            <p className="font-bold text-slate-900 flex items-center gap-1.5">
-              <Phone className="size-3.5 text-blue-700" /> 1. Telecom Call Detail Records (CDR Intercepts)
-            </p>
-            {xaiInfo?.forensic_evidence_trail?.filter((e: any) => e.domain === "CDR" || e.source === "CDR").slice(0, 2).map((ev: any, i: number) => (
-              <p key={i} className="text-slate-700">
-                <strong>{ev.timestamp || ev.date || "Intercept Log"}:</strong> {ev.detail || ev.description || ev.summary || "Coordinated telephony activity corroborated with co-location logs."}
-              </p>
-            ))}
-            {(!xaiInfo?.forensic_evidence_trail || xaiInfo.forensic_evidence_trail.filter((e: any) => e.domain === "CDR" || e.source === "CDR").length === 0) && (
-              <p className="text-slate-700">
-                Subject maintained recurring encrypted call activity during nocturnal hours (00:00–05:00 IST).
-                Gaussian Z-score analysis confirms statistically anomalous night call burst.
-                {cdrInfo.length > 0 && (
-                  <span> Primary contact: <strong>{cdrInfo[0]?.suspect_2 || cdrInfo[0]?.suspect_1 || "Flagged Associate"}</strong> — {cdrInfo[0]?.total_calls || "N/A"} logged calls, {cdrInfo[0]?.nocturnal_calls || 0} nocturnal.</span>
-                )}
-              </p>
+          <div className="flex items-center justify-between border-b border-slate-300 pb-1">
+            <h2 className="text-sm font-black uppercase tracking-wider text-slate-950 font-sans">
+              III. MULTI-DOMAIN FORENSIC EVIDENCE CORROBORATION
+            </h2>
+            {loading && (
+              <span className="font-mono text-[10px] text-blue-600 font-bold animate-pulse flex items-center gap-1">
+                <span className="size-1.5 rounded-full bg-blue-600 animate-ping" /> Extracting Real Evidence Trail...
+              </span>
             )}
           </div>
 
-          {/* (2) CCTV Evidence — Dynamic from XAI forensic trail */}
-          <div className="rounded border border-slate-300 p-3 text-xs font-sans space-y-1">
-            <p className="font-bold text-slate-900 flex items-center gap-1.5">
-              <Camera className="size-3.5 text-amber-700" /> 2. Municipal CCTV Camera Co-Location Sightings
-            </p>
-            {xaiInfo?.forensic_evidence_trail?.filter((e: any) => e.domain === "CCTV" || e.source === "CCTV").slice(0, 2).map((ev: any, i: number) => (
-              <p key={i} className="text-slate-700">
-                <strong>{ev.timestamp || ev.date || "Camera Sighting"}:</strong> {ev.detail || ev.description || ev.summary || "Co-location event confirmed via CCTV facial recognition."}
-              </p>
-            ))}
-            {(!xaiInfo?.forensic_evidence_trail || xaiInfo.forensic_evidence_trail.filter((e: any) => e.domain === "CCTV" || e.source === "CCTV").length === 0) && (
-              <p className="text-slate-700">
-                Municipal camera logs confirm physical rendezvous.
-                {cctvInfo.length > 0 && (
-                  <span> Location: <em>{cctvInfo[0]?.location || "Dadar"}</em> · {cctvInfo[0]?.suspect_b || "Associate"} present. Avg facial recognition confidence: <strong>{cctvInfo[0]?.confidence ? `${(cctvInfo[0].confidence * 100).toFixed(1)}%` : "89.4%"}</strong>.</span>
+          {loading ? (
+            /* Skeleton Loading State while xaiInfo and CDRs are fetching */
+            <div className="space-y-3 animate-pulse">
+              {[1, 2, 3, 4].map((n) => (
+                <div key={n} className="rounded border border-slate-200 bg-slate-50/70 p-3 space-y-2">
+                  <div className="flex items-center gap-2">
+                    <div className="size-3.5 rounded bg-slate-300" />
+                    <div className="h-3 w-48 rounded bg-slate-300" />
+                  </div>
+                  <div className="h-2.5 w-full rounded bg-slate-200" />
+                  <div className="h-2.5 w-4/5 rounded bg-slate-200" />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <>
+              {/* (1) Telecom Evidence — Dynamic from XAI forensic trail */}
+              <div className="rounded border border-slate-300 p-3 text-xs font-sans space-y-1">
+                <p className="font-bold text-slate-900 flex items-center gap-1.5">
+                  <Phone className="size-3.5 text-blue-700" /> 1. Telecom Call Detail Records (CDR Intercepts)
+                </p>
+                {xaiInfo?.forensic_evidence_trail?.filter((e: any) => e.domain === "CDR" || e.source === "CDR").slice(0, 2).map((ev: any, i: number) => (
+                  <p key={i} className="text-slate-700">
+                    <strong>{ev.timestamp || ev.date || "Intercept Log"}:</strong> {ev.detail || ev.description || ev.summary || "Coordinated telephony activity corroborated with co-location logs."}
+                  </p>
+                ))}
+                {(!xaiInfo?.forensic_evidence_trail || xaiInfo.forensic_evidence_trail.filter((e: any) => e.domain === "CDR" || e.source === "CDR").length === 0) && (
+                  <p className="text-slate-700">
+                    Subject maintained recurring encrypted call activity during nocturnal hours (00:00–05:00 IST).
+                    Gaussian Z-score analysis confirms statistically anomalous night call burst.
+                    {cdrInfo.length > 0 && (
+                      <span> Primary contact: <strong>{cdrInfo[0]?.suspect_2 || cdrInfo[0]?.suspect_1 || "Flagged Associate"}</strong> — {cdrInfo[0]?.total_calls || "N/A"} logged calls, {cdrInfo[0]?.nocturnal_calls || 0} nocturnal.</span>
+                    )}
+                  </p>
                 )}
-              </p>
-            )}
-          </div>
+              </div>
 
-          {/* (3) Financial Hawala Evidence — Dynamic from XAI financial features */}
-          <div className="rounded border border-slate-300 p-3 text-xs font-sans space-y-1">
-            <p className="font-bold text-slate-900 flex items-center gap-1.5">
-              <Banknote className="size-3.5 text-emerald-700" /> 3. Hawala Smurfing & Banking Ledger Trails
-            </p>
-            {xaiInfo?.forensic_evidence_trail?.filter((e: any) => e.domain === "FINANCIAL" || e.source === "FINANCIAL" || e.domain === "Financial").slice(0, 2).map((ev: any, i: number) => (
-              <p key={i} className="text-slate-700">
-                <strong>{ev.timestamp || ev.date || "Transaction Record"}:</strong> {ev.detail || ev.description || ev.summary}
-              </p>
-            ))}
-            {(() => {
-              const finFeature = xaiInfo?.feature_attribution?.find((f: any) =>
-                (f.feature_name || "").toLowerCase().includes("financial")
-              );
-              const hasFin = xaiInfo?.forensic_evidence_trail?.some((e: any) => e.domain === "FINANCIAL" || e.source === "FINANCIAL" || e.domain === "Financial");
-              if (!hasFin) return (
-                <p className="text-slate-700">
-                  Audited transaction velocity exhibits regulatory structuring. {finFeature
-                    ? <span>Financial risk contribution: <strong>{finFeature.score_contribution} pts</strong> ({finFeature.percentage_influence}% of threat profile) — {finFeature.evidence_summary || "sub-threshold Hawala smurfing detected via IQR outlier analysis."}
-                    </span>
-                    : "Multiple payments structured below ₹50,000 regulatory reporting threshold, routed through mule accounts."
-                  }
+              {/* (2) CCTV Evidence — Dynamic from XAI forensic trail */}
+              <div className="rounded border border-slate-300 p-3 text-xs font-sans space-y-1">
+                <p className="font-bold text-slate-900 flex items-center gap-1.5">
+                  <Camera className="size-3.5 text-amber-700" /> 2. Municipal CCTV Camera Co-Location Sightings
                 </p>
-              );
-              return null;
-            })()}
-          </div>
+                {xaiInfo?.forensic_evidence_trail?.filter((e: any) => e.domain === "CCTV" || e.source === "CCTV").slice(0, 2).map((ev: any, i: number) => (
+                  <p key={i} className="text-slate-700">
+                    <strong>{ev.timestamp || ev.date || "Camera Sighting"}:</strong> {ev.detail || ev.description || ev.summary || "Co-location event confirmed via CCTV facial recognition."}
+                  </p>
+                ))}
+                {(!xaiInfo?.forensic_evidence_trail || xaiInfo.forensic_evidence_trail.filter((e: any) => e.domain === "CCTV" || e.source === "CCTV").length === 0) && (
+                  <p className="text-slate-700">
+                    Municipal camera logs confirm physical rendezvous.
+                    {cctvInfo.length > 0 && (
+                      <span> Location: <em>{cctvInfo[0]?.location || "Dadar"}</em> · {cctvInfo[0]?.suspect_b || "Associate"} present. Avg facial recognition confidence: <strong>{cctvInfo[0]?.confidence ? `${(cctvInfo[0].confidence * 100).toFixed(1)}%` : "89.4%"}</strong>.</span>
+                    )}
+                  </p>
+                )}
+              </div>
 
-          {/* (4) Graph Centrality Evidence — Dynamic from XAI graph features */}
-          <div className="rounded border border-slate-300 p-3 text-xs font-sans space-y-1">
-            <p className="font-bold text-slate-900 flex items-center gap-1.5">
-              <Network className="size-3.5 text-purple-700" /> 4. Graph Network Centrality & Hierarchy Proof
-            </p>
-            {(() => {
-              const graphFeature = xaiInfo?.feature_attribution?.find((f: any) =>
-                (f.feature_name || "").toLowerCase().includes("cdr") || (f.feature_name || "").toLowerCase().includes("network")
-              );
-              return (
-                <p className="text-slate-700">
-                  Betweenness Centrality confirms this subject is an <strong>Articulation Point (Cut-Node)</strong> in the criminal interaction mesh.
-                  {graphFeature
-                    ? <span> CDR network score contribution: <strong>{graphFeature.score_contribution} pts</strong> — {graphFeature.evidence_summary || "confirms central broker role in conspiracy ring."}</span>
-                    : " Community modularity score Q = 0.8936 establishes non-random syndicated organization across 4 distinct criminal cells."
-                  }
+              {/* (3) Financial Hawala Evidence — Dynamic from XAI financial features */}
+              <div className="rounded border border-slate-300 p-3 text-xs font-sans space-y-1">
+                <p className="font-bold text-slate-900 flex items-center gap-1.5">
+                  <Banknote className="size-3.5 text-emerald-700" /> 3. Hawala Smurfing & Banking Ledger Trails
                 </p>
-              );
-            })()}
-          </div>
+                {xaiInfo?.forensic_evidence_trail?.filter((e: any) => e.domain === "FINANCIAL" || e.source === "FINANCIAL" || e.domain === "Financial").slice(0, 2).map((ev: any, i: number) => (
+                  <p key={i} className="text-slate-700">
+                    <strong>{ev.timestamp || ev.date || "Transaction Record"}:</strong> {ev.detail || ev.description || ev.summary}
+                  </p>
+                ))}
+                {(() => {
+                  const finFeature = xaiInfo?.feature_attribution?.find((f: any) =>
+                    (f.feature_name || "").toLowerCase().includes("financial")
+                  );
+                  const hasFin = xaiInfo?.forensic_evidence_trail?.some((e: any) => e.domain === "FINANCIAL" || e.source === "FINANCIAL" || e.domain === "Financial");
+                  if (!hasFin) return (
+                    <p className="text-slate-700">
+                      Audited transaction velocity exhibits regulatory structuring. {finFeature
+                        ? <span>Financial risk contribution: <strong>{finFeature.score_contribution} pts</strong> ({finFeature.percentage_influence}% of threat profile) — {finFeature.evidence_summary || "sub-threshold Hawala smurfing detected via IQR outlier analysis."}
+                        </span>
+                        : "Multiple payments structured below ₹50,000 regulatory reporting threshold, routed through mule accounts."
+                      }
+                    </p>
+                  );
+                  return null;
+                })()}
+              </div>
+
+              {/* (4) Graph Centrality Evidence — Dynamic from XAI graph features */}
+              <div className="rounded border border-slate-300 p-3 text-xs font-sans space-y-1">
+                <p className="font-bold text-slate-900 flex items-center gap-1.5">
+                  <Network className="size-3.5 text-purple-700" /> 4. Graph Network Centrality & Hierarchy Proof
+                </p>
+                {(() => {
+                  const graphFeature = xaiInfo?.feature_attribution?.find((f: any) =>
+                    (f.feature_name || "").toLowerCase().includes("cdr") || (f.feature_name || "").toLowerCase().includes("network")
+                  );
+                  return (
+                    <p className="text-slate-700">
+                      Betweenness Centrality confirms this subject is an <strong>Articulation Point (Cut-Node)</strong> in the criminal interaction mesh.
+                      {graphFeature
+                        ? <span> CDR network score contribution: <strong>{graphFeature.score_contribution} pts</strong> — {graphFeature.evidence_summary || "confirms central broker role in conspiracy ring."}</span>
+                        : " Community modularity score Q = 0.8936 establishes non-random syndicated organization across 4 distinct criminal cells."
+                      }
+                    </p>
+                  );
+                })()}
+              </div>
+            </>
+          )}
         </div>
 
         {/* Section IV: Formal Investigating Officer Certification */}

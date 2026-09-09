@@ -42,17 +42,65 @@ const PRESET_PROMPTS = [
 ];
 
 export default function AICopilotPage() {
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: "welcome",
-      sender: "copilot",
-      text: "**Brihanmumbai Police AI Intelligence Copilot Online.**\n\nI can assist you with:\n- Investigating **why suspects were flagged** (SHAP feature attribution & counterfactuals)\n- Identifying **clandestine call links** and **shortest network routes**\n- Flagging **statistical nocturnal anomalies** (Gaussian Z-score $Z > 2.0$)\n- Auditing **financial Hawala structuring** & mule account money trails\n\nAsk any question or click a demo query below to begin.",
-      timestamp: new Date().toLocaleTimeString("en-IN", { hour12: false })
-    }
-  ]);
+  const defaultWelcome: Message = {
+    id: "welcome",
+    sender: "copilot",
+    text: "**Brihanmumbai Police AI Intelligence Copilot Online.**\n\nI can assist you with:\n- Investigating **why suspects were flagged** (SHAP feature attribution & counterfactuals)\n- Identifying **clandestine call links** and **shortest network routes**\n- Flagging **statistical nocturnal anomalies** (Gaussian Z-score $Z > 2.0$)\n- Auditing **financial Hawala structuring** & mule account money trails\n\nAsk any question or click a demo query below to begin.",
+    timestamp: "10:00:00"
+  };
+
+  const [messages, setMessages] = useState<Message[]>([defaultWelcome]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Load persisted history from localStorage on mount (hydration safe)
+    try {
+      const saved = localStorage.getItem("police_ai_copilot_history");
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setMessages(parsed);
+          return;
+        }
+      }
+    } catch {
+      // Fallback if localStorage is unavailable
+    }
+
+    // Default welcome message with local time
+    setMessages([
+      {
+        ...defaultWelcome,
+        timestamp: new Date().toLocaleTimeString("en-IN", { hour12: false })
+      }
+    ]);
+  }, []);
+
+  // Persist messages whenever they change (keep last 20 messages / 10 pairs)
+  useEffect(() => {
+    if (messages.length > 1 || (messages.length === 1 && messages[0].id !== "welcome")) {
+      try {
+        localStorage.setItem("police_ai_copilot_history", JSON.stringify(messages.slice(-20)));
+      } catch {
+        // Storage full or unavailable
+      }
+    }
+  }, [messages]);
+
+  const handleClearHistory = () => {
+    try {
+      localStorage.removeItem("police_ai_copilot_history");
+    } catch {}
+    setMessages([
+      {
+        ...defaultWelcome,
+        id: "welcome-" + Date.now(),
+        timestamp: new Date().toLocaleTimeString("en-IN", { hour12: false })
+      }
+    ]);
+  };
 
   useEffect(() => {
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -133,9 +181,18 @@ export default function AICopilotPage() {
                 Live Intelligence Console
               </CardTitle>
             </div>
-            <Badge className="border-blue-800 bg-blue-950 font-mono text-[10px] text-blue-400">
-              GPT / BERT + FASTAPI ENGINE 2.0
-            </Badge>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={handleClearHistory}
+                className="rounded border border-slate-700 bg-slate-800/80 px-2.5 py-1 text-[10px] font-bold text-slate-400 hover:border-red-500/50 hover:bg-red-950/40 hover:text-red-300 transition"
+                title="Reset conversation history"
+              >
+                Clear History
+              </button>
+              <Badge className="border-blue-800 bg-blue-950 font-mono text-[10px] text-blue-400">
+                GPT / BERT + FASTAPI ENGINE 2.0
+              </Badge>
+            </div>
           </div>
         </CardHeader>
 
@@ -198,7 +255,7 @@ export default function AICopilotPage() {
                     </div>
                   )}
 
-                  <p className="text-[9px] font-mono text-slate-500 text-right">
+                  <p className="text-[9px] font-mono text-slate-500 text-right" suppressHydrationWarning>
                     {m.timestamp} IST
                   </p>
                 </div>

@@ -118,9 +118,16 @@ ROLE_KEYWORDS = {
 # ENTITY EXTRACTION ENGINE CLASS
 # ---------------------------------------------------------------------------
 class AdvancedNLPEngine:
-    def __init__(self, master_suspects: Optional[List[str]] = None, master_phones: Optional[Dict[str, str]] = None):
-        self.master_suspects = master_suspects or []
-        self.master_phones = master_phones or {}
+    def __init__(self, master_suspects: Any = None, master_phones: Optional[Dict[str, str]] = None):
+        if master_suspects is not None and hasattr(master_suspects, 'all_suspects'):
+            self.master_suspects = list(master_suspects.all_suspects)
+            self.master_phones = getattr(master_suspects, 'phone_to_name', {}) or master_phones or {}
+        elif isinstance(master_suspects, (list, set, tuple)):
+            self.master_suspects = list(master_suspects)
+            self.master_phones = master_phones or {}
+        else:
+            self.master_suspects = []
+            self.master_phones = master_phones or {}
 
     def fuzzy_match_suspect(self, candidate_text: str, threshold: float = 0.82) -> Optional[Tuple[str, float]]:
         """Match candidate string against known criminal suspect registry using SequenceMatcher."""

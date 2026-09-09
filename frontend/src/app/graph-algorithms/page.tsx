@@ -248,6 +248,7 @@ export default function GraphAlgorithmsProofPage() {
                   <Share2 className="size-4 text-cyan-400" /> Interactive Mathematical Graph Topology Canvas
                 </CardTitle>
                 <div className="flex items-center gap-3 text-[10px] font-mono text-slate-400">
+                  <span className="flex items-center gap-1"><span className="size-2 rounded-full bg-amber-400 animate-ping" /> Top-Threat Kingpin</span>
                   <span className="flex items-center gap-1"><span className="size-2 rounded-full bg-rose-500 animate-ping" /> Articulation Cut-Vertex</span>
                   <span className="flex items-center gap-1"><span className="size-2 rounded-full bg-blue-500" /> Syndicate Cluster 1</span>
                   <span className="flex items-center gap-1"><span className="size-2 rounded-full bg-emerald-500" /> Syndicate Cluster 2</span>
@@ -295,56 +296,94 @@ export default function GraphAlgorithmsProofPage() {
                   })}
 
                   {/* Render Nodes */}
-                  {data.nodes.slice(0, 16).map((node: any, idx: number) => {
-                    const total = Math.min(data.nodes.length, 16);
-                    const angle = (idx / total) * 2 * Math.PI;
-                    const r = 110;
-                    const cx = 400 + r * Math.cos(angle);
-                    const cy = 160 + r * Math.sin(angle);
-                    const nodeRadius = Math.max(6, Math.min(18, node.pagerank * 1500));
-                    const isArt = node.is_articulation_point;
-                    const isSelected = node.node_id === sourceSuspect || node.node_id === targetSuspect;
+                  {(() => {
+                    const visibleNodes = data.nodes.slice(0, 16);
+                    const topNode = visibleNodes.reduce((best: any, curr: any) =>
+                      ((curr.threat_score || curr.pagerank || 0) > (best?.threat_score || best?.pagerank || 0) ? curr : best), visibleNodes[0]
+                    );
 
-                    const colors = ["#3b82f6", "#10b981", "#f59e0b", "#a855f7", "#06b6d4", "#ec4899"];
-                    const commNum = parseInt(node.community_id.replace("RING-", "")) || 1;
-                    const color = colors[(commNum - 1) % colors.length];
+                    return visibleNodes.map((node: any, idx: number) => {
+                      const total = visibleNodes.length;
+                      const angle = (idx / total) * 2 * Math.PI;
+                      const r = 110;
+                      const cx = 400 + r * Math.cos(angle);
+                      const cy = 160 + r * Math.sin(angle);
+                      const nodeRadius = Math.max(6, Math.min(18, node.pagerank * 1500));
+                      const isArt = node.is_articulation_point;
+                      const isTopThreat = node.node_id === topNode?.node_id;
+                      const isSelected = node.node_id === sourceSuspect || node.node_id === targetSuspect;
 
-                    return (
-                      <g key={node.node_id} className="cursor-pointer transition-transform hover:scale-125">
-                        {isArt && (
+                      const colors = ["#3b82f6", "#10b981", "#f59e0b", "#a855f7", "#06b6d4", "#ec4899"];
+                      const commNum = parseInt(node.community_id.replace("RING-", "")) || 1;
+                      const color = colors[(commNum - 1) % colors.length];
+
+                      return (
+                        <g key={node.node_id} className="cursor-pointer transition-transform hover:scale-125">
+                          {/* Animated Pulse Ring for Top Threat Kingpin */}
+                          {isTopThreat && (
+                            <>
+                              <circle
+                                cx={cx}
+                                cy={cy}
+                                r={nodeRadius + 14}
+                                fill="none"
+                                stroke="#f59e0b"
+                                strokeWidth="2"
+                                className="animate-ping"
+                                opacity="0.6"
+                              />
+                              <circle
+                                cx={cx}
+                                cy={cy}
+                                r={nodeRadius + 8}
+                                fill="none"
+                                stroke="#ef4444"
+                                strokeWidth="1.5"
+                                strokeDasharray="3 3"
+                                opacity="0.9"
+                              />
+                            </>
+                          )}
+
+                          {/* Articulation Point Ring */}
+                          {isArt && !isTopThreat && (
+                            <circle
+                              cx={cx}
+                              cy={cy}
+                              r={nodeRadius + 6}
+                              fill="none"
+                              stroke="#f43f5e"
+                              strokeWidth="2"
+                              className="animate-ping"
+                              opacity="0.7"
+                            />
+                          )}
+
+                          {/* Core Node Circle */}
                           <circle
                             cx={cx}
                             cy={cy}
-                            r={nodeRadius + 6}
-                            fill="none"
-                            stroke="#f43f5e"
-                            strokeWidth="2"
-                            className="animate-ping"
-                            opacity="0.7"
+                            r={nodeRadius}
+                            fill={isTopThreat ? "#ef4444" : color}
+                            stroke={isSelected ? "#ffffff" : isTopThreat ? "#fbbf24" : isArt ? "#f43f5e" : "#0f172a"}
+                            strokeWidth={isSelected || isTopThreat ? "3" : isArt ? "2" : "1.5"}
                           />
-                        )}
-                        <circle
-                          cx={cx}
-                          cy={cy}
-                          r={nodeRadius}
-                          fill={color}
-                          stroke={isSelected ? "#ffffff" : isArt ? "#f43f5e" : "#0f172a"}
-                          strokeWidth={isSelected ? "3" : isArt ? "2" : "1.5"}
-                        />
-                        <text
-                          x={cx}
-                          y={cy + nodeRadius + 11}
-                          textAnchor="middle"
-                          fill="#cbd5e1"
-                          fontSize="9"
-                          fontFamily="sans-serif"
-                          fontWeight={isSelected ? "bold" : "normal"}
-                        >
-                          {node.node_id.split(" ").slice(-1)[0]}
-                        </text>
-                      </g>
-                    );
-                  })}
+                          <text
+                            x={cx}
+                            y={cy + nodeRadius + 11}
+                            textAnchor="middle"
+                            fill={isTopThreat ? "#fbbf24" : "#cbd5e1"}
+                            fontSize="9"
+                            fontFamily="sans-serif"
+                            fontWeight={isSelected || isTopThreat ? "bold" : "normal"}
+                          >
+                            {node.node_id.split(" ").slice(-1)[0]}
+                            {isTopThreat ? " ★" : ""}
+                          </text>
+                        </g>
+                      );
+                    });
+                  })()}
                 </svg>
                 <div className="absolute bottom-2 left-3 font-mono text-[10px] text-slate-500">
                   Node Size ∝ PageRank PR(u) · Ring Color ∝ Louvain Partition

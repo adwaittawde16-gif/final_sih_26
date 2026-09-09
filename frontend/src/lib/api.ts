@@ -277,4 +277,16 @@ export const api = {
     fetchAPI<any>("/api/cdr/pairs", undefined, { pair_summary: [] }).then((res: any) =>
       Array.isArray(res) ? res : (res?.pair_summary ?? res?.pairs ?? [])
     ),
+
+  // AI Intelligence Copilot Query
+  queryCopilot: (query: string) =>
+    fetchAPI<any>("/api/core-ai/copilot/query", {
+      method: "POST",
+      body: JSON.stringify({ query }),
+    }, {
+      intent: "GENERAL_OVERVIEW",
+      answer_markdown: "Backend engine offline. Please start FastAPI on port 8080.",
+      evidence_items: [],
+      suggested_queries: [],
+    }),
 };

@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="en" className="bg-slate-50"><body className="min-h-screen bg-slate-50 text-slate-900"><div className="flex min-h-screen"><Sidebar /><main className="min-w-0 flex-1 overflow-y-auto px-4 py-5 sm:px-6 lg:px-8">{children}</main></div></body></html>;
+  return <html lang="en" suppressHydrationWarning className="bg-slate-50"><body suppressHydrationWarning className="min-h-screen bg-slate-50 text-slate-900"><div className="flex min-h-screen"><Sidebar /><main className="min-w-0 flex-1 overflow-y-auto px-4 py-5 sm:px-6 lg:px-8">{children}</main></div></body></html>;
 }

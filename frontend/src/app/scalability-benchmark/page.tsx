@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Loading } from "@/components/ui/loading";
 import { api } from "@/lib/api";
-import { Zap, Gauge, Server, Activity, Database, CheckCircle2, Clock } from "lucide-react";
+import { Zap, Gauge, Server, Activity, Database, CheckCircle2, Clock, Download } from "lucide-react";
 
 export default function ScalabilityBenchmarkPage() {
   const [recordCount, setRecordCount] = useState<number>(50000);
@@ -25,6 +25,19 @@ export default function ScalabilityBenchmarkPage() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleExportJSON = () => {
+    if (!result) return;
+    const blob = new Blob([JSON.stringify(result, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `sih2026_scalability_benchmark_${result.dataset_size_records || recordCount}_records.json`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
   };
 
   return (
@@ -126,10 +139,18 @@ export default function ScalabilityBenchmarkPage() {
 
           {/* Verdict Box */}
           <Card className="border-emerald-900/40 bg-emerald-950/20 text-white">
-            <CardHeader className="pb-2">
+            <CardHeader className="flex flex-row items-center justify-between pb-2">
               <CardTitle className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-400">
                 <CheckCircle2 className="size-4" /> Production Scalability Verdict
               </CardTitle>
+              <Button
+                onClick={handleExportJSON}
+                size="sm"
+                variant="outline"
+                className="border-emerald-700/60 bg-emerald-950/80 text-xs font-bold text-emerald-300 hover:bg-emerald-900 hover:text-white"
+              >
+                <Download className="mr-1.5 size-3.5" /> Export Benchmark Report (JSON)
+              </Button>
             </CardHeader>
             <CardContent className="space-y-2">
               <p className="text-sm font-semibold text-white">{result.verdict}</p>
