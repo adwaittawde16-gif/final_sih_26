@@ -1,1 +1,3 @@
-export { default } from "../gangs/page";
+import GangsPage from "../gangs/page";
+
+export default GangsPage;

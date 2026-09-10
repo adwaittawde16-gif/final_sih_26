@@ -1,1 +1,3 @@
-export { default } from "../cctv/page";
+import CctvPage from "../cctv/page";
+
+export default CctvPage;

@@ -1,1 +1,3 @@
-export { default } from "../financial/page";
+import FinancialIntelligencePage from "../financial/page";
+
+export default FinancialIntelligencePage;

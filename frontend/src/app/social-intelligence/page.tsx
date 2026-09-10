@@ -1,1 +1,3 @@
-export { default } from "../social-media/page";
+import SocialMediaPage from "../social-media/page";
+
+export default SocialMediaPage;

@@ -30,8 +30,10 @@ from app_backend.routers import (
     geo,
     graph_analytics,
     core_ai,
-    stream
+    stream,
+    audit
 )
+from app_backend.middleware.audit_middleware import AuditLogMiddleware
 
 app = FastAPI(
     title="Brihanmumbai Police Tactical Intelligence REST API",
@@ -88,6 +90,9 @@ def health_check():
         total_suspects=len(scores)
     )
 
+# Add SHA-256 Tamper-Evident Audit Logging Middleware
+app.add_middleware(AuditLogMiddleware)
+
 # Register Intelligence Module APIRouters
 app.include_router(threat.router)
 app.include_router(cdr.router)
@@ -104,6 +109,7 @@ app.include_router(geo.router)
 app.include_router(graph_analytics.router)
 app.include_router(core_ai.router)
 app.include_router(stream.router)
+app.include_router(audit.router)
 
 
 
