@@ -1,1 +1,3 @@
-export { default } from "../nocturnal/page";
+import NocturnalPage from "../nocturnal/page";
+
+export default NocturnalPage;
