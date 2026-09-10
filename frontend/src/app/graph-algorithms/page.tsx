@@ -300,6 +300,14 @@ ${edges}
                   <span className="flex items-center gap-1"><span className="size-2 rounded-full bg-rose-500 animate-ping" /> Articulation Cut-Vertex</span>
                   <span className="flex items-center gap-1"><span className="size-2 rounded-full bg-blue-500" /> Syndicate Cluster 1</span>
                   <span className="flex items-center gap-1"><span className="size-2 rounded-full bg-emerald-500" /> Syndicate Cluster 2</span>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={handleExportGEXF}
+                    className="h-6 border-slate-700 bg-slate-800/80 px-2 text-[10px] text-cyan-300 hover:bg-slate-700 hover:text-white"
+                  >
+                    <Download className="mr-1 size-3" /> Export GEXF (Gephi)
+                  </Button>
                 </div>
               </div>
             </CardHeader>
