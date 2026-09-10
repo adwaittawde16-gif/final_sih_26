@@ -29,7 +29,8 @@ import {
   fallbackDossier,
   fallbackTimeline,
   fallbackSocial,
-  fallbackGeo
+  fallbackGeo,
+  fallbackExplanation
 } from "./mockData";
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL !== undefined
@@ -261,7 +262,10 @@ export const api = {
 
   // Explainable AI (XAI)
   explainSuspect: (suspect: string) =>
-    fetchAPI<any>(`/api/core-ai/explain/suspect?suspect=${encodeURIComponent(suspect)}`),
+    fetchAPI<any>(`/api/core-ai/explain/suspect?suspect=${encodeURIComponent(suspect)}`, undefined, {
+      ...fallbackExplanation,
+      suspect_name: suspect
+    }),
 
   // Big Data Benchmark
   runStressTest: (records: number = 50000) =>

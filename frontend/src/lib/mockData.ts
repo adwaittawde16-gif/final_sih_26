@@ -563,3 +563,92 @@ export const fallbackGeo: GeoPointsResponse = {
     { id: "pt-3", lat: 18.9950, lng: 72.8300, title: "Field Patrol Spot: SR-2026-9901", category: "SURVEILLANCE", timestamp: "2026-08-25 14:00", details: "Special Branch Panchnama Conducted", color: "#ef4444" }
   ]
 };
+
+export const fallbackExplanation = {
+  suspect_name: "Md. Ranbir Bhalla",
+  phone_number: "+91-2236381844",
+  total_threat_score: 94.2,
+  threat_tier: "CRITICAL / LEVEL-1 RED",
+  primary_verdict: "Subject flagged with Threat Score 94.2/100 based on multi-source intelligence correlation across CCTV, CDR, and prior FIR records.",
+  feature_attribution: [
+    {
+      feature_name: "Physical CCTV Sighting & Co-Location",
+      score_contribution: 28.6,
+      percentage_influence: 30.4,
+      max_possible: 30.0,
+      risk_signal: "CRITICAL"
+    },
+    {
+      feature_name: "Telecom Call Degree & Nocturnal Interceptions",
+      score_contribution: 20.0,
+      percentage_influence: 21.2,
+      max_possible: 20.0,
+      risk_signal: "HIGH"
+    },
+    {
+      feature_name: "FIR & Police Complaint Severity",
+      score_contribution: 15.0,
+      percentage_influence: 15.9,
+      max_possible: 15.0,
+      risk_signal: "HIGH"
+    },
+    {
+      feature_name: "Prior Criminal Convictions & Case Status",
+      score_contribution: 12.0,
+      percentage_influence: 12.7,
+      max_possible: 15.0,
+      risk_signal: "HIGH"
+    },
+    {
+      feature_name: "Financial Transactions & Merchant Risk",
+      score_contribution: 9.6,
+      percentage_influence: 10.2,
+      max_possible: 10.0,
+      risk_signal: "HIGH"
+    },
+    {
+      feature_name: "Field Surveillance & Panchnama Reports",
+      score_contribution: 9.0,
+      percentage_influence: 9.6,
+      max_possible: 10.0,
+      risk_signal: "MODERATE"
+    }
+  ],
+  counterfactual_analysis: [
+    {
+      hypothesis: "What if Nocturnal Calls were 0?",
+      simulated_score: 86.2,
+      verdict_change: "Threat tier drops significantly"
+    },
+    {
+      hypothesis: "What if Physical CCTV Meeting was an innocent coincidence?",
+      simulated_score: 71.3,
+      verdict_change: "Eliminates physical conspiracy link"
+    }
+  ],
+  forensic_evidence_trail: [
+    {
+      source_modality: "TELECOM_CDR",
+      timestamp: "2026-09-04 02:15:00",
+      summary: "Intercepted Outgoing call (240s) with Md. Teerth Bhargava (+91-7611970993)",
+      location: "Byculla Sector 4 Tower",
+      flag: "NOCTURNAL_ALERT"
+    },
+    {
+      source_modality: "CCTV_SURVEILLANCE",
+      timestamp: "2026-09-05 18:30:00",
+      summary: "Optical facial recognition capture at Venus Wine Shop, Byculla West (97% Match)",
+      location: "MH-CCTV-9890 (Byculla West)",
+      flag: "PHYSICAL_CO_LOCATION"
+    },
+    {
+      source_modality: "POLICE_FIR_RECORD",
+      timestamp: "2026-08-12",
+      summary: "Registered under IPC 384/120B at Byculla PS. FIR #0254/2026",
+      location: "Byculla Police Station",
+      flag: "CRIMINAL_CHARGES_ACTIVE"
+    }
+  ],
+  statutory_chargeability: "Prosecutable under MCOCA / IPC Sec 120B based on multi-source conspiracy matrix."
+};
+
