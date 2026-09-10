@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Loading } from "@/components/ui/loading";
 import { api } from "@/lib/api";
-import { Network, Activity, GitFork, ShieldAlert, Cpu, RefreshCw, Zap, Layers, Share2, Compass, AlertOctagon } from "lucide-react";
+import { Network, Activity, GitFork, ShieldAlert, Cpu, RefreshCw, Zap, Layers, Share2, Compass, AlertOctagon, Download } from "lucide-react";
 
 export default function GraphAlgorithmsProofPage() {
   const [loading, setLoading] = useState(true);
@@ -20,6 +20,54 @@ export default function GraphAlgorithmsProofPage() {
   const [targetSuspect, setTargetSuspect] = useState("Md Hardik Kant");
   const [pathResult, setPathResult] = useState<any>(null);
   const [pathLoading, setPathLoading] = useState(false);
+
+  const handleExportGEXF = () => {
+    if (!data?.nodes || !data?.edges) return;
+    const nodes = data.nodes
+      .map((n: any) =>
+        `    <node id="${n.node_id}" label="${n.node_id}">
+      <attvalues>
+        <attvalue for="threat_score" value="${n.threat_score ?? n.pagerank ?? 0}" />
+        <attvalue for="community" value="${n.community ?? 0}" />
+        <attvalue for="pagerank" value="${n.pagerank ?? 0}" />
+      </attvalues>
+    </node>`
+      )
+      .join("\n");
+    const edges = data.edges
+      .map((e: any, i: number) =>
+        `    <edge id="${i}" source="${e.source}" target="${e.target}" weight="${e.weight ?? 1}" />`
+      )
+      .join("\n");
+    const gexf = `<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns="http://gexf.net/1.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://gexf.net/1.3 http://gexf.net/1.3/gexf.xsd" version="1.3">
+  <meta lastmodifieddate="${new Date().toISOString().split("T")[0]}">
+    <creator>Brihanmumbai Police - Criminal Intelligence System</creator>
+    <description>Criminal Network Graph — Louvain Community Detection</description>
+  </meta>
+  <graph defaultedgetype="undirected">
+    <attributes class="node">
+      <attribute id="threat_score" title="Threat Score" type="float" />
+      <attribute id="community" title="Community" type="integer" />
+      <attribute id="pagerank" title="PageRank" type="float" />
+    </attributes>
+    <nodes>
+${nodes}
+    </nodes>
+    <edges>
+${edges}
+    </edges>
+  </graph>
+</gexf>`;
+    const blob = new Blob([gexf], { type: "application/xml" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `criminal_network_${new Date().toISOString().split("T")[0]}.gexf`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
 
   const fetchGraphProof = async (resVal = louvainRes, alphaVal = pagerankAlpha) => {
     setLoading(true);
@@ -96,12 +144,21 @@ export default function GraphAlgorithmsProofPage() {
             </div>
           </div>
 
-          <Button
-            onClick={() => fetchGraphProof(louvainRes, pagerankAlpha)}
-            className="bg-blue-600 text-xs font-semibold text-white hover:bg-blue-500"
-          >
-            <RefreshCw className="mr-2 size-3.5" /> Re-Compute Live Algorithms
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              onClick={handleExportGEXF}
+              variant="outline"
+              className="border-slate-700 bg-slate-800 text-xs font-semibold text-slate-200 hover:bg-slate-700 hover:text-white"
+            >
+              <Download className="mr-2 size-3.5 text-blue-400" /> Export GEXF XML
+            </Button>
+            <Button
+              onClick={() => fetchGraphProof(louvainRes, pagerankAlpha)}
+              className="bg-blue-600 text-xs font-semibold text-white hover:bg-blue-500"
+            >
+              <RefreshCw className="mr-2 size-3.5" /> Re-Compute Live Algorithms
+            </Button>
+          </div>
         </CardContent>
       </Card>
 

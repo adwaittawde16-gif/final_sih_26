@@ -21,7 +21,9 @@ import {
   Phone,
   FileText,
   Activity,
-  Network
+  Network,
+  Mic,
+  MicOff
 } from "lucide-react";
 
 interface Message {
@@ -53,6 +55,35 @@ export default function AICopilotPage() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [isListening, setIsListening] = useState(false);
+  const recognitionRef = useRef<any>(null);
+
+  const startListening = () => {
+    if (typeof window === "undefined") return;
+    const SR = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    if (!SR) return;
+    if (isListening) {
+      recognitionRef.current?.stop();
+      setIsListening(false);
+      return;
+    }
+    const recognition = new SR();
+    recognitionRef.current = recognition;
+    recognition.lang = "en-IN";
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.onstart = () => setIsListening(true);
+    recognition.onend = () => setIsListening(false);
+    recognition.onerror = () => setIsListening(false);
+    recognition.onresult = (event: any) => {
+      const transcript = event.results[0][0].transcript;
+      setInput(transcript);
+      setTimeout(() => {
+        handleSend(transcript);
+      }, 100);
+    };
+    recognition.start();
+  };
 
   useEffect(() => {
     // Load persisted history from localStorage on mount (hydration safe)
@@ -292,6 +323,21 @@ export default function AICopilotPage() {
               placeholder="Ask intelligence questions e.g. 'Why was Md. Ranbir Bhalla flagged?' or 'Find connection between suspect A and B'..."
               className="flex-1 rounded-lg border border-slate-800 bg-slate-950 px-4 py-2.5 text-xs text-slate-200 placeholder-slate-500 focus:border-blue-500 focus:outline-none font-mono"
             />
+            <button
+              type="button"
+              onClick={startListening}
+              title={isListening ? "Stop listening" : "Speak your query (en-IN)"}
+              className={`relative flex items-center justify-center rounded-lg border px-3 py-2.5 transition ${
+                isListening
+                  ? "border-rose-500 bg-rose-900/40 text-rose-400"
+                  : "border-slate-700 bg-slate-800 text-slate-400 hover:border-slate-500 hover:text-slate-200"
+              }`}
+            >
+              {isListening && (
+                <span className="absolute inset-0 rounded-lg animate-ping bg-rose-500 opacity-20" />
+              )}
+              {isListening ? <MicOff className="size-4" /> : <Mic className="size-4" />}
+            </button>
             <Button
               type="submit"
               disabled={loading || !input.trim()}
