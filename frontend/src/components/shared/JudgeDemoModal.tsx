@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
   Sparkles,
@@ -249,11 +249,14 @@ export function JudgeDemoModal({
 
           <div className="flex items-center gap-2">
             <Link
-              href={current.route}
-              onClick={onClose}
-              className="text-xs font-semibold text-blue-400 hover:text-blue-300"
+              href="/nlp-extraction?pitch=true"
+              onClick={() => {
+                try { localStorage.setItem("sih_pitch_active", "true"); } catch {}
+                onClose();
+              }}
+              className="inline-flex items-center gap-1.5 rounded-lg bg-amber-500 px-3 py-1.5 text-xs font-black text-slate-950 shadow-md shadow-amber-500/30 hover:bg-amber-400 transition"
             >
-              Test {current.route} →
+              ▶ Start Live Pitch Stepper
             </Link>
           </div>
 
@@ -276,6 +279,176 @@ export function JudgeDemoModal({
           )}
         </div>
 
+      </div>
+    </div>
+  );
+}
+
+// ─── Floating Top Live Pitch Runner Banner ──────────────────────────────────
+export const PITCH_STAGES = [
+  {
+    stage: 1,
+    title: "1. NLP Extraction",
+    subtitle: "FIR ➔ IPC 384/307 ➔ Graph Injection",
+    route: "/nlp-extraction",
+    icon: Cpu,
+    claim: "Extracts accused suspects, statutory sections & weapons in <30ms, then injects directly into live graph."
+  },
+  {
+    stage: 2,
+    title: "2. Graph Proofs",
+    subtitle: "Louvain Q=0.8936 ➔ Cut-Nodes",
+    route: "/graph-algorithms",
+    icon: Network,
+    claim: "Proves mathematical community modularity (Q=0.8936) and identifies syndicate kingpins."
+  },
+  {
+    stage: 3,
+    title: "3. Anomaly Engine",
+    subtitle: "Gaussian Z=2.41σ ➔ CCTV Haversine",
+    route: "/anomaly-detection",
+    icon: Activity,
+    claim: "Exposes non-blackbox mathematical statistical formulas for nocturnal calls & physical rendezvous."
+  },
+  {
+    stage: 4,
+    title: "4. Explainable AI",
+    subtitle: "SHAP Breakdown ➔ Counterfactuals",
+    route: "/explainability?suspect=Md.+Ranbir+Bhalla",
+    icon: Sparkles,
+    claim: "Transparent percentage feature attribution explaining why subject jumped to Threat 88/100."
+  },
+  {
+    stage: 5,
+    title: "5. Court Chargesheet",
+    subtitle: "CrPC 173 ➔ Sec 65B Panchnama",
+    route: "/chargesheet",
+    icon: ShieldCheck,
+    claim: "Generates formal judicial chargesheet with digital evidence certification and 1-click PDF print."
+  }
+];
+
+export function JudgePitchBanner() {
+  const [isActive, setIsActive] = useState(false);
+  const [currentPath, setCurrentPath] = useState("");
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    setCurrentPath(window.location.pathname);
+    const urlParams = new URLSearchParams(window.location.search);
+    const isPitchParam = urlParams.get("pitch") === "true";
+    const savedActive = localStorage.getItem("sih_pitch_active") === "true";
+    if (isPitchParam || savedActive) {
+      setIsActive(true);
+      try { localStorage.setItem("sih_pitch_active", "true"); } catch {}
+    }
+  }, []);
+
+  if (!isActive) return null;
+
+  const currentStageIndex = PITCH_STAGES.findIndex((s) => currentPath.startsWith(s.route.split("?")[0]));
+  const currentStage = currentStageIndex >= 0 ? PITCH_STAGES[currentStageIndex] : PITCH_STAGES[0];
+  const nextStage = currentStageIndex < PITCH_STAGES.length - 1 ? PITCH_STAGES[currentStageIndex + 1] : null;
+  const prevStage = currentStageIndex > 0 ? PITCH_STAGES[currentStageIndex - 1] : null;
+
+  const handleClose = () => {
+    setIsActive(false);
+    try { localStorage.removeItem("sih_pitch_active"); } catch {}
+  };
+
+  return (
+    <div className="sticky top-2 z-40 mb-4 rounded-xl border border-amber-500/60 bg-slate-950/95 p-3.5 shadow-2xl backdrop-blur-md text-white font-sans ring-1 ring-amber-500/20">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        
+        {/* Left Badge & Stage Info */}
+        <div className="flex items-center gap-3">
+          <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-amber-500 text-slate-950 font-black shadow-md shadow-amber-500/30">
+            <Award className="size-4" />
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="font-mono text-[10px] font-black uppercase tracking-widest text-amber-400">
+                SIH 2026 LIVE PITCH RUNNER
+              </span>
+              <Badge className="border-amber-500/40 bg-amber-950/60 font-mono text-[9px] text-amber-300">
+                Stage {currentStageIndex + 1} of {PITCH_STAGES.length}
+              </Badge>
+            </div>
+            <p className="text-xs font-bold text-white">
+              {currentStage.title} <span className="font-normal text-slate-400">· {currentStage.subtitle}</span>
+            </p>
+          </div>
+        </div>
+
+        {/* Stepper Navigation Pills */}
+        <div className="hidden lg:flex items-center gap-1 bg-slate-900/90 p-1 rounded-lg border border-slate-800">
+          {PITCH_STAGES.map((st, i) => (
+            <Link
+              key={st.stage}
+              href={st.route}
+              onClick={() => setCurrentPath(st.route.split("?")[0])}
+              className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] font-mono font-bold transition ${
+                i === currentStageIndex
+                  ? "bg-amber-500 text-slate-950 shadow"
+                  : i < currentStageIndex
+                  ? "bg-emerald-950/60 text-emerald-300 border border-emerald-800/60"
+                  : "text-slate-400 hover:text-white"
+              }`}
+            >
+              {i < currentStageIndex ? <CheckCircle2 className="size-2.5 text-emerald-400" /> : `0${st.stage}`}
+              <span className="hidden xl:inline">{st.title.split(". ")[1]}</span>
+            </Link>
+          ))}
+        </div>
+
+        {/* Quick Stepper Action Buttons */}
+        <div className="flex items-center gap-2">
+          {prevStage && (
+            <Link
+              href={prevStage.route}
+              onClick={() => setCurrentPath(prevStage.route.split("?")[0])}
+              className="inline-flex items-center gap-1 rounded-lg border border-slate-700 bg-slate-900 px-2.5 py-1.5 text-xs font-bold text-slate-300 hover:bg-slate-800 hover:text-white transition"
+            >
+              <ChevronLeft className="size-3.5" /> Prev
+            </Link>
+          )}
+
+          {nextStage ? (
+            <Link
+              href={nextStage.route}
+              onClick={() => setCurrentPath(nextStage.route.split("?")[0])}
+              className="inline-flex items-center gap-1.5 rounded-lg bg-amber-500 px-3 py-1.5 text-xs font-black text-slate-950 shadow-md shadow-amber-500/20 hover:bg-amber-400 transition animate-pulse"
+            >
+              Next: {nextStage.title.split(". ")[1]} <ChevronRight className="size-3.5" />
+            </Link>
+          ) : (
+            <button
+              onClick={handleClose}
+              className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white shadow hover:bg-emerald-500 transition"
+            >
+              <CheckCircle2 className="size-3.5" /> Pitch Complete
+            </button>
+          )}
+
+          <button
+            onClick={handleClose}
+            className="rounded-lg p-1.5 text-slate-500 hover:bg-slate-800 hover:text-slate-300 transition"
+            title="Exit Pitch Runner"
+          >
+            <X className="size-4" />
+          </button>
+        </div>
+
+      </div>
+
+      {/* Live Technical Pitch Claim */}
+      <div className="mt-2 border-t border-slate-800/80 pt-1.5 flex items-center justify-between text-[11px] text-slate-300">
+        <p className="italic text-amber-200/90 font-mono text-[10px]">
+          🎯 <strong>Judge Pitch Claim:</strong> "{currentStage.claim}"
+        </p>
+        <span className="hidden md:inline text-[9px] font-mono text-slate-500">
+          Click Next to step through live AI proofs
+        </span>
       </div>
     </div>
   );
