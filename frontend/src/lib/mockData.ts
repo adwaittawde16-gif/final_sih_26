@@ -505,7 +505,7 @@ export const fallbackSocial: SocialMediaResponse = {
     {
       approximate_location: "Byculla West, Mumbai",
       suspect_count: 3,
-      platforms_used: "WhatsApp, Instagram",
+      platforms_used: "WhatsApp, Instagram, Telegram",
       devices_used: "Android Mobile, Desktop Browser",
       suspects: ["Md. Ranbir Bhalla", "Md. Teerth Bhargava", "Md. Vedant Padmanabhan"]
     },
@@ -513,8 +513,15 @@ export const fallbackSocial: SocialMediaResponse = {
       approximate_location: "Lower Parel, Mumbai",
       suspect_count: 2,
       platforms_used: "WhatsApp, X / Twitter",
-      devices_used: "iPhone",
+      devices_used: "iPhone 14 Pro",
       suspects: ["Md. Pranit Arya", "Md. Hardik Kant"]
+    },
+    {
+      approximate_location: "Agripada Main Road, Mumbai",
+      suspect_count: 2,
+      platforms_used: "Telegram, Instagram",
+      devices_used: "OnePlus 11",
+      suspects: ["Md. Ranbir Bhalla", "Md. Teerth Bhargava"]
     }
   ],
   suspects: [
@@ -534,6 +541,15 @@ export const fallbackSocial: SocialMediaResponse = {
           is_verified: false,
           status_flag: "MONITORED",
           profile_url: "https://instagram.com/@md_ranbir_bhalla"
+        },
+        {
+          platform: "Telegram",
+          handle: "@ranbir_syndicate_channel",
+          followers_count: 1850,
+          following_count: 12,
+          is_verified: false,
+          status_flag: "HIGH_RISK",
+          profile_url: "https://t.me/ranbir_syndicate_channel"
         }
       ],
       recent_posts: [
@@ -549,6 +565,164 @@ export const fallbackSocial: SocialMediaResponse = {
           hashtags: ["#MumbaiUnderworld", "#NightPatrol"],
           tagged_users: ["@md_teerth_bhargava"],
           location_checkin: "Station Road Footpath, Byculla"
+        },
+        {
+          post_id: "SM-41281",
+          platform: "Telegram",
+          timestamp: "2026-08-26 02:45:00",
+          content: "Meeting set near Venus Wine Shop. Confirm cash drop before midnight.",
+          sentiment: "SUSPICIOUS",
+          risk_level: "HIGH",
+          likes: 89,
+          shares: 12,
+          hashtags: ["#CashDrop", "#BycullaCell"],
+          tagged_users: ["@md_vedant_p"],
+          location_checkin: "Venus Wine Shop, Byculla"
+        }
+      ]
+    },
+    {
+      suspect_name: "Md. Teerth Bhargava",
+      phone_number: "+91-7611970993",
+      total_platforms: 2,
+      total_posts: 4,
+      overall_sentiment: "SUSPICIOUS",
+      risk_score: 88.5,
+      profiles: [
+        {
+          platform: "Instagram",
+          handle: "@md_teerth_bhargava",
+          followers_count: 2900,
+          following_count: 410,
+          is_verified: false,
+          status_flag: "MONITORED",
+          profile_url: "https://instagram.com/@md_teerth_bhargava"
+        },
+        {
+          platform: "X / Twitter",
+          handle: "@teerth_b_real",
+          followers_count: 1450,
+          following_count: 220,
+          is_verified: false,
+          status_flag: "MONITORED",
+          profile_url: "https://x.com/teerth_b_real"
+        }
+      ],
+      recent_posts: [
+        {
+          post_id: "SM-41290",
+          platform: "Instagram",
+          timestamp: "2026-08-24 21:10:00",
+          content: "Standing by with the team. Agripada signal clear.",
+          sentiment: "SUSPICIOUS",
+          risk_level: "HIGH",
+          likes: 210,
+          shares: 18,
+          hashtags: ["#Agripada", "#Syndicate"],
+          tagged_users: ["@md_ranbir_bhalla"],
+          location_checkin: "Agripada Traffic Signal, Mumbai"
+        }
+      ]
+    },
+    {
+      suspect_name: "Md. Vedant Padmanabhan",
+      phone_number: "+91-2530358841",
+      total_platforms: 2,
+      total_posts: 3,
+      overall_sentiment: "SUSPICIOUS",
+      risk_score: 84.1,
+      profiles: [
+        {
+          platform: "Instagram",
+          handle: "@md_vedant_p",
+          followers_count: 1800,
+          following_count: 290,
+          is_verified: false,
+          status_flag: "MONITORED",
+          profile_url: "https://instagram.com/@md_vedant_p"
+        }
+      ],
+      recent_posts: [
+        {
+          post_id: "SM-41300",
+          platform: "Instagram",
+          timestamp: "2026-08-23 15:40:00",
+          content: "Cash ledger updated for the week. All settlements clear.",
+          sentiment: "SUSPICIOUS",
+          risk_level: "HIGH",
+          likes: 145,
+          shares: 9,
+          hashtags: ["#FinanceTrail", "#Settlement"],
+          tagged_users: [],
+          location_checkin: "Lower Parel Commercial Hub"
+        }
+      ]
+    },
+    {
+      suspect_name: "Md. Pranit Arya",
+      phone_number: "+91-7774789752",
+      total_platforms: 2,
+      total_posts: 3,
+      overall_sentiment: "MODERATE",
+      risk_score: 79.6,
+      profiles: [
+        {
+          platform: "X / Twitter",
+          handle: "@pranit_arya_official",
+          followers_count: 3100,
+          following_count: 190,
+          is_verified: false,
+          status_flag: "MONITORED",
+          profile_url: "https://x.com/pranit_arya_official"
+        }
+      ],
+      recent_posts: [
+        {
+          post_id: "SM-41310",
+          platform: "X / Twitter",
+          timestamp: "2026-08-22 19:15:00",
+          content: "Night patrol underway near Lower Parel service road.",
+          sentiment: "MODERATE",
+          risk_level: "MODERATE",
+          likes: 98,
+          shares: 14,
+          hashtags: ["#LowerParel", "#Patrol"],
+          tagged_users: ["@hardik_kant_b"],
+          location_checkin: "Flyover Service Road, Lower Parel"
+        }
+      ]
+    },
+    {
+      suspect_name: "Md. Hardik Kant",
+      phone_number: "+91-8482336846",
+      total_platforms: 2,
+      total_posts: 2,
+      overall_sentiment: "MODERATE",
+      risk_score: 73.4,
+      profiles: [
+        {
+          platform: "Instagram",
+          handle: "@hardik_kant_b",
+          followers_count: 1550,
+          following_count: 310,
+          is_verified: false,
+          status_flag: "MONITORED",
+          profile_url: "https://instagram.com/@hardik_kant_b"
+        }
+      ],
+      recent_posts: [
+        {
+          post_id: "SM-41320",
+          platform: "Instagram",
+          timestamp: "2026-08-21 23:05:00",
+          content: "On site near Byculla Market entrance.",
+          sentiment: "MODERATE",
+          risk_level: "MODERATE",
+          likes: 76,
+          shares: 5,
+          hashtags: ["#BycullaMarket"],
+          tagged_users: [],
+          location_checkin: "Market Entrance, Byculla West"
         }
       ]
     }
