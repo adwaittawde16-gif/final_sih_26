@@ -144,12 +144,21 @@ ${edges}
             </div>
           </div>
 
-          <Button
-            onClick={() => fetchGraphProof(louvainRes, pagerankAlpha)}
-            className="bg-blue-600 text-xs font-semibold text-white hover:bg-blue-500"
-          >
-            <RefreshCw className="mr-2 size-3.5" /> Re-Compute Live Algorithms
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              onClick={handleExportGEXF}
+              variant="outline"
+              className="border-slate-700 bg-slate-800 text-xs font-semibold text-slate-200 hover:bg-slate-700 hover:text-white"
+            >
+              <Download className="mr-2 size-3.5 text-blue-400" /> Export GEXF XML
+            </Button>
+            <Button
+              onClick={() => fetchGraphProof(louvainRes, pagerankAlpha)}
+              className="bg-blue-600 text-xs font-semibold text-white hover:bg-blue-500"
+            >
+              <RefreshCw className="mr-2 size-3.5" /> Re-Compute Live Algorithms
+            </Button>
+          </div>
         </CardContent>
       </Card>
 
