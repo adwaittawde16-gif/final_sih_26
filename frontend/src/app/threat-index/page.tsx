@@ -1,1 +1,3 @@
-export { default } from "../threat/page";
+import ThreatLeaderboardPage from "../threat/page";
+
+export default ThreatLeaderboardPage;
