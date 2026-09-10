@@ -24,27 +24,11 @@ const events = [
 export const dynamic = "force-dynamic";
 
 export function GET() {
-  const encoder = new TextEncoder();
-  const body = new ReadableStream<Uint8Array>({
-    start(controller) {
-      let index = 0;
-      const send = () => {
-        const event = events[index % events.length];
-        controller.enqueue(encoder.encode(`data: ${JSON.stringify(event)}\n\n`));
-        index += 1;
-      };
+  const event = events[Math.floor(Date.now() / 15000) % events.length];
 
-      send();
-      controller.enqueue(encoder.encode(": connected\n\n"));
-    },
-    cancel() {},
-  });
-
-  return new NextResponse(body, {
+  return NextResponse.json(event, {
     headers: {
-      "Cache-Control": "no-cache, no-transform",
-      Connection: "keep-alive",
-      "Content-Type": "text/event-stream; charset=utf-8",
+      "Cache-Control": "no-store, max-age=0",
     },
   });
 }

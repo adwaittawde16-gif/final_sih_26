@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Header } from "@/components/shared/Header";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -50,24 +50,32 @@ function LiveEventTicker() {
   const [events, setEvents] = useState<LiveEvent[]>([]);
   const [connected, setConnected] = useState(false);
   const [error, setError] = useState(false);
-  const esRef = useRef<EventSource | null>(null);
-
   useEffect(() => {
-    const API_BASE = typeof window !== "undefined" ? (process.env.NEXT_PUBLIC_API_URL || "") : "http://127.0.0.1:8080";
-    const url = `${API_BASE}/api/stream/events`;
-    try {
-      const es = new EventSource(url);
-      esRef.current = es;
-      es.onopen = () => { setConnected(true); setError(false); };
-      es.onmessage = (e) => {
-        try {
-          const evt: LiveEvent = JSON.parse(e.data);
-          setEvents((prev) => [evt, ...prev].slice(0, 6));
-        } catch { /* ignore malformed */ }
-      };
-      es.onerror = () => { setConnected(false); setError(true); };
-    } catch { setError(true); }
-    return () => { esRef.current?.close(); };
+    let cancelled = false;
+    const loadEvent = async () => {
+      try {
+        const response = await fetch("/api/stream/events", { cache: "no-store" });
+        if (!response.ok) throw new Error(`Feed request failed: ${response.status}`);
+        const evt: LiveEvent = await response.json();
+        if (!cancelled) {
+          setConnected(true);
+          setError(false);
+          setEvents((prev) => [evt, ...prev.filter((item) => item.id !== evt.id)].slice(0, 6));
+        }
+      } catch {
+        if (!cancelled) {
+          setConnected(false);
+          setError(true);
+        }
+      }
+    };
+
+    loadEvent();
+    const interval = window.setInterval(loadEvent, 15000);
+    return () => {
+      cancelled = true;
+      window.clearInterval(interval);
+    };
   }, []);
 
   return (
@@ -80,7 +88,7 @@ function LiveEventTicker() {
             {connected ? "● LIVE" : error ? "DISCONNECTED" : "CONNECTING…"}
           </span>
         </div>
-        <span className="font-mono text-[10px] text-slate-400">SSE · /api/stream/events · auto-refresh</span>
+        <span className="font-mono text-[10px] text-slate-400">Polling · /api/stream/events · every 15s</span>
       </CardHeader>
       <CardContent className="pb-4">
         {events.length === 0 && !error && (
