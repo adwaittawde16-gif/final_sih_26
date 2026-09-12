@@ -31,7 +31,8 @@ from app_backend.routers import (
     graph_analytics,
     core_ai,
     stream,
-    audit
+    audit,
+    enhanced_cdr
 )
 from app_backend.middleware.audit_middleware import AuditLogMiddleware
 
@@ -68,6 +69,10 @@ def startup_event():
     engine.get_cctv_meetings()
     engine.calculate_threat_scores()
     ThreatClassifier(engine).classify_suspect_risks()
+    # Pre-warm enhanced CDR service
+    from app_backend.services import enhanced_cdr_service
+    enhanced_cdr_service.get_enhanced_cdr_summary(engine)
+    enhanced_cdr_service.detect_suspicious_patterns(engine)
     print("[OK] Intelligence Engine warm-up complete! Responses will be served instantly.")
 
 # Custom Exception Handler
@@ -110,6 +115,7 @@ app.include_router(graph_analytics.router)
 app.include_router(core_ai.router)
 app.include_router(stream.router)
 app.include_router(audit.router)
+app.include_router(enhanced_cdr.router)
 
 
 
