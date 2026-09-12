@@ -353,7 +353,7 @@ export default function CDRNetworkPage() {
                           <div className="text-right">
                             <Button
                               variant="outline"
-                              size="xs"
+                              size="sm"
                               onClick={() => {
                                 // Investigate pattern - highlight related nodes or show details
                                 alert(`Investigating: ${pattern.type}\n${pattern.description}`);
@@ -405,7 +405,7 @@ export default function CDRNetworkPage() {
                       ✕
                     </button>
                   )}
-                }
+                </div>
               </div>
 
               {/* Min Threat Score Slider */}
@@ -478,7 +478,7 @@ export default function CDRNetworkPage() {
                 >
                   <option value="ALL">All Detected Roles</option>
                   <option value="KINGPIN">Kingpin / Ring Leader</option>
-                  <option value="BRIDGE">Bridge Connector
+                  <option value="BRIDGE">Bridge Connector</option>
                 </select>
               </div>
 
@@ -514,7 +514,7 @@ export default function CDRNetworkPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="w-3 h-3 rounded-full bg-slate-600 inline-block" />
-                    <span>Uninvolved Civilian</span
+                    <span>Uninvolved Civilian</span>
                   </div>
                 </div>
               </div>
@@ -645,8 +645,9 @@ export default function CDRNetworkPage() {
                         </span>
                       </div>
                     </div>
-                  });
-                }}
+                      );
+                    })}
+                </div>
               </div>
             </Card>
           </div>
@@ -703,7 +704,7 @@ export default function CDRNetworkPage() {
                     </div>
                     <div className="justify-between items-center text-slate-300">
                       <span className="text-slate-400 text-[11px]">Legal Status:</span>
-                      <span className="font-bold text-red-400">Under Trial (Bail)</span
+                      <span className="font-bold text-red-400">Under Trial (Bail)</span>
                     </div>
                     <div className="justify-between items-center text-slate-300">
                       <span className="text-slate-400 text-[11px]">Cell / Cluster:</span>
@@ -729,7 +730,7 @@ export default function CDRNetworkPage() {
                     </div>
                     <div className="flex justify-between items-center text-slate-300">
                       <span className="text-slate-400">Total Received:</span>
-                      <span className="font-bold text-emerald-400">₹54,87,204</span
+                      <span className="font-bold text-emerald-400">₹54,87,204</span>
                     </div>
                     <div className="flex justify-between items-center text-slate-300">
                       <span className="text-slate-400">Smurfing Muling:</span>
