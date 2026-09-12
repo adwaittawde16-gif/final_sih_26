@@ -1,17 +1,116 @@
 "use client";
 
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { useMemo, useState } from "react";
 import { Header } from "@/components/shared/Header";
-import { Activity, ArrowUpRight, ChevronRight, Database, FileText, MapPin, RefreshCw, Search, ShieldAlert, Users, Wifi } from "lucide-react";
+import { KPICard } from "@/components/shared/KPICard";
+import { LoadingSpinner, ErrorState } from "@/components/ui/loading";
+import { Card, CardTitle, CardDescription } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { api } from "@/lib/api";
+import { ThreatLeaderboardResponse, AlertsResponse } from "@/types";
+import { Flame, Network, Camera, Layers, Banknote, Moon, Eye, FileText, ArrowRight } from "lucide-react";
 
-const sourceRows = [["CDR / carrier logs", "42,816", "18:41:58", "Operational"], ["CCTV event index", "12,904", "18:41:42", "Operational"], ["Financial ledger", "8,220", "18:40:16", "Operational"], ["Open social signals", "3,691", "18:39:55", "Delayed 02m"], ["Field observation queue", "1,482", "18:38:10", "Operational"]];
-const players = [["A. Chaudhry", "NX-047", "0.94", "4 / 6", "12", "CRITICAL"], ["T. Bhargava", "NX-112", "0.87", "3 / 6", "9", "HIGH"], ["R. Bhalla", "NX-083", "0.82", "4 / 6", "8", "HIGH"], ["S. Mehta", "NX-204", "0.71", "2 / 6", "6", "WATCH"], ["K. Ansari", "NX-166", "0.68", "3 / 6", "5", "WATCH"]];
-const alerts = [{ code: "ALT-2409", title: "Cross-domain association detected", text: "NX-047 · CDR + CCTV + ledger signals intersect within 1.8 km", level: "CRITICAL", time: "11m" }, { code: "ALT-2408", title: "Night movement anomaly", text: "NX-112 · four tower transitions between 00:00–06:00", level: "HIGH", time: "34m" }, { code: "ALT-2407", title: "Merchant concentration review", text: "F-09 · transaction velocity exceeds local baseline", level: "MEDIUM", time: "1h" }];
-const modules = [{ label: "Entity extraction", href: "/nlp-extraction", value: "2,418", note: "entities / 24h" }, { label: "Relationship graph", href: "/cdr-network", value: "214", note: "open associations" }, { label: "Financial trail", href: "/financial-intelligence", value: "91", note: "flagged transactions" }, { label: "Anomaly detection", href: "/anomaly-detection", value: "47", note: "active signals" }];
+export default function CommandCenterPage() {
+  const [data, setData] = useState<ThreatLeaderboardResponse | null>(null);
+  const [alerts, setAlerts] = useState<AlertsResponse | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-function NetworkGraph() { const nodes = [{ x: 164, y: 118, r: 17, label: "NX-047", hot: true }, { x: 74, y: 66, r: 10, label: "NX-112" }, { x: 68, y: 176, r: 9, label: "CCTV-09" }, { x: 260, y: 55, r: 11, label: "NX-083" }, { x: 287, y: 168, r: 12, label: "M-009" }, { x: 188, y: 214, r: 8, label: "F-09" }, { x: 366, y: 113, r: 8, label: "NX-166" }]; const edges = [[164,118,74,66],[164,118,68,176],[164,118,260,55],[164,118,287,168],[164,118,188,214],[260,55,366,113],[287,168,366,113]]; return <div className="relative h-[282px] overflow-hidden bg-[#f8faf9]" style={{ backgroundImage: "linear-gradient(#e1e7e5 1px, transparent 1px), linear-gradient(90deg, #e1e7e5 1px, transparent 1px)", backgroundSize: "32px 32px" }}><svg viewBox="0 0 440 260" className="h-full w-full"><g stroke="#b2c2c5" strokeWidth="1.2">{edges.map((e, i) => <line key={i} x1={e[0]} y1={e[1]} x2={e[2]} y2={e[3]} />)}</g>{nodes.map(n => <g key={n.label}><circle cx={n.x} cy={n.y} r={n.r + 4} fill="none" stroke={n.hot ? "#a43d36" : "#7b9aa6"} strokeWidth="1" opacity=".35" /><circle cx={n.x} cy={n.y} r={n.r} fill={n.hot ? "#a43d36" : "#d7e4e7"} stroke={n.hot ? "#7e2924" : "#4b7184"} strokeWidth="1.5" /><text x={n.x} y={n.y + n.r + 14} textAnchor="middle" fontSize="9" fill="#5d6b70" fontFamily="IBM Plex Mono">{n.label}</text></g>)}</svg><div className="absolute bottom-3 left-3 flex gap-3 bg-white/90 px-2 py-1 font-mono text-[9px] text-muted"><span><i className="mr-1 inline-block size-2 bg-accent" />priority</span><span><i className="mr-1 inline-block size-2 border border-accent bg-[#d7e4e7]" />entity</span></div></div> }
+  useEffect(() => {
+    async function loadData() {
+      try {
+        setLoading(true);
+        const [boardRes, alertRes] = await Promise.all([
+          api.getThreatLeaderboard(),
+          api.getAlerts()
+        ]);
+        setData(boardRes);
+        setAlerts(alertRes);
+      } catch (err: any) {
+        setError(err.message || "Failed to connect to Python FastAPI backend");
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadData();
+  }, []);
 
-function GeoPanel() { return <div className="relative h-[282px] overflow-hidden bg-[#eef2f1]" style={{ backgroundImage: "linear-gradient(35deg, transparent 47%, #cbd5d4 48%, #cbd5d4 49%, transparent 50%), linear-gradient(120deg, transparent 47%, #d2dbd9 48%, #d2dbd9 49%, transparent 50%), linear-gradient(#dce4e2 1px, transparent 1px), linear-gradient(90deg, #dce4e2 1px, transparent 1px)", backgroundSize: "140px 110px, 170px 140px, 30px 30px, 30px 30px" }}><div className="absolute left-[28%] top-[33%] size-16 rounded-full border border-[#a43d36]/40 bg-[#a43d36]/20" /><div className="absolute left-[28%] top-[33%] size-4 -translate-x-1/2 -translate-y-1/2 bg-accent" /><div className="absolute left-[64%] top-[57%] size-11 rounded-full border border-[#4b7184]/50 bg-[#4b7184]/20" /><div className="absolute left-[64%] top-[57%] size-3 -translate-x-1/2 -translate-y-1/2 bg-steel" /><div className="absolute left-[48%] top-[74%] size-2 bg-steel" /><div className="absolute bottom-3 left-3 border border-line bg-white/90 px-2 py-1 font-mono text-[9px] text-muted"><MapPin className="mr-1 inline size-3" /> Mumbai region · signal density</div><div className="absolute right-3 top-3 border border-line bg-white/90 px-2 py-1 font-mono text-[9px] text-muted">3 hotspots</div></div> }
+  if (loading) return <LoadingSpinner label="Connecting to Tactical Intelligence Backend..." />;
+  if (error) return <ErrorState message={error} onRetry={() => window.location.reload()} />;
 
-export default function CommandCenterPage() { const [active, setActive] = useState("30 days"); const [showAll, setShowAll] = useState(false); const [query, setQuery] = useState(""); const filtered = useMemo(() => players.filter(p => p.join(" ").toLowerCase().includes(query.toLowerCase())), [query]); return <div className="min-h-screen"><Header title="Command overview" subtitle="Cross-source intelligence workspace for entity, network, financial, and location analysis." /><main className="mx-auto max-w-[1640px] space-y-4 p-4 lg:p-6"><section className="grid gap-3 border-b border-line pb-4 sm:grid-cols-2 lg:grid-cols-4"><div className="border-l-2 border-accent bg-white p-3"><p className="label">Active entities</p><p className="metric">1,284</p><p className="delta"><ArrowUpRight className="inline size-3" /> 8.4% vs prior period</p></div><div className="border-l-2 border-accent bg-white p-3"><p className="label">Open associations</p><p className="metric">214</p><p className="delta"><ArrowUpRight className="inline size-3" /> 12.1% cross-source</p></div><div className="border-l-2 border-[#c79734] bg-white p-3"><p className="label">Review queue</p><p className="metric">38</p><p className="delta text-[#a06b15]">6 critical / human review</p></div><div className="border-l-2 border-steel bg-white p-3"><p className="label">Source health</p><p className="metric">98.7%</p><p className="delta text-emerald-700">8 / 8 operational</p></div></section><section className="grid gap-4 xl:grid-cols-[1.2fr_1.8fr_1.05fr]"><div className="panel"><div className="panel-head"><div><p className="eyebrow">01 / ingest</p><h2>Source activity</h2></div><Database className="size-4 text-muted" /></div><div className="overflow-x-auto"><table className="data-table"><thead><tr><th>Source</th><th>Records</th><th>Sync</th><th>Status</th></tr></thead><tbody>{sourceRows.map(r => <tr key={r[0]}><td>{r[0]}</td><td className="font-mono">{r[1]}</td><td className="font-mono text-muted">{r[2]}</td><td><span className={r[3].startsWith("Delayed") ? "text-[#a06b15]" : "text-emerald-700"}>● {r[3]}</span></td></tr>)}</tbody></table></div><div className="mt-3 flex items-center justify-between border-t border-line pt-3"><span className="font-mono text-[9px] uppercase text-muted">Last full refresh 18:42:16</span><Link href="/data-ingestion" className="text-[10px] font-semibold text-steel hover:underline">Inspect pipeline <ChevronRight className="inline size-3" /></Link></div></div><div className="panel"><div className="panel-head"><div><p className="eyebrow">02 / topology</p><h2>Relationship graph</h2></div><span className="font-mono text-[9px] text-muted">214 nodes · 386 edges</span></div><NetworkGraph /><div className="mt-3 flex items-center justify-between"><span className="font-mono text-[9px] text-muted">Layout: force-directed / centrality weighted</span><Link href="/cdr-network" className="text-[10px] font-semibold text-steel hover:underline">Open graph <ChevronRight className="inline size-3" /></Link></div></div><div className="panel"><div className="panel-head"><div><p className="eyebrow">03 / alerts</p><h2>Anomaly ticker</h2></div><span className="font-mono text-[9px] text-accent">LIVE</span></div><div className="space-y-2">{(showAll ? alerts : alerts.slice(0, 2)).map(a => <div key={a.code} className="border-l-2 border-accent bg-[#faf8f7] p-2.5"><div className="flex justify-between gap-2"><span className="font-mono text-[9px] font-bold text-accent">{a.level}</span><span className="font-mono text-[9px] text-muted">{a.time}</span></div><p className="mt-1 text-[11px] font-semibold">{a.title}</p><p className="mt-1 text-[10px] leading-4 text-muted">{a.text}</p></div>)}<button onClick={() => setShowAll(!showAll)} className="w-full border border-line py-2 text-[10px] font-semibold text-muted hover:bg-[#f6f7f6]">{showAll ? "Collapse ticker" : "View all alerts"}</button></div></div></section><section className="grid gap-4 lg:grid-cols-[1.2fr_1fr]"><div className="panel"><div className="panel-head"><div><p className="eyebrow">04 / ranking</p><h2>Key-player centrality</h2></div><div className="relative"><Search className="absolute left-2 top-1/2 size-3 -translate-y-1/2 text-muted" /><input value={query} onChange={e => setQuery(e.target.value)} placeholder="Filter" className="h-7 w-28 border border-line pl-6 font-mono text-[10px] outline-none focus:border-steel" /></div></div><div className="overflow-x-auto"><table className="data-table"><thead><tr><th>Entity</th><th>ID</th><th>Score</th><th>Coverage</th><th>Links</th><th>Band</th></tr></thead><tbody>{filtered.map(p => <tr key={p[1]}><td className="font-semibold">{p[0]}</td><td className="font-mono text-muted">{p[1]}</td><td className="font-mono font-bold text-accent">{p[2]}</td><td className="font-mono">{p[3]}</td><td className="font-mono">{p[4]}</td><td><span className={p[5] === "CRITICAL" ? "text-accent" : p[5] === "HIGH" ? "text-[#a06b15]" : "text-steel"}>{p[5]}</span></td></tr>)}</tbody></table></div><div className="mt-3 border-t border-line pt-3"><Link href="/threat-index" className="text-[10px] font-semibold text-steel hover:underline">Open full ranking <ChevronRight className="inline size-3" /></Link></div></div><div className="panel"><div className="panel-head"><div><p className="eyebrow">05 / geospatial</p><h2>Signal locations</h2></div><span className="font-mono text-[9px] text-muted">18:42 IST</span></div><GeoPanel /></div></section><section><div className="mb-2 flex flex-wrap items-end justify-between gap-2"><div><p className="eyebrow">06 / modules</p><h2 className="text-[15px] font-semibold">Analysis modules</h2></div><div className="flex border border-line bg-white">{["24 hours", "7 days", "30 days"].map(w => <button key={w} onClick={() => setActive(w)} className={`px-3 py-1.5 font-mono text-[9px] ${active === w ? "bg-ink text-white" : "text-muted hover:bg-[#f5f6f5]"}`}>{w}</button>)}</div></div><div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{modules.map(m => <Link href={m.href} key={m.label} className="panel group p-3 hover:border-steel"><div className="flex items-center justify-between"><span className="font-mono text-[9px] uppercase tracking-wider text-muted">{m.label}</span><ChevronRight className="size-3.5 text-muted group-hover:text-steel" /></div><p className="mt-3 font-mono text-xl font-semibold">{m.value}</p><p className="mt-1 text-[10px] text-muted">{m.note} · {active}</p></Link>)}</div></section><footer className="flex flex-wrap items-center justify-between gap-2 border-t border-line py-3 font-mono text-[9px] uppercase tracking-wider text-muted"><span>Nexus Intelligence Platform / operational workspace</span><span><Wifi className="mr-1 inline size-3 text-emerald-700" />Telemetry nominal · synthetic demo dataset</span></footer></main><style jsx global>{`.label{font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:#6d7b7e}.metric{font-family:var(--font-mono);font-size:25px;font-weight:600;letter-spacing:-.04em;margin-top:7px}.delta{font-family:var(--font-mono);font-size:9px;color:#4b7184;margin-top:5px}.panel{border:1px solid #d7dfdc;background:#fff;padding:14px}.panel-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #e0e5e3;padding-bottom:10px;margin-bottom:12px}.panel-head h2{font-size:14px;font-weight:600;margin-top:3px}.eyebrow{font-family:var(--font-mono);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#4b7184}.data-table{width:100%;border-collapse:collapse;font-size:10px;white-space:nowrap}.data-table th{text-align:left;font-family:var(--font-mono);font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:#7b8788;background:#f6f8f7;border-bottom:1px solid #d7dfdc;padding:8px 7px}.data-table td{border-bottom:1px solid #e7ebe9;padding:9px 7px;color:#334044}.data-table tr:last-child td{border-bottom:0}.data-table tbody tr:hover{background:#f8faf9}`}</style></div> }
+  const topSuspect = data?.leaderboard[0];
+
+  return (
+    <div className="space-y-6">
+      <Header
+        title="Tactical Intelligence Command Center"
+        subtitle="Unified suspect risk scoring, CDR networks, CCTV tracking, and financial intelligence."
+      />
+
+      {/* KPI Cards Grid */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+        <KPICard label="Suspects Profiled" value={data?.total_suspects || 100} accent="blue" icon={Flame} />
+        <KPICard label="Active Crime Rings" value="88" accent="red" icon={Layers} subtext="Priority RING-01" />
+        <KPICard label="Critical Risk Tiers" value={data?.critical_count || 6} accent="red" icon={Flame} />
+        <KPICard label="CCTV Encounters" value="12" accent="amber" icon={Camera} subtext="Confirmed matches" />
+        <KPICard label="Night Hotspots" value="16" accent="green" icon={Moon} subtext="00:00-06:00 IST" />
+      </div>
+
+      {/* Priority Top Suspect Alert Card */}
+      {topSuspect && (
+        <Card className="border-red-300 bg-red-50/40">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div className="space-y-1">
+              <div className="flex items-center gap-2">
+                <Badge variant="critical">CRITICAL RISK · PRIORITY DOSSIER</Badge>
+                <span className="text-xs font-mono text-slate-500">RING-01 LEAD</span>
+              </div>
+              <h2 className="text-xl font-bold text-slate-900">{topSuspect.suspect_name}</h2>
+              <p className="text-xs font-mono text-slate-600">{topSuspect.phone_number} · Composite Score {topSuspect.total_threat_score.toFixed(1)}/100</p>
+            </div>
+            <Link
+              href={`/dossiers?suspect=${encodeURIComponent(topSuspect.suspect_name)}`}
+              className="inline-flex items-center justify-center px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-semibold text-xs rounded-lg transition-colors font-mono shadow-sm"
+            >
+              Open 360° Suspect Dossier
+            </Link>
+          </div>
+        </Card>
+      )}
+
+      {/* 8 Module Navigation Grid */}
+      <div>
+        <h3 className="text-xs font-mono font-bold text-slate-500 uppercase tracking-widest mb-4">
+          Core Intelligence Modules
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            { title: "1. Suspect Threat Index", desc: "0-100 Suspect risk ranking & simulator", href: "/threat", icon: Flame, color: "text-red-600" },
+            { title: "2. CDR Network Graph", desc: "Call log pairings & physics network", href: "/cdr", icon: Network, color: "text-blue-600" },
+            { title: "3. CCTV Co-Location", desc: "Camera sightings & distance correlation", href: "/cctv", icon: Camera, color: "text-amber-600" },
+            { title: "4. Crime Syndicates", desc: "Connected component ring detection", href: "/crime-rings", icon: Layers, color: "text-purple-600" },
+            { title: "5. Financial Intelligence", desc: "UPI money trails & merchant flags", href: "/financial", icon: Banknote, color: "text-emerald-600" },
+            { title: "6. Nocturnal Anomalies", desc: "Late-night calls & cell tower hotspots", href: "/nocturnal", icon: Moon, color: "text-cyan-600" },
+            { title: "7. Field Surveillance", desc: "Field officer reports & density heatmap", href: "/surveillance", icon: Eye, color: "text-indigo-600" },
+            { title: "8. Suspect Dossiers", desc: "360° dossiers & real-time alert feed", href: "/dossiers", icon: FileText, color: "text-pink-600" },
+          ].map((m) => {
+            const Icon = m.icon;
+            return (
+              <Link key={m.href} href={m.href} className="group">
+                <Card className="h-full hover:border-slate-400 transition-all">
+                  <div className="flex items-center justify-between mb-3">
+                    <Icon className={`w-5 h-5 ${m.color}`} />
+                    <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-slate-900 group-hover:translate-x-1 transition-all" />
+                  </div>
+                  <CardTitle className="text-sm font-bold group-hover:text-blue-700 transition-colors">{m.title}</CardTitle>
+                  <CardDescription className="mt-1">{m.desc}</CardDescription>
+                </Card>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}

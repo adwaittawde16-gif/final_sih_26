@@ -127,147 +127,36 @@ export const fallbackCDRPairs: CDRSummaryResponse = {
 };
 
 export const fallbackCDRGraph: NetworkGraphResponse = {
-  total_nodes: 20,
-  total_edges: 28,
+  total_nodes: 6,
+  total_edges: 8,
   top_key_influencers: [
     {
-      id: "Md. Ranbir Bhalla",
+      id: "node-1",
       label: "Md. Ranbir Bhalla",
       phone: "+91-2236381844",
       threat_score: 94.2,
       degree_centrality: 0.85,
       betweenness_centrality: 0.78,
       total_calls_count: 240,
-      connected_entities_count: 7,
+      connected_entities_count: 5,
       nocturnal_calls_count: 62,
-      risk_tier: "CRITICAL",
-      gang_id: "GANG-01",
-      gang_name: "Gang 1 — Byculla Syndicate"
-    },
-    {
-      id: "Md. Advik Golla",
-      label: "Md. Advik Golla",
-      phone: "+91-0751400478",
-      threat_score: 91.0,
-      degree_centrality: 0.76,
-      betweenness_centrality: 0.71,
-      total_calls_count: 195,
-      connected_entities_count: 6,
-      nocturnal_calls_count: 48,
-      risk_tier: "CRITICAL",
-      gang_id: "GANG-02",
-      gang_name: "Gang 2 — Lower Parel Ring"
-    },
-    {
-      id: "Md. Azad Mannan",
-      label: "Md. Azad Mannan",
-      phone: "+91-8472516266",
-      threat_score: 87.4,
-      degree_centrality: 0.69,
-      betweenness_centrality: 0.64,
-      total_calls_count: 172,
-      connected_entities_count: 5,
-      nocturnal_calls_count: 39,
-      risk_tier: "CRITICAL",
-      gang_id: "GANG-03",
-      gang_name: "Gang 3 — Kurla Mule Network"
-    },
-    {
-      id: "Md. Maanav Tailor",
-      label: "Md. Maanav Tailor",
-      phone: "+91-5405416287",
-      threat_score: 84.8,
-      degree_centrality: 0.65,
-      betweenness_centrality: 0.58,
-      total_calls_count: 160,
-      connected_entities_count: 5,
-      nocturnal_calls_count: 34,
-      risk_tier: "HIGH",
-      gang_id: "GANG-04",
-      gang_name: "Gang 4 — Dharavi Extortion Group"
-    },
-    {
-      id: "Md. Teerth Bhargava",
-      label: "Md. Teerth Bhargava",
-      phone: "+91-7611970993",
-      threat_score: 88.5,
-      degree_centrality: 0.72,
-      betweenness_centrality: 0.65,
-      total_calls_count: 180,
-      connected_entities_count: 5,
-      nocturnal_calls_count: 41,
       risk_tier: "CRITICAL",
       gang_id: "GANG-01",
       gang_name: "Gang 1 — Byculla Syndicate"
     }
   ],
   nodes: [
-    // GANG-01 (Byculla / Alpha)
-    { id: "Md. Ranbir Bhalla", label: "Md. Ranbir Bhalla", phone: "+91-2236381844", threat_score: 94.2, degree_centrality: 0.85, betweenness_centrality: 0.78, total_calls_count: 240, connected_entities_count: 7, nocturnal_calls_count: 62, risk_tier: "CRITICAL", gang_id: "GANG-01", gang_name: "Gang 1 — Byculla Syndicate" },
-    { id: "Md. Teerth Bhargava", label: "Md. Teerth Bhargava", phone: "+91-7611970993", threat_score: 88.5, degree_centrality: 0.72, betweenness_centrality: 0.65, total_calls_count: 180, connected_entities_count: 5, nocturnal_calls_count: 41, risk_tier: "CRITICAL", gang_id: "GANG-01", gang_name: "Gang 1 — Byculla Syndicate" },
+    { id: "Md. Ranbir Bhalla", label: "Md. Ranbir Bhalla", phone: "+91-2236381844", threat_score: 94.2, degree_centrality: 0.85, betweenness_centrality: 0.78, total_calls_count: 240, connected_entities_count: 5, nocturnal_calls_count: 62, risk_tier: "CRITICAL", gang_id: "GANG-01", gang_name: "Gang 1 — Byculla Syndicate" },
+    { id: "Md. Teerth Bhargava", label: "Md. Teerth Bhargava", phone: "+91-7611970993", threat_score: 88.5, degree_centrality: 0.72, betweenness_centrality: 0.65, total_calls_count: 180, connected_entities_count: 4, nocturnal_calls_count: 41, risk_tier: "CRITICAL", gang_id: "GANG-01", gang_name: "Gang 1 — Byculla Syndicate" },
     { id: "Md. Vedant Padmanabhan", label: "Md. Vedant Padmanabhan", phone: "+91-2530358841", threat_score: 84.1, degree_centrality: 0.68, betweenness_centrality: 0.54, total_calls_count: 150, connected_entities_count: 4, nocturnal_calls_count: 35, risk_tier: "HIGH", gang_id: "GANG-01", gang_name: "Gang 1 — Byculla Syndicate" },
-    { id: "Md. Zashil Mistry", label: "Md. Zashil Mistry", phone: "+91-9820145612", threat_score: 68.2, degree_centrality: 0.45, betweenness_centrality: 0.28, total_calls_count: 85, connected_entities_count: 3, nocturnal_calls_count: 18, risk_tier: "MODERATE", gang_id: "GANG-01", gang_name: "Gang 1 — Byculla Syndicate" },
-    { id: "Md. Samar Nagar", label: "Md. Samar Nagar", phone: "+91-9123847560", threat_score: 62.0, degree_centrality: 0.38, betweenness_centrality: 0.19, total_calls_count: 70, connected_entities_count: 3, nocturnal_calls_count: 14, risk_tier: "MODERATE", gang_id: "GANG-01", gang_name: "Gang 1 — Byculla Syndicate" },
-
-    // GANG-02 (Lower Parel / Beta)
-    { id: "Md. Advik Golla", label: "Md. Advik Golla", phone: "+91-0751400478", threat_score: 91.0, degree_centrality: 0.76, betweenness_centrality: 0.71, total_calls_count: 195, connected_entities_count: 6, nocturnal_calls_count: 48, risk_tier: "CRITICAL", gang_id: "GANG-02", gang_name: "Gang 2 — Lower Parel Ring" },
-    { id: "Md. Darsh Sampath", label: "Md. Darsh Sampath", phone: "+91-7458410398", threat_score: 78.4, degree_centrality: 0.55, betweenness_centrality: 0.38, total_calls_count: 110, connected_entities_count: 4, nocturnal_calls_count: 24, risk_tier: "HIGH", gang_id: "GANG-02", gang_name: "Gang 2 — Lower Parel Ring" },
-    { id: "Md. Pranit Arya", label: "Md. Pranit Arya", phone: "+91-7774789752", threat_score: 79.6, degree_centrality: 0.58, betweenness_centrality: 0.42, total_calls_count: 120, connected_entities_count: 4, nocturnal_calls_count: 28, risk_tier: "HIGH", gang_id: "GANG-02", gang_name: "Gang 2 — Lower Parel Ring" },
-    { id: "Md. Hardik Kant", label: "Md. Hardik Kant", phone: "+91-8482336846", threat_score: 73.4, degree_centrality: 0.45, betweenness_centrality: 0.30, total_calls_count: 90, connected_entities_count: 3, nocturnal_calls_count: 15, risk_tier: "MODERATE", gang_id: "GANG-02", gang_name: "Gang 2 — Lower Parel Ring" },
-    { id: "Md. Christopher Pillai", label: "Md. Christopher Pillai", phone: "+91-4293362242", threat_score: 65.1, degree_centrality: 0.40, betweenness_centrality: 0.22, total_calls_count: 75, connected_entities_count: 3, nocturnal_calls_count: 12, risk_tier: "MODERATE", gang_id: "GANG-02", gang_name: "Gang 2 — Lower Parel Ring" },
-
-    // GANG-03 (Kurla / Gamma)
-    { id: "Md. Azad Mannan", label: "Md. Azad Mannan", phone: "+91-8472516266", threat_score: 87.4, degree_centrality: 0.69, betweenness_centrality: 0.64, total_calls_count: 172, connected_entities_count: 5, nocturnal_calls_count: 39, risk_tier: "CRITICAL", gang_id: "GANG-03", gang_name: "Gang 3 — Kurla Mule Network" },
-    { id: "Md. Indrajit Kunda", label: "Md. Indrajit Kunda", phone: "+91-9876543210", threat_score: 76.5, degree_centrality: 0.52, betweenness_centrality: 0.35, total_calls_count: 105, connected_entities_count: 4, nocturnal_calls_count: 22, risk_tier: "HIGH", gang_id: "GANG-03", gang_name: "Gang 3 — Kurla Mule Network" },
-    { id: "Md. Harish Bali", label: "Md. Harish Bali", phone: "+91-9456123789", threat_score: 71.0, degree_centrality: 0.48, betweenness_centrality: 0.29, total_calls_count: 95, connected_entities_count: 3, nocturnal_calls_count: 18, risk_tier: "MODERATE", gang_id: "GANG-03", gang_name: "Gang 3 — Kurla Mule Network" },
-    { id: "Md. Harrison Sarna", label: "Md. Harrison Sarna", phone: "+91-9123456780", threat_score: 64.2, degree_centrality: 0.39, betweenness_centrality: 0.18, total_calls_count: 68, connected_entities_count: 3, nocturnal_calls_count: 11, risk_tier: "MODERATE", gang_id: "GANG-03", gang_name: "Gang 3 — Kurla Mule Network" },
-    { id: "Md. Tanveer Choudhary", label: "Md. Tanveer Choudhary", phone: "+91-3531160657", threat_score: 58.0, degree_centrality: 0.32, betweenness_centrality: 0.14, total_calls_count: 52, connected_entities_count: 2, nocturnal_calls_count: 8, risk_tier: "MODERATE", gang_id: "GANG-03", gang_name: "Gang 3 — Kurla Mule Network" },
-
-    // GANG-04 (Dharavi / Delta)
-    { id: "Md. Maanav Tailor", label: "Md. Maanav Tailor", phone: "+91-5405416287", threat_score: 84.8, degree_centrality: 0.65, betweenness_centrality: 0.58, total_calls_count: 160, connected_entities_count: 5, nocturnal_calls_count: 34, risk_tier: "HIGH", gang_id: "GANG-04", gang_name: "Gang 4 — Dharavi Extortion Group" },
-    { id: "Md. Umang Mody", label: "Md. Umang Mody", phone: "+91-9321456789", threat_score: 77.2, degree_centrality: 0.54, betweenness_centrality: 0.36, total_calls_count: 112, connected_entities_count: 4, nocturnal_calls_count: 25, risk_tier: "HIGH", gang_id: "GANG-04", gang_name: "Gang 4 — Dharavi Extortion Group" },
-    { id: "Md. George Ramaswamy", label: "Md. George Ramaswamy", phone: "+91-9456781234", threat_score: 69.8, degree_centrality: 0.44, betweenness_centrality: 0.25, total_calls_count: 84, connected_entities_count: 3, nocturnal_calls_count: 16, risk_tier: "MODERATE", gang_id: "GANG-04", gang_name: "Gang 4 — Dharavi Extortion Group" },
-    { id: "Md. Balendra Nayak", label: "Md. Balendra Nayak", phone: "+91-9937146397", threat_score: 63.5, degree_centrality: 0.37, betweenness_centrality: 0.17, total_calls_count: 65, connected_entities_count: 3, nocturnal_calls_count: 10, risk_tier: "MODERATE", gang_id: "GANG-04", gang_name: "Gang 4 — Dharavi Extortion Group" },
-    { id: "Md. Tarak Sahni", label: "Md. Tarak Sahni", phone: "+91-8535218781", threat_score: 55.0, degree_centrality: 0.30, betweenness_centrality: 0.12, total_calls_count: 45, connected_entities_count: 2, nocturnal_calls_count: 6, risk_tier: "LOW", gang_id: "GANG-04", gang_name: "Gang 4 — Dharavi Extortion Group" }
+    { id: "Md. Pranit Arya", label: "Md. Pranit Arya", phone: "+91-7774789752", threat_score: 79.6, degree_centrality: 0.58, betweenness_centrality: 0.42, total_calls_count: 120, connected_entities_count: 3, nocturnal_calls_count: 28, risk_tier: "HIGH", gang_id: "GANG-02", gang_name: "Gang 2 — Lower Parel Ring" },
+    { id: "Md. Hardik Kant", label: "Md. Hardik Kant", phone: "+91-8482336846", threat_score: 73.4, degree_centrality: 0.45, betweenness_centrality: 0.30, total_calls_count: 90, connected_entities_count: 2, nocturnal_calls_count: 15, risk_tier: "MODERATE", gang_id: "GANG-02", gang_name: "Gang 2 — Lower Parel Ring" }
   ],
   edges: [
-    // Intra-gang GANG-01
     { source: "Md. Ranbir Bhalla", target: "Md. Teerth Bhargava", total_calls: 142, weight: 14.2 },
     { source: "Md. Ranbir Bhalla", target: "Md. Vedant Padmanabhan", total_calls: 98, weight: 9.8 },
-    { source: "Md. Teerth Bhargava", target: "Md. Zashil Mistry", total_calls: 48, weight: 4.8 },
-    { source: "Md. Vedant Padmanabhan", target: "Md. Samar Nagar", total_calls: 42, weight: 4.2 },
-    { source: "Md. Ranbir Bhalla", target: "Md. Samar Nagar", total_calls: 36, weight: 3.6 },
-
-    // Intra-gang GANG-02
-    { source: "Md. Advik Golla", target: "Md. Darsh Sampath", total_calls: 88, weight: 8.8 },
-    { source: "Md. Advik Golla", target: "Md. Pranit Arya", total_calls: 76, weight: 7.6 },
-    { source: "Md. Darsh Sampath", target: "Md. Hardik Kant", total_calls: 54, weight: 5.4 },
-    { source: "Md. Pranit Arya", target: "Md. Christopher Pillai", total_calls: 45, weight: 4.5 },
-    { source: "Md. Advik Golla", target: "Md. Christopher Pillai", total_calls: 38, weight: 3.8 },
-
-    // Intra-gang GANG-03
-    { source: "Md. Azad Mannan", target: "Md. Indrajit Kunda", total_calls: 92, weight: 9.2 },
-    { source: "Md. Azad Mannan", target: "Md. Harish Bali", total_calls: 64, weight: 6.4 },
-    { source: "Md. Indrajit Kunda", target: "Md. Harrison Sarna", total_calls: 46, weight: 4.6 },
-    { source: "Md. Harish Bali", target: "Md. Tanveer Choudhary", total_calls: 35, weight: 3.5 },
-    { source: "Md. Azad Mannan", target: "Md. Harrison Sarna", total_calls: 30, weight: 3.0 },
-
-    // Intra-gang GANG-04
-    { source: "Md. Maanav Tailor", target: "Md. Umang Mody", total_calls: 82, weight: 8.2 },
-    { source: "Md. Maanav Tailor", target: "Md. George Ramaswamy", total_calls: 60, weight: 6.0 },
-    { source: "Md. Umang Mody", target: "Md. Balendra Nayak", total_calls: 44, weight: 4.4 },
-    { source: "Md. George Ramaswamy", target: "Md. Tarak Sahni", total_calls: 32, weight: 3.2 },
-    { source: "Md. Balendra Nayak", target: "Md. Tarak Sahni", total_calls: 28, weight: 2.8 },
-
-    // Inter-gang Cross-Links (Bridges & Syndicates)
-    { source: "Md. Ranbir Bhalla", target: "Md. Advik Golla", total_calls: 24, weight: 2.4 }, // Kingpin to Kingpin
-    { source: "Md. Teerth Bhargava", target: "Md. Pranit Arya", total_calls: 86, weight: 8.6 }, // Major Cross-Gang Bridge
-    { source: "Md. Vedant Padmanabhan", target: "Md. Hardik Kant", total_calls: 54, weight: 5.4 }, // Secondary Bridge
-    { source: "Md. Advik Golla", target: "Md. Azad Mannan", total_calls: 18, weight: 1.8 }, // Beta to Gamma Kingpin
-    { source: "Md. Darsh Sampath", target: "Md. Indrajit Kunda", total_calls: 32, weight: 3.2 }, // Logistics to Mule Bridge
-    { source: "Md. Azad Mannan", target: "Md. Maanav Tailor", total_calls: 22, weight: 2.2 }, // Gamma to Delta Kingpin
-    { source: "Md. Harish Bali", target: "Md. Umang Mody", total_calls: 28, weight: 2.8 }, // Mule to Extortion Bridge
-    { source: "Md. Ranbir Bhalla", target: "Md. Maanav Tailor", total_calls: 15, weight: 1.5 } // Alpha to Delta
+    { source: "Md. Teerth Bhargava", target: "Md. Pranit Arya", total_calls: 86, weight: 8.6 },
+    { source: "Md. Vedant Padmanabhan", target: "Md. Hardik Kant", total_calls: 54, weight: 5.4 }
   ]
 };
 
@@ -505,7 +394,7 @@ export const fallbackSocial: SocialMediaResponse = {
     {
       approximate_location: "Byculla West, Mumbai",
       suspect_count: 3,
-      platforms_used: "WhatsApp, Instagram, Telegram",
+      platforms_used: "WhatsApp, Instagram",
       devices_used: "Android Mobile, Desktop Browser",
       suspects: ["Md. Ranbir Bhalla", "Md. Teerth Bhargava", "Md. Vedant Padmanabhan"]
     },
@@ -513,15 +402,8 @@ export const fallbackSocial: SocialMediaResponse = {
       approximate_location: "Lower Parel, Mumbai",
       suspect_count: 2,
       platforms_used: "WhatsApp, X / Twitter",
-      devices_used: "iPhone 14 Pro",
+      devices_used: "iPhone",
       suspects: ["Md. Pranit Arya", "Md. Hardik Kant"]
-    },
-    {
-      approximate_location: "Agripada Main Road, Mumbai",
-      suspect_count: 2,
-      platforms_used: "Telegram, Instagram",
-      devices_used: "OnePlus 11",
-      suspects: ["Md. Ranbir Bhalla", "Md. Teerth Bhargava"]
     }
   ],
   suspects: [
@@ -541,15 +423,6 @@ export const fallbackSocial: SocialMediaResponse = {
           is_verified: false,
           status_flag: "MONITORED",
           profile_url: "https://instagram.com/@md_ranbir_bhalla"
-        },
-        {
-          platform: "Telegram",
-          handle: "@ranbir_syndicate_channel",
-          followers_count: 1850,
-          following_count: 12,
-          is_verified: false,
-          status_flag: "HIGH_RISK",
-          profile_url: "https://t.me/ranbir_syndicate_channel"
         }
       ],
       recent_posts: [
@@ -565,164 +438,6 @@ export const fallbackSocial: SocialMediaResponse = {
           hashtags: ["#MumbaiUnderworld", "#NightPatrol"],
           tagged_users: ["@md_teerth_bhargava"],
           location_checkin: "Station Road Footpath, Byculla"
-        },
-        {
-          post_id: "SM-41281",
-          platform: "Telegram",
-          timestamp: "2026-08-26 02:45:00",
-          content: "Meeting set near Venus Wine Shop. Confirm cash drop before midnight.",
-          sentiment: "SUSPICIOUS",
-          risk_level: "HIGH",
-          likes: 89,
-          shares: 12,
-          hashtags: ["#CashDrop", "#BycullaCell"],
-          tagged_users: ["@md_vedant_p"],
-          location_checkin: "Venus Wine Shop, Byculla"
-        }
-      ]
-    },
-    {
-      suspect_name: "Md. Teerth Bhargava",
-      phone_number: "+91-7611970993",
-      total_platforms: 2,
-      total_posts: 4,
-      overall_sentiment: "SUSPICIOUS",
-      risk_score: 88.5,
-      profiles: [
-        {
-          platform: "Instagram",
-          handle: "@md_teerth_bhargava",
-          followers_count: 2900,
-          following_count: 410,
-          is_verified: false,
-          status_flag: "MONITORED",
-          profile_url: "https://instagram.com/@md_teerth_bhargava"
-        },
-        {
-          platform: "X / Twitter",
-          handle: "@teerth_b_real",
-          followers_count: 1450,
-          following_count: 220,
-          is_verified: false,
-          status_flag: "MONITORED",
-          profile_url: "https://x.com/teerth_b_real"
-        }
-      ],
-      recent_posts: [
-        {
-          post_id: "SM-41290",
-          platform: "Instagram",
-          timestamp: "2026-08-24 21:10:00",
-          content: "Standing by with the team. Agripada signal clear.",
-          sentiment: "SUSPICIOUS",
-          risk_level: "HIGH",
-          likes: 210,
-          shares: 18,
-          hashtags: ["#Agripada", "#Syndicate"],
-          tagged_users: ["@md_ranbir_bhalla"],
-          location_checkin: "Agripada Traffic Signal, Mumbai"
-        }
-      ]
-    },
-    {
-      suspect_name: "Md. Vedant Padmanabhan",
-      phone_number: "+91-2530358841",
-      total_platforms: 2,
-      total_posts: 3,
-      overall_sentiment: "SUSPICIOUS",
-      risk_score: 84.1,
-      profiles: [
-        {
-          platform: "Instagram",
-          handle: "@md_vedant_p",
-          followers_count: 1800,
-          following_count: 290,
-          is_verified: false,
-          status_flag: "MONITORED",
-          profile_url: "https://instagram.com/@md_vedant_p"
-        }
-      ],
-      recent_posts: [
-        {
-          post_id: "SM-41300",
-          platform: "Instagram",
-          timestamp: "2026-08-23 15:40:00",
-          content: "Cash ledger updated for the week. All settlements clear.",
-          sentiment: "SUSPICIOUS",
-          risk_level: "HIGH",
-          likes: 145,
-          shares: 9,
-          hashtags: ["#FinanceTrail", "#Settlement"],
-          tagged_users: [],
-          location_checkin: "Lower Parel Commercial Hub"
-        }
-      ]
-    },
-    {
-      suspect_name: "Md. Pranit Arya",
-      phone_number: "+91-7774789752",
-      total_platforms: 2,
-      total_posts: 3,
-      overall_sentiment: "MODERATE",
-      risk_score: 79.6,
-      profiles: [
-        {
-          platform: "X / Twitter",
-          handle: "@pranit_arya_official",
-          followers_count: 3100,
-          following_count: 190,
-          is_verified: false,
-          status_flag: "MONITORED",
-          profile_url: "https://x.com/pranit_arya_official"
-        }
-      ],
-      recent_posts: [
-        {
-          post_id: "SM-41310",
-          platform: "X / Twitter",
-          timestamp: "2026-08-22 19:15:00",
-          content: "Night patrol underway near Lower Parel service road.",
-          sentiment: "MODERATE",
-          risk_level: "MODERATE",
-          likes: 98,
-          shares: 14,
-          hashtags: ["#LowerParel", "#Patrol"],
-          tagged_users: ["@hardik_kant_b"],
-          location_checkin: "Flyover Service Road, Lower Parel"
-        }
-      ]
-    },
-    {
-      suspect_name: "Md. Hardik Kant",
-      phone_number: "+91-8482336846",
-      total_platforms: 2,
-      total_posts: 2,
-      overall_sentiment: "MODERATE",
-      risk_score: 73.4,
-      profiles: [
-        {
-          platform: "Instagram",
-          handle: "@hardik_kant_b",
-          followers_count: 1550,
-          following_count: 310,
-          is_verified: false,
-          status_flag: "MONITORED",
-          profile_url: "https://instagram.com/@hardik_kant_b"
-        }
-      ],
-      recent_posts: [
-        {
-          post_id: "SM-41320",
-          platform: "Instagram",
-          timestamp: "2026-08-21 23:05:00",
-          content: "On site near Byculla Market entrance.",
-          sentiment: "MODERATE",
-          risk_level: "MODERATE",
-          likes: 76,
-          shares: 5,
-          hashtags: ["#BycullaMarket"],
-          tagged_users: [],
-          location_checkin: "Market Entrance, Byculla West"
         }
       ]
     }
@@ -737,92 +452,3 @@ export const fallbackGeo: GeoPointsResponse = {
     { id: "pt-3", lat: 18.9950, lng: 72.8300, title: "Field Patrol Spot: SR-2026-9901", category: "SURVEILLANCE", timestamp: "2026-08-25 14:00", details: "Special Branch Panchnama Conducted", color: "#ef4444" }
   ]
 };
-
-export const fallbackExplanation = {
-  suspect_name: "Md. Ranbir Bhalla",
-  phone_number: "+91-2236381844",
-  total_threat_score: 94.2,
-  threat_tier: "CRITICAL / LEVEL-1 RED",
-  primary_verdict: "Subject flagged with Threat Score 94.2/100 based on multi-source intelligence correlation across CCTV, CDR, and prior FIR records.",
-  feature_attribution: [
-    {
-      feature_name: "Physical CCTV Sighting & Co-Location",
-      score_contribution: 28.6,
-      percentage_influence: 30.4,
-      max_possible: 30.0,
-      risk_signal: "CRITICAL"
-    },
-    {
-      feature_name: "Telecom Call Degree & Nocturnal Interceptions",
-      score_contribution: 20.0,
-      percentage_influence: 21.2,
-      max_possible: 20.0,
-      risk_signal: "HIGH"
-    },
-    {
-      feature_name: "FIR & Police Complaint Severity",
-      score_contribution: 15.0,
-      percentage_influence: 15.9,
-      max_possible: 15.0,
-      risk_signal: "HIGH"
-    },
-    {
-      feature_name: "Prior Criminal Convictions & Case Status",
-      score_contribution: 12.0,
-      percentage_influence: 12.7,
-      max_possible: 15.0,
-      risk_signal: "HIGH"
-    },
-    {
-      feature_name: "Financial Transactions & Merchant Risk",
-      score_contribution: 9.6,
-      percentage_influence: 10.2,
-      max_possible: 10.0,
-      risk_signal: "HIGH"
-    },
-    {
-      feature_name: "Field Surveillance & Panchnama Reports",
-      score_contribution: 9.0,
-      percentage_influence: 9.6,
-      max_possible: 10.0,
-      risk_signal: "MODERATE"
-    }
-  ],
-  counterfactual_analysis: [
-    {
-      hypothesis: "What if Nocturnal Calls were 0?",
-      simulated_score: 86.2,
-      verdict_change: "Threat tier drops significantly"
-    },
-    {
-      hypothesis: "What if Physical CCTV Meeting was an innocent coincidence?",
-      simulated_score: 71.3,
-      verdict_change: "Eliminates physical conspiracy link"
-    }
-  ],
-  forensic_evidence_trail: [
-    {
-      source_modality: "TELECOM_CDR",
-      timestamp: "2026-09-04 02:15:00",
-      summary: "Intercepted Outgoing call (240s) with Md. Teerth Bhargava (+91-7611970993)",
-      location: "Byculla Sector 4 Tower",
-      flag: "NOCTURNAL_ALERT"
-    },
-    {
-      source_modality: "CCTV_SURVEILLANCE",
-      timestamp: "2026-09-05 18:30:00",
-      summary: "Optical facial recognition capture at Venus Wine Shop, Byculla West (97% Match)",
-      location: "MH-CCTV-9890 (Byculla West)",
-      flag: "PHYSICAL_CO_LOCATION"
-    },
-    {
-      source_modality: "POLICE_FIR_RECORD",
-      timestamp: "2026-08-12",
-      summary: "Registered under IPC 384/120B at Byculla PS. FIR #0254/2026",
-      location: "Byculla Police Station",
-      flag: "CRIMINAL_CHARGES_ACTIVE"
-    }
-  ],
-  statutory_chargeability: "Prosecutable under MCOCA / IPC Sec 120B based on multi-source conspiracy matrix."
-};
-
