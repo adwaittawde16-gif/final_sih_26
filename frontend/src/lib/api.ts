@@ -13,7 +13,14 @@ import {
   SuspectDossierDetails,
   SearchResultResponse,
   GangListResponse,
-  GangSubGraphResponse
+  GangSubGraphResponse,
+  FinancialGraphResponse,
+  MoneyFlowTraceResponse,
+  LaunderingPatternsResponse,
+  FinancialCentralityResponse,
+  PMLADossierResponse,
+  CourtEvidenceCertificateResponse,
+  SuspiciousPatternResponse
 } from "../types";
 
 import {
@@ -147,6 +154,49 @@ export const api = {
   // Module 5: Financial Intelligence & Money Trails
   getFinancialIntelligence: () =>
     fetchAPI<FinancialIntelligenceResponse>("/api/financial/summary", undefined, fallbackFinancial),
+
+  getFinancialGraph: (focusEntity?: string, maxNodes?: number) => {
+    const params = new URLSearchParams();
+    if (focusEntity) params.append("focus_entity", focusEntity);
+    if (maxNodes) params.append("max_nodes", maxNodes.toString());
+    const query = params.toString() ? `?${params.toString()}` : "";
+    return fetchAPI<FinancialGraphResponse>(`/api/financial/graph${query}`);
+  },
+
+  traceFinancialFlow: (source: string, target?: string, maxDepth: number = 5) => {
+    const params = new URLSearchParams({ source, max_depth: maxDepth.toString() });
+    if (target) params.append("target", target);
+    return fetchAPI<MoneyFlowTraceResponse>(`/api/financial/trace?${params.toString()}`);
+  },
+
+  getLaunderingPatterns: () =>
+    fetchAPI<LaunderingPatternsResponse>("/api/financial/patterns"),
+
+  getFinancialCentrality: () =>
+    fetchAPI<FinancialCentralityResponse>("/api/financial/centrality"),
+
+  getPMLADossier: (entityId: string) =>
+    fetchAPI<PMLADossierResponse>(`/api/financial/dossier/${encodeURIComponent(entityId)}`),
+
+  getCourtEvidenceCertificate: (entityId: string) =>
+    fetchAPI<CourtEvidenceCertificateResponse>(`/api/financial/court-certificate/${encodeURIComponent(entityId)}`),
+
+  // Enhanced CDR Analysis
+  getEnhancedCDRSummary: () =>
+    fetchAPI<CDRSummaryResponse>("/api/enhanced-cdr/summary"),
+
+  getSuspiciousPatterns: () =>
+    fetchAPI<SuspiciousPatternResponse>("/api/enhanced-cdr/suspicious-patterns"),
+
+  getCellTowerCoLocation: (timeWindowMinutes: number = 30) =>
+    fetchAPI<any>(`/api/enhanced-cdr/cell-tower-co-location?time_window_minutes=${timeWindowMinutes}`),
+
+  getCrossDomainCorrelation: () =>
+    fetchAPI<any>("/api/enhanced-cdr/cross-domain-correlation"),
+
+  getAdvancedNetworkAnalysis: () =>
+    fetchAPI<any>("/api/enhanced-cdr/advanced-network-analysis"),
+
 
   // Module 6: Nocturnal Call Anomalies
   getNocturnalAnomalies: () =>
