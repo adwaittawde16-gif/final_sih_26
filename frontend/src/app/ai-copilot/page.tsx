@@ -324,10 +324,7 @@ export default function AICopilotPage() {
               placeholder="Ask intelligence questions e.g. 'Why was Md. Ranbir Bhalla flagged?' or 'Find connection between suspect A and B'..."
               className="flex-1 rounded-lg border border-slate-800 bg-slate-950 px-4 py-2.5 text-xs text-slate-200 placeholder-slate-500 focus:border-blue-500 focus:outline-none font-mono"
             />
-<<<<<<< HEAD
             {/* Mic Button */}
-=======
->>>>>>> 875d13fc365cac088e675cb0c0df239497346f92
             <button
               type="button"
               onClick={startListening}
