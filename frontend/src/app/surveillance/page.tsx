@@ -59,14 +59,14 @@ export default function FieldSurveillancePage() {
       />
 
 
-      <Card className="overflow-hidden p-0 bg-slate-900 border-slate-800">
-        <div className="p-4 border-b border-slate-800 bg-slate-900 flex justify-between items-center">
-          <h3 className="text-sm font-bold font-mono text-white">Field Surveillance Observation Logs</h3>
-          <span className="text-xs font-mono text-indigo-400 font-semibold">Special Branch Intelligence</span>
+      <Card className="overflow-hidden p-0 border-slate-300">
+        <div className="p-4 border-b border-slate-200 bg-slate-50 flex justify-between items-center">
+          <h3 className="text-sm font-bold font-mono text-slate-900">Field Surveillance Observation Logs</h3>
+          <span className="text-xs font-mono text-indigo-700 font-semibold">Special Branch Intelligence</span>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs font-mono">
-            <thead className="bg-slate-950 text-slate-400 border-b border-slate-800 uppercase tracking-wider text-[10px]">
+            <thead className="bg-slate-100 text-slate-600 border-b border-slate-200 uppercase tracking-wider text-[10px]">
               <tr>
                 <th className="p-3">Report ID</th>
                 <th className="p-3">FIR Number</th>
@@ -76,19 +76,16 @@ export default function FieldSurveillancePage() {
                 <th className="p-3 text-center">Panchnama</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-800">
+            <tbody className="divide-y divide-slate-200">
               {data?.reports.map((r) => (
-                <tr key={r.report_id} className="hover:bg-slate-800/50 transition-colors">
-                  <td className="p-3 font-bold text-indigo-400">{r.report_id}</td>
-                  <td className="p-3 font-bold text-white">{r.fir_number}</td>
-                  <td className="p-3 text-slate-300 font-sans font-medium">{r.spot_location}</td>
-                  <td className="p-3 text-slate-400 font-sans max-w-md truncate">{r.observation_details}</td>
-                  <td className="p-3 text-right text-slate-300">{r.patrol_officer_1}</td>
-                  <td className="p-3 text-center font-bold">
-                    {r.panchnama_conducted
-                      ? <span className="text-emerald-400">✔ YES</span>
-                      : <span className="text-red-400">✘ NO</span>
-                    }
+                <tr key={r.report_id} className="hover:bg-slate-50 transition-colors">
+                  <td className="p-3 font-bold text-indigo-700">{r.report_id}</td>
+                  <td className="p-3 font-bold text-slate-900">{r.fir_number}</td>
+                  <td className="p-3 text-slate-800 font-sans font-medium">{r.spot_location}</td>
+                  <td className="p-3 text-slate-600 font-sans max-w-md truncate">{r.observation_details}</td>
+                  <td className="p-3 text-right text-slate-700">{r.patrol_officer_1}</td>
+                  <td className="p-3 text-center font-bold text-emerald-700">
+                    {r.panchnama_conducted ? "YES" : "NO"}
                   </td>
                 </tr>
               ))}

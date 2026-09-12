@@ -29,13 +29,10 @@ import {
   fallbackDossier,
   fallbackTimeline,
   fallbackSocial,
-  fallbackGeo,
-  fallbackExplanation
+  fallbackGeo
 } from "./mockData";
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL !== undefined
-  ? process.env.NEXT_PUBLIC_API_URL
-  : (typeof window !== "undefined" ? "" : "http://127.0.0.1:8080");
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8080";
 
 async function fetchAPI<T>(endpoint: string, options?: RequestInit, fallbackData?: T): Promise<T> {
   const controller = new AbortController();
@@ -205,92 +202,5 @@ export const api = {
 
   // Shared Geo Points
   getGeoPoints: (category?: string) =>
-    fetchAPI<import("../types").GeoPointsResponse>(`/api/geo/points${category ? `?category=${encodeURIComponent(category)}` : ""}`, undefined, fallbackGeo),
-
-  // Core AI & ML Graph Proofs
-  getGraphProofs: (louvainRes: number = 1.0, pagerankAlpha: number = 0.85) =>
-    fetchAPI<any>(`/api/graph-proof/metrics?louvain_resolution=${louvainRes}&pagerank_alpha=${pagerankAlpha}`),
-
-  getShortestPath: (source: string, target: string) =>
-    fetchAPI<any>(`/api/graph-proof/shortest-path?source=${encodeURIComponent(source)}&target=${encodeURIComponent(target)}`),
-
-  // FIR Samples
-  getFIRSamples: () =>
-    fetchAPI<any[]>("/api/fir/samples"),
-
-  // Multi-Source Ingestion
-  ingestCDR: (data: string, format: string = "csv") =>
-    fetchAPI<any>("/api/core-ai/ingest/cdr", {
-      method: "POST",
-      body: JSON.stringify({ data, format })
-    }),
-
-  ingestFinancial: (data: string, format: string = "csv") =>
-    fetchAPI<any>("/api/core-ai/ingest/financial", {
-      method: "POST",
-      body: JSON.stringify({ data, format })
-    }),
-
-  ingestFIR: (firText: string, firNumber?: string) =>
-    fetchAPI<any>("/api/core-ai/ingest/fir", {
-      method: "POST",
-      body: JSON.stringify({ fir_text: firText, fir_number: firNumber || "FIR-LIVE-2026" })
-    }),
-
-  // Statistical Anomaly Detection
-  getNocturnalZScore: (zThreshold: number = 2.0) =>
-    fetchAPI<any>(`/api/core-ai/anomaly/nocturnal?z_threshold=${zThreshold}`),
-
-  getFinancialIQR: () =>
-    fetchAPI<any>("/api/core-ai/anomaly/financial"),
-
-  getSpatioTemporalClusters: () =>
-    fetchAPI<any>("/api/core-ai/anomaly/spatiotemporal"),
-
-  // Role-Based Access Control & Audit
-  getAuthUsers: () =>
-    fetchAPI<any[]>("/api/core-ai/auth/users"),
-
-  loginOfficer: (username: string) =>
-    fetchAPI<any>("/api/core-ai/auth/login", {
-      method: "POST",
-      body: JSON.stringify({ username })
-    }),
-
-  getAuditTrail: (limit: number = 50) =>
-    fetchAPI<any[]>(`/api/core-ai/auth/audit-trail?limit=${limit}`),
-
-  // Explainable AI (XAI)
-  explainSuspect: (suspect: string) =>
-    fetchAPI<any>(`/api/core-ai/explain/suspect?suspect=${encodeURIComponent(suspect)}`, undefined, {
-      ...fallbackExplanation,
-      suspect_name: suspect
-    }),
-
-  // Big Data Benchmark
-  runStressTest: (records: number = 50000) =>
-    fetchAPI<any>(`/api/core-ai/benchmark/stress-test?records=${records}`),
-
-  // 360° Dossier helpers — convenience aliases
-  getThreatIndex: () =>
-    fetchAPI<any[]>("/api/threat/leaderboard", undefined, []).then((res: any) =>
-      Array.isArray(res) ? res : (res?.leaderboard ?? [])
-    ),
-
-  getCDRSummary: () =>
-    fetchAPI<any>("/api/cdr/pairs", undefined, { pair_summary: [] }).then((res: any) =>
-      Array.isArray(res) ? res : (res?.pair_summary ?? res?.pairs ?? [])
-    ),
-
-  // AI Intelligence Copilot Query
-  queryCopilot: (query: string) =>
-    fetchAPI<any>("/api/core-ai/copilot/query", {
-      method: "POST",
-      body: JSON.stringify({ query }),
-    }, {
-      intent: "GENERAL_OVERVIEW",
-      answer_markdown: "Backend engine offline. Please start FastAPI on port 8080.",
-      evidence_items: [],
-      suggested_queries: [],
-    }),
+    fetchAPI<import("../types").GeoPointsResponse>(`/api/geo/points${category ? `?category=${encodeURIComponent(category)}` : ""}`, undefined, fallbackGeo)
 };
