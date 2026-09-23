@@ -139,45 +139,45 @@ export function AICopilotDrawer() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 font-mono">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 font-sans">
       {!isOpen && (
-        <Button
+        <button
           onClick={() => setIsOpen(true)}
-          className="bg-emerald-600 hover:bg-emerald-500 text-white rounded-full p-4 shadow-2xl flex items-center gap-2 border border-emerald-400/40 animate-pulse hover:animate-none"
+          className="bg-[var(--surface)] hover:bg-[var(--surface-2)] text-[var(--text)] rounded-full px-4 py-3 shadow-xl flex items-center gap-2 border border-[var(--border)] hover:border-blue-500 backdrop-blur-md transition-all text-xs font-medium"
         >
-          <Sparkles className="w-5 h-5 text-amber-300" />
-          <span className="font-bold text-xs tracking-wider">AI COPILOT</span>
-        </Button>
+          <Sparkles className="w-4 h-4 text-blue-500" />
+          <span>AI Copilot</span>
+        </button>
       )}
 
       {isOpen && (
-        <Card className="w-[380px] sm:w-[440px] h-[540px] bg-slate-900 border-slate-700 shadow-2xl flex flex-col overflow-hidden text-xs rounded-xl">
+        <Card className="w-[calc(100vw-2rem)] sm:w-[420px] h-[520px] max-h-[85vh] bg-[var(--surface)] border-[var(--border)] shadow-2xl flex flex-col overflow-hidden text-xs rounded-xl font-sans transition-colors">
           {/* Header */}
-          <div className="p-3.5 bg-slate-950 border-b border-slate-800 flex justify-between items-center">
+          <div className="p-3.5 bg-[var(--surface-2)] border-b border-[var(--border)] flex justify-between items-center">
             <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-emerald-950 border border-emerald-700 flex items-center justify-center text-emerald-400">
+              <div className="w-7 h-7 rounded-lg bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center text-blue-500">
                 <Bot className="w-4 h-4" />
               </div>
               <div>
-                <h4 className="font-bold text-slate-100 flex items-center gap-1.5">
+                <h4 className="font-bold text-[var(--text)] flex items-center gap-1.5">
                   Tactical AI Copilot
-                  <Badge variant="default" className="text-[9px] py-0 px-1 bg-emerald-950 text-emerald-300 border-emerald-700">
+                  <Badge variant="default" className="text-[9px] py-0 px-1 bg-emerald-950/20 text-emerald-500 border border-emerald-800/40">
                     LIVE
                   </Badge>
                 </h4>
-                <p className="text-[10px] text-slate-400">PMLA & Police Intelligence Reasoning</p>
+                <p className="text-[10px] text-[var(--text-muted)]">PMLA & Police Intelligence Reasoning</p>
               </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="p-1.5 text-slate-400 hover:text-slate-200 hover:bg-slate-800 rounded-md transition-colors"
+              className="p-1.5 text-[var(--text-muted)] hover:text-[var(--text)] hover:bg-[var(--surface)] rounded-md transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
           </div>
 
           {/* Messages Area */}
-          <div className="flex-1 p-3 overflow-y-auto space-y-3 bg-slate-950/40">
+          <div className="flex-1 p-3 overflow-y-auto space-y-3 bg-[var(--bg)]/40">
             {messages.map((m) => (
               <div
                 key={m.id}

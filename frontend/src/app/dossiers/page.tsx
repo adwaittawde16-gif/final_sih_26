@@ -253,7 +253,7 @@ function EnhancedDossierCard({ dossier }: { dossier: SuspectDossierDetails }) {
           </p>
         </div>
         <div className="flex items-center gap-3">
-          <div className="p-2 bg-red-950/80 border border-red-600 rounded-lg text-center min-w-[60px] shadow-[0_0_10px_#ef4444_inset]">
+          <div className="p-2 bg-red-950/80 border border-red-600/60 rounded-md text-center min-w-[60px]">
             <span className="text-xl font-extrabold text-red-400 block leading-none">
               {dossier.threat_score?.toFixed(0) ?? "N/A"}
             </span>

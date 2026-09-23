@@ -10,17 +10,25 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#f8fafc",
-        surface: "#f1f5f9",
-        panel: "#ffffff",
-        border: "#cbd5e1",
+        bg: "var(--bg)",
+        surface: "var(--surface)",
+        "surface-2": "var(--surface-2)",
+        border: "var(--border)",
+        text: "var(--text)",
+        "text-muted": "var(--text-muted)",
+        accent: "var(--accent)",
+        "accent-hover": "var(--accent-hover)",
+        danger: "var(--danger)",
+        warn: "var(--warn)",
+        background: "var(--bg)",
+        panel: "var(--surface)",
         brand: {
-          navy: "#0f172a",
-          blue: "#2563eb",
+          navy: "#0b0f17",
+          blue: "#3b82f6",
           red: "#dc2626",
           amber: "#d97706",
           green: "#059669",
-          cyan: "#0891b2"
+          cyan: "#3b82f6"
         }
       },
       fontFamily: {

@@ -39,10 +39,10 @@ export function ExpandableText({
         "cursor-pointer transition-all duration-200 inline-flex items-center gap-1 min-w-0 max-w-full",
         isExpanded
           ? cn(
-              "whitespace-normal break-words bg-sky-950/60 text-sky-200 px-1.5 py-0.5 rounded border border-sky-400/60 shadow-[0_0_10px_rgba(2,132,199,0.3)]",
+              "whitespace-normal break-words bg-[#161F30] text-blue-300 px-1.5 py-0.5 rounded border border-[#1F2A3D]",
               expandedClassName
             )
-          : cn("truncate hover:text-sky-300 hover:underline decoration-sky-500/50", className)
+          : cn("truncate hover:text-blue-400", className)
       )}
     >
       <span className={cn(isExpanded ? "break-words" : "truncate")}>{textStr}</span>

@@ -1,141 +1,100 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
+:root,
+[data-theme="dark"],
+.dark {
+  --bg: #0D1117;
+  --surface: #161B22;
+  --surface-2: #21262D;
+  --border: #30363D;
+  --text: #E6EDF3;
+  --text-muted: #8B949E;
+  --accent: #488FEC;
+  --accent-hover: #388BFD;
+  --danger: #DA3633;
+  --warn: #D29922;
   --font-mono: 'JetBrains Mono', monospace;
-  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-sans: 'Inter', sans-serif;
 }
 
-/* INTERPOL Tactical Dark Theme Tokens */
-.dark-theme {
-  --background: #061224; /* INTERPOL Deep Midnight Navy */
-  --foreground: #f8fafc; /* Crisp White */
-  --muted: #0c213f; /* INTERPOL Navy Card Surface */
-  --muted-foreground: #94a3b8; /* Ice Slate */
-  --popover: #0c213f;
-  --popover-foreground: #f8fafc;
-  --card: #0c213f;
-  --card-foreground: #f8fafc;
-  --border: #1a3b6d; /* INTERPOL Steel Navy Border */
-  --input: #1a3b6d;
-  --primary: #0284c7; /* INTERPOL Operational Blue */
-  --primary-foreground: #ffffff;
-  --secondary: #102a52;
-  --secondary-foreground: #f8fafc;
-  --accent: #e31b23; /* INTERPOL Notice Crimson Red */
-  --accent-foreground: #ffffff;
-  --destructive: #e31b23;
-  --destructive-foreground: #ffffff;
-  --ring: #0284c7;
-  --radius: 0.75rem;
+[data-theme="light"],
+.light {
+  --bg: #F6F8FA;
+  --surface: #FFFFFF;
+  --surface-2: #F3F4F6;
+  --border: #D0D7DE;
+  --text: #1F2328;
+  --text-muted: #656D76;
+  --accent: #0969DA;
+  --accent-hover: #0550AE;
+  --danger: #CF222E;
+  --warn: #9A6700;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: 'Inter', sans-serif;
 }
 
 body {
-  background-color: #061224;
-  color: #f8fafc;
+  background-color: var(--bg);
+  color: var(--text);
   font-family: var(--font-sans);
   overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .font-mono {
   font-family: var(--font-mono);
 }
 
-/* Glassmorphism INTERPOL Tactical Panels */
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Clean Enterprise Cards & Panels */
 .glass-panel {
-  background: rgba(12, 33, 63, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(26, 59, 109, 0.6);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
 }
 
 .glass-panel-glow {
-  background: rgba(12, 33, 63, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(2, 132, 199, 0.4);
-  box-shadow: 0 0 20px -5px rgba(2, 132, 199, 0.25);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
 }
 
 .glass-card {
-  background: rgba(12, 33, 63, 0.75);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(26, 59, 109, 0.55);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 
 .glass-card:hover {
-  background: rgba(16, 42, 82, 0.9);
-  border-color: rgba(2, 132, 199, 0.5);
-  box-shadow: 0 8px 30px -10px rgba(6, 18, 36, 0.9), 0 0 15px -3px rgba(2, 132, 199, 0.2);
-  transform: translateY(-1px);
+  background: var(--surface-2);
+  border-color: var(--border);
 }
 
-/* Tactical Background Grid Pattern */
-.tactical-grid {
-  background-image: radial-gradient(rgba(26, 59, 109, 0.5) 1px, transparent 1px);
-  background-size: 20px 20px;
-}
-
-/* Glowing Threat Accents */
-.glow-cyan {
-  box-shadow: 0 0 15px -2px rgba(2, 132, 199, 0.5);
-}
-
-.glow-red {
-  box-shadow: 0 0 15px -2px rgba(227, 27, 35, 0.5);
-}
-
-.glow-amber {
-  box-shadow: 0 0 15px -2px rgba(245, 158, 11, 0.5);
-}
-
-.glow-emerald {
-  box-shadow: 0 0 15px -2px rgba(16, 185, 129, 0.5);
-}
-
-/* Radar Pulse Animation */
-@keyframes radar-sweep {
-  0% {
-    transform: scale(0.95);
-    opacity: 0.8;
-  }
-  50% {
-    transform: scale(1.15);
-    opacity: 0.3;
-  }
-  100% {
-    transform: scale(0.95);
-    opacity: 0.8;
-  }
-}
-
-.animate-radar {
-  animation: radar-sweep 3s ease-in-out infinite;
-}
-
-/* Custom INTERPOL Dark Scrollbars */
+/* Scrollbars */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #061224;
+  background: var(--bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1a3b6d;
-  border-radius: 9999px;
-  border: 1px solid rgba(26, 59, 109, 0.7);
+  background: var(--border);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #234d8f;
+  background: var(--text-muted);
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -146,27 +105,27 @@ body {
   scrollbar-width: none;
 }
 
-/* Badge and Status Colors */
+/* Severity Badges (Controlled Colors) */
 .badge-critical {
-  background: rgba(220, 38, 38, 0.2);
-  color: #f87171;
-  border: 1px solid rgba(239, 68, 68, 0.4);
+  background: rgba(218, 54, 51, 0.15);
+  color: var(--danger);
+  border: 1px solid rgba(218, 54, 51, 0.3);
 }
 
 .badge-high {
-  background: rgba(234, 88, 12, 0.2);
-  color: #fb923c;
-  border: 1px solid rgba(249, 115, 22, 0.4);
+  background: rgba(210, 153, 34, 0.15);
+  color: var(--warn);
+  border: 1px solid rgba(210, 153, 34, 0.3);
 }
 
 .badge-medium {
-  background: rgba(217, 119, 6, 0.2);
-  color: #fbbf24;
-  border: 1px solid rgba(245, 158, 11, 0.4);
+  background: rgba(210, 153, 34, 0.1);
+  color: var(--warn);
+  border: 1px solid rgba(210, 153, 34, 0.2);
 }
 
 .badge-low {
-  background: rgba(5, 150, 105, 0.2);
-  color: #34d399;
-  border: 1px solid rgba(16, 185, 129, 0.4);
-}
+  background: rgba(46, 160, 67, 0.1);
+  color: #2EA043;
+  border: 1px solid rgba(46, 160, 67, 0.2);
+}

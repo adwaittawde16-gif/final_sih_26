@@ -118,7 +118,7 @@ export default function AlertsPage() {
       </div>
 
       {/* Control Bar: Filters & Live Audio Mode */}
-      <div className="p-4 rounded-xl bg-[#0c213f] border border-[#1a3b6d] flex flex-col md:flex-row items-center justify-between gap-4 shadow-lg">
+      <div className="p-4 rounded-lg bg-[#111826] border border-[#1F2A3D] flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex flex-wrap items-center gap-2 w-full md:w-auto">
           <div className="relative flex-1 md:w-64">
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
@@ -127,23 +127,23 @@ export default function AlertsPage() {
               placeholder="Filter title or message..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-3 py-1.5 bg-[#061224] border border-[#1a3b6d] rounded-lg text-xs font-mono text-white placeholder-slate-400 focus:outline-none focus:border-sky-400"
+              className="w-full pl-9 pr-3 py-1.5 bg-[#161F30] border border-[#1F2A3D] rounded-md text-xs font-sans text-white placeholder-slate-500 focus:outline-none focus:border-blue-500"
             />
           </div>
 
-          <div className="flex items-center gap-1 bg-[#061224] p-1 rounded-lg border border-[#1a3b6d]">
+          <div className="flex items-center gap-1 bg-[#161F30] p-1 rounded-md border border-[#1F2A3D]">
             {["ALL", "CRITICAL", "HIGH", "MODERATE"].map((sev) => (
               <button
                 key={sev}
                 onClick={() => setSeverityFilter(sev)}
-                className={`px-3 py-1 rounded text-xs font-mono font-bold transition-all ${
+                className={`px-3 py-1 rounded text-xs font-sans font-medium transition-colors ${
                   severityFilter === sev
                     ? sev === "CRITICAL"
-                      ? "bg-red-600 text-white shadow-[0_0_10px_rgba(239,68,68,0.5)]"
+                      ? "bg-red-600 text-white"
                       : sev === "HIGH"
-                      ? "bg-amber-600 text-white shadow-[0_0_10px_rgba(245,158,11,0.5)]"
+                      ? "bg-amber-600 text-white"
                       : sev === "MODERATE"
-                      ? "bg-sky-600 text-white shadow-[0_0_10px_rgba(2,132,199,0.5)]"
+                      ? "bg-blue-600 text-white"
                       : "bg-slate-700 text-white"
                     : "text-slate-400 hover:text-white"
                 }`}
@@ -159,17 +159,17 @@ export default function AlertsPage() {
             variant="outline"
             size="sm"
             onClick={() => setSoundEnabled(!soundEnabled)}
-            className="border-[#1a3b6d] bg-[#061224] text-slate-200 hover:bg-[#102a52] text-xs font-mono"
+            className="border-[#1F2A3D] bg-[#161F30] text-slate-200 hover:bg-[#1E2B42] text-xs font-sans"
           >
             {soundEnabled ? (
               <>
                 <Volume2 className="w-3.5 h-3.5 mr-1.5 text-emerald-400" />
-                Audio Siren: Active
+                Audio siren: Active
               </>
             ) : (
               <>
                 <VolumeX className="w-3.5 h-3.5 mr-1.5 text-slate-400" />
-                Audio Siren: Muted
+                Audio siren: Muted
               </>
             )}
           </Button>
@@ -177,10 +177,10 @@ export default function AlertsPage() {
           <Button
             size="sm"
             onClick={() => setAcknowledgedIds(new Set(allAlerts.map((_, i) => i)))}
-            className="bg-sky-600 hover:bg-sky-500 text-white text-xs font-mono"
+            className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-sans"
           >
             <CheckCircle2 className="w-3.5 h-3.5 mr-1.5" />
-            Acknowledge All
+            Acknowledge all
           </Button>
         </div>
       </div>
@@ -188,9 +188,9 @@ export default function AlertsPage() {
       {/* Alerts Feed */}
       <div className="space-y-3">
         {filteredAlerts.length === 0 ? (
-          <div className="p-12 text-center bg-[#0c213f] border border-[#1a3b6d] rounded-xl">
+          <div className="p-12 text-center bg-[#111826] border border-[#1F2A3D] rounded-lg">
             <ShieldAlert className="w-12 h-12 text-slate-500 mx-auto mb-3" />
-            <p className="text-slate-300 font-mono text-sm font-bold">No active alerts matching filter</p>
+            <p className="text-slate-300 font-sans text-sm font-semibold">No active alerts matching filter</p>
             <p className="text-slate-400 text-xs mt-1">All early warning telemetry criteria are currently within standard baseline parameters.</p>
           </div>
         ) : (
@@ -204,25 +204,25 @@ export default function AlertsPage() {
             return (
               <div
                 key={idx}
-                className={`p-4 rounded-xl border transition-all duration-200 ${
+                className={`p-4 rounded-lg border transition-colors ${
                   isAck
-                    ? "bg-[#061224]/70 border-[#1a3b6d]/60 opacity-60"
+                    ? "bg-[#111826]/70 border-[#1F2A3D]/60 opacity-60"
                     : isCritical
-                    ? "bg-[#150a12] border-red-500/50 shadow-[0_0_15px_-3px_rgba(239,68,68,0.2)]"
+                    ? "bg-[#150a12] border-red-600/60 border-l-4 border-l-red-600"
                     : isHigh
-                    ? "bg-[#151208] border-amber-500/50 shadow-[0_0_15px_-3px_rgba(245,158,11,0.15)]"
-                    : "bg-[#0c213f] border-[#1a3b6d]"
+                    ? "bg-[#151208] border-amber-600/60 border-l-4 border-l-amber-600"
+                    : "bg-[#111826] border-[#1F2A3D]"
                 }`}
               >
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
                   <div className="flex items-start gap-3 min-w-0">
                     <div
-                      className={`p-2.5 rounded-lg shrink-0 mt-0.5 ${
+                      className={`p-2.5 rounded-md shrink-0 mt-0.5 ${
                         isCritical
-                          ? "bg-red-950/80 border border-red-500/40 text-red-400 animate-pulse"
+                          ? "bg-red-950/80 border border-red-600/40 text-red-400"
                           : isHigh
-                          ? "bg-amber-950/80 border border-amber-500/40 text-amber-400"
-                          : "bg-sky-950/80 border border-sky-500/40 text-sky-400"
+                          ? "bg-amber-950/80 border border-amber-600/40 text-amber-400"
+                          : "bg-blue-950/80 border border-blue-600/40 text-blue-400"
                       }`}
                     >
                       {isCritical ? (
@@ -234,20 +234,20 @@ export default function AlertsPage() {
                       )}
                     </div>
 
-                    <div className="min-w-0">
+                    <div className="min-w-0 font-sans">
                       <div className="flex flex-wrap items-center gap-2 mb-1">
                         <Badge
                           variant={badgeVariant}
-                          className="font-mono font-extrabold text-[10px] tracking-wider uppercase"
+                          className="font-sans font-semibold text-[10px] tracking-wider uppercase"
                         >
-                          {alert.severity} NOTICE
+                          {alert.severity} notice
                         </Badge>
                         <span className="font-bold text-white text-sm font-sans truncate">
                           {alert.title}
                         </span>
                         {isAck && (
-                          <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950/60 px-1.5 py-0.5 rounded border border-emerald-800/40 flex items-center gap-1">
-                            <CheckCircle2 className="w-3 h-3" /> ACKNOWLEDGED
+                          <span className="text-[10px] font-sans text-emerald-400 bg-emerald-950/60 px-1.5 py-0.5 rounded border border-emerald-800/40 flex items-center gap-1">
+                            <CheckCircle2 className="w-3 h-3" /> Acknowledged
                           </span>
                         )}
                       </div>
@@ -256,33 +256,33 @@ export default function AlertsPage() {
                         {alert.message}
                       </p>
 
-                      <div className="flex items-center gap-4 mt-2 text-[11px] font-mono text-slate-400">
+                      <div className="flex items-center gap-4 mt-2 text-[11px] font-sans text-slate-400">
                         <span className="flex items-center gap-1">
                           <Clock className="w-3 h-3 text-slate-500" />
-                          {alert.timestamp || "Live Stream Telemetry"}
+                          <span className="font-mono">{alert.timestamp || "Live stream"}</span>
                         </span>
                         <span>•</span>
-                        <span>ID: {alert.id || `ALERT-${idx + 1}`}</span>
+                        <span className="font-mono">ID: {alert.id || `ALERT-${idx + 1}`}</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Actions */}
-                  <div className="flex items-center gap-2 shrink-0 self-end md:self-center pt-2 md:pt-0">
+                  <div className="flex items-center gap-2 shrink-0 self-end md:self-center pt-2 md:pt-0 font-sans">
                     <button
                       onClick={() => toggleAcknowledge(idx)}
-                      className={`px-3 py-1.5 rounded-lg text-xs font-mono border transition-all ${
+                      className={`px-3 py-1.5 rounded-md text-xs font-sans border transition-colors ${
                         isAck
                           ? "bg-slate-800 text-slate-400 border-slate-700 hover:text-white"
-                          : "bg-[#102a52] text-sky-300 border-sky-500/40 hover:bg-sky-600 hover:text-white"
+                          : "bg-[#161F30] text-blue-300 border-[#1F2A3D] hover:bg-blue-600 hover:text-white"
                       }`}
                     >
-                      {isAck ? "Mark Unread" : "Acknowledge"}
+                      {isAck ? "Mark unread" : "Acknowledge"}
                     </button>
 
                     <Link
                       href={`/dossiers`}
-                      className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-red-600/90 hover:bg-red-500 text-white text-xs font-mono font-bold transition-all shadow-[0_0_10px_rgba(227,27,35,0.4)]"
+                      className="flex items-center gap-1 px-3 py-1.5 rounded-md bg-red-600 hover:bg-red-500 text-white text-xs font-sans font-medium transition-colors"
                     >
                       <span>Investigate</span>
                       <ArrowRight className="w-3 h-3" />
