@@ -13,7 +13,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("dark");
+  const [theme, setThemeState] = useState<Theme>("light");
 
   useEffect(() => {
     const saved = localStorage.getItem("netsentinel_theme") as Theme | null;
@@ -23,8 +23,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       document.documentElement.classList.remove("dark", "light");
       document.documentElement.classList.add(saved);
     } else {
-      document.documentElement.setAttribute("data-theme", "dark");
-      document.documentElement.classList.add("dark");
+      setThemeState("light");
+      document.documentElement.setAttribute("data-theme", "light");
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
     }
   }, []);
 

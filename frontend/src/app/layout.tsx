@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="light" data-theme="light">
       <body className="bg-[var(--bg)] text-[var(--text)] flex min-h-screen antialiased">
         <ThemeProvider>
           <NavProvider>

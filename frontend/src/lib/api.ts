@@ -55,7 +55,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "";
 
 async function fetchAPI<T>(endpoint: string, options?: RequestInit, fallbackData?: T): Promise<T> {
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 6000);
+  const timeoutId = setTimeout(() => controller.abort(), 1000);
 
   try {
     const url = BASE_URL ? `${BASE_URL}${endpoint}` : endpoint;

@@ -20,7 +20,7 @@ export async function GET(
       headers: {
         "Content-Type": "application/json",
       },
-      signal: AbortSignal.timeout(5000),
+      signal: AbortSignal.timeout(800),
     });
 
     if (backendRes.ok) {
@@ -71,7 +71,7 @@ export async function POST(
         "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
-      signal: AbortSignal.timeout(5000),
+      signal: AbortSignal.timeout(800),
     });
 
     if (backendRes.ok) {
